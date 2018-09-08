@@ -10,19 +10,18 @@ function onOpen() {
 function buildJsonOutput() {
   var speciesSettings = initSettings_("species settings");
   var stockSettings = initSettings_("stock settings");
-  var species = getJsonFromSheet(speciesSettings);
-  var stock = getJsonFromSheet(stockSettings);
-  var output = {
-    species: JSON.parse(species),
-    stock: JSON.parse(stock),
+  var species = JSON.parse(getJsonFromSheet(speciesSettings));
+  var stock = JSON.parse(getJsonFromSheet(stockSettings));
+  var model = {
+    fish: filterAndCombineLists(species, stock),
     postDate: new Date().toUTCString(),
   };
 
   if (speciesSettings.options) {
-    output.options = JSON.parse(speciesSettings.options);
+    model.options = JSON.parse(speciesSettings.options);
   }
 
-  return output;
+  return model;
 }
 
 // https://github.com/Spencer-Easton/Apps-Script-GSApp-Library/blob/master/example.gs
@@ -103,8 +102,8 @@ function buildJSON_(sheet, settings) {
 
 function initSettings_(sheetName) {
   /**
-    Build the settings object from the "SETTINGS" sheet
-    */
+      Build the settings object from the "SETTINGS" sheet
+      */
   // Create an empty settings object
   var s = new Object();
 
