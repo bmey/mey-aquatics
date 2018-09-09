@@ -8,9 +8,15 @@
     "react-scripts": "1.1.5"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start-js": "react-scripts start",
+    "start-server": "json-server mock-server/db.json",
+    "start": "npm-run-all -p -l start-js start-server",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "json-server": "^0.14.0",
+    "npm-run-all": "^4.1.3"
   }
 }
