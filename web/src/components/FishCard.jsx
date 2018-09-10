@@ -16,7 +16,7 @@ const FishCard = ({ id, onCaresList, common, scientific, origin, sizes }) => {
     <Card>
       <CardBody>
         <CardTitle>{common || scientific}</CardTitle>
-        <CardSubtitle>{common ? scientific : `${scientific} | ${origin}`}</CardSubtitle>
+        <CardSubtitle>{common ? `${scientific} | ${origin}` : { origin }}</CardSubtitle>
       </CardBody>
       {/* <img
         width="100%"
