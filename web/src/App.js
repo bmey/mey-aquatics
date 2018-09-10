@@ -1,10 +1,12 @@
 import React, { Component } from "react";
+import FishList from "./components/FishList";
 import logo from "./logo.svg";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 class App extends Component {
   state = {
-    data: {},
+    data: null,
   };
 
   componentDidMount() {
@@ -26,10 +28,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <p>
-          Data:
-          {this.state.data && JSON.stringify(this.state.data)}
-        </p>
+        {this.state.data && <FishList {...this.state.data} />}
       </div>
     );
   }
