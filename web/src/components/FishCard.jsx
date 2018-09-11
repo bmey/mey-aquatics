@@ -1,5 +1,6 @@
 import React from "react";
-import { Card, CardImg, CardText, CardBody, CardLink, CardTitle, CardSubtitle, Badge } from "reactstrap";
+import { Card, CardBody, CardTitle, CardSubtitle, Badge } from "reactstrap";
+import { Image } from "cloudinary-react";
 
 const SizeItem = ({ size, length, price, count }) => {
   return (
@@ -18,11 +19,19 @@ const FishCard = ({ id, onCaresList, common, scientific, origin, sizes }) => {
         <CardTitle>{common || scientific}</CardTitle>
         <CardSubtitle>{common ? `${scientific} | ${origin}` : { origin }}</CardSubtitle>
       </CardBody>
-      {/* <img
-        width="100%"
-        src="https://placeholdit.imgix.net/~text?txtsize=33&txt=160%C3%9790&w=160&h=90"
-        alt="Card image cap"
-      /> */}
+      <Image
+        className="card-thumbnail"
+        publicId="tropical-saltwater-fish.jpg"
+        width="auto"
+        dpr="auto"
+        responsive
+        aspectRatio="16:9"
+        fetchFormat="auto"
+        quality="auto:low"
+        secure="true"
+        crop="fill"
+        alt={`Image of ${common || scientific} from ${origin}`}
+      />
       <CardBody>
         <ul className="list-group list-group-flush">
           {onCaresList && (

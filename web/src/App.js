@@ -1,6 +1,6 @@
 import React, { Component } from "react";
+import { CloudinaryContext } from "cloudinary-react";
 import FishList from "./components/FishList";
-import logo from "./logo.svg";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
@@ -21,10 +21,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to Mey Aquatics!</h1>
-        </header>
-        <div className="App-content">{this.state.data && <FishList {...this.state.data} />}</div>
+        <CloudinaryContext cloudName="bmey">
+          <header className="App-header">
+            <h1 className="App-title">Welcome to Mey Aquatics!</h1>
+          </header>
+          <div className="App-content">{this.state.data && <FishList {...this.state.data} />}</div>
+        </CloudinaryContext>
       </div>
     );
   }
