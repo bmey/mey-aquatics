@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, CardBody, CardTitle, CardSubtitle, Badge } from "reactstrap";
 import { Image } from "cloudinary-react";
+import MissingImage from "./MissingImage";
 
 const SizeItem = ({ size, length, price, count }) => {
   return (
@@ -11,27 +12,32 @@ const SizeItem = ({ size, length, price, count }) => {
   );
 };
 
-const FishCard = ({ id, onCaresList, common, scientific, origin, sizes }) => {
-  console.log(sizes);
+const FishCard = ({ id, onCaresList, common, scientific, origin, sizes, picture }) => {
   return (
     <Card>
       <CardBody>
         <CardTitle>{common || scientific}</CardTitle>
         <CardSubtitle>{common ? `${scientific} | ${origin}` : { origin }}</CardSubtitle>
       </CardBody>
-      <Image
-        className="card-thumbnail"
-        publicId="tropical-saltwater-fish.jpg"
-        width="auto"
-        dpr="auto"
-        responsive
-        aspectRatio="16:9"
-        fetchFormat="auto"
-        quality="auto:low"
-        secure="true"
-        crop="fill"
-        alt={`Image of ${common || scientific} from ${origin}`}
-      />
+      <div className="d-flex justify-content-center">
+        {picture ? (
+          <Image
+            className="card-thumbnail"
+            publicId={picture}
+            width="auto"
+            dpr="auto"
+            responsive
+            aspectRatio="16:9"
+            fetchFormat="auto"
+            quality="auto:low"
+            secure="true"
+            crop="fill"
+            alt={`Image of ${common || scientific} from ${origin}`}
+          />
+        ) : (
+          <MissingImage />
+        )}
+      </div>
       <CardBody>
         <ul className="list-group list-group-flush">
           {onCaresList && (

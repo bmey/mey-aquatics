@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { CloudinaryContext } from "cloudinary-react";
 import FishList from "./components/FishList";
+import Credits from "./components/Credits";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
@@ -26,6 +27,7 @@ class App extends Component {
             <h1 className="App-title">Welcome to Mey Aquatics!</h1>
           </header>
           <div className="App-content">{this.state.data && <FishList {...this.state.data} />}</div>
+          <Credits />
         </CloudinaryContext>
       </div>
     );
