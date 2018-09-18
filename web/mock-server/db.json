@@ -7,7 +7,7 @@
         "common": "Window cichlid",
         "scientific": "Vieja fenestratus \" pink\"",
         "origin": "CE America",
-        "picture": "tropical-saltwater-fish.jpg",
+        "picture": "fish/tagged/Vieja_Fenestratus_Pink.jpg",
         "sizes": {
           "S": {
             "length": 0,
@@ -66,6 +66,37 @@
         "common": "Midas Cichlid",
         "scientific": "Amphilophus citrinellus",
         "origin": "Costa Rica",
+        "picture": "fish/tagged/Amphilophus_citrinellus_F.jpg",
+        "sizes": {
+          "S": {
+            "length": 0,
+            "price": 0,
+            "count": 1
+          },
+          "M": {
+            "length": 0,
+            "price": 0,
+            "count": 0
+          },
+          "L": {
+            "length": 4,
+            "price": 30,
+            "count": 0
+          },
+          "B": {
+            "length": 0,
+            "price": 0,
+            "count": 0
+          }
+        }
+      },
+      {
+        "id": "andinoacara-rivulatus-syn|samerica",
+        "onCaresList": false,
+        "common": "Green Terror",
+        "scientific": "Andinoacara rivulatus syn.",
+        "origin": "SAmerica",
+        "picture": "fish/tagged/Andinoacara_rivulatus.jpg",
         "sizes": {
           "S": {
             "length": 0,
@@ -124,6 +155,7 @@
         "common": "European Dragonblood",
         "scientific": "Aulonocara jacobfreibergi",
         "origin": "Lake Malawi",
+        "picture": "fish/tagged/Aulonocara_jacobfreibergi_M.jpg",
         "sizes": {
           "S": {
             "length": 0,
@@ -211,6 +243,7 @@
         "common": "Red Peacock",
         "scientific": "Aulonocara Red",
         "origin": "Lake Malawi",
+        "picture": "fish/tagged/Aulonocara_Nyassae.jpg",
         "sizes": {
           "S": {
             "length": 0,
@@ -269,6 +302,7 @@
         "common": "Tropheus Lufubu (Purple)",
         "scientific": "Tropheus moorii Lufubu",
         "origin": "Lake Tanganyika",
+        "picture": "fish/tagged/Tropheus_moorii_Lufubu_2.jpg",
         "sizes": {
           "S": {
             "length": 0,
@@ -356,6 +390,7 @@
         "common": "Hap Milomo",
         "scientific": "Placidochromis milomo",
         "origin": "Lake Victoria",
+        "picture": "fish/tagged/Hap_Milomo.jpg",
         "sizes": {
           "S": {
             "length": 0,
@@ -414,6 +449,7 @@
         "common": "Kenya Gold",
         "scientific": "Haplochromis Kenya Gold",
         "origin": "Lake Victoria",
+        "picture": "fish/tagged/Haplochromis_Kenya_Gold_F.jpg",
         "sizes": {
           "S": {
             "length": 0,
@@ -472,6 +508,7 @@
         "common": "Obliquden",
         "scientific": "Hapolochromus murchasin",
         "origin": "Lake Victoria",
+        "picture": "fish/tagged/Hapolochromus_murchasin_2.jpg",
         "sizes": {
           "S": {
             "length": 0,
@@ -501,6 +538,7 @@
         "common": "Rock Kribensis",
         "scientific": "Paralabidochromis sauvagei",
         "origin": "Lake Victoria",
+        "picture": "fish/tagged/Paralabidochromis_sauvagei.jpg",
         "sizes": {
           "S": {
             "length": 0,
@@ -530,6 +568,7 @@
         "common": "Ruby Green",
         "scientific": "Haplochromis sp. Ruby Green",
         "origin": "Lake Victoria",
+        "picture": "fish/tagged/Haplochromus_sp._Ruby_Green_M.jpg",
         "sizes": {
           "S": {
             "length": 0,
@@ -559,6 +598,7 @@
         "common": "Amazonia",
         "scientific": "Cichlasoma amazonia",
         "origin": "SAmerica",
+        "picture": "fish/tagged/Cichlasoma_Amazonia_F.jpg",
         "sizes": {
           "S": {
             "length": 0,
@@ -588,6 +628,7 @@
         "common": "Bandit cichlid",
         "scientific": "Guianacara geayi",
         "origin": "SAmerica",
+        "picture": "fish/tagged/Guianacara_geayi.jpg",
         "sizes": {
           "S": {
             "length": 0,
@@ -820,6 +861,7 @@
         "common": "Dogtooth cichlid",
         "scientific": "Cynotilpia Afra",
         "origin": "Lake Malawi",
+        "picture": "fish/tagged/Cynotilapia_Afra.jpg",
         "sizes": {
           "S": {
             "length": 1,
@@ -849,6 +891,7 @@
         "common": "Red top lwanda",
         "scientific": "Aulonocara sp. Lwanda",
         "origin": "Lake Malawi",
+        "picture": "fish/tagged/Aulonocara_sp._LwandaM.jpg",
         "sizes": {
           "S": {
             "length": 0,
@@ -1081,6 +1124,7 @@
         "common": "Neolamprolagus multifasciatus",
         "scientific": "Neolamprologus multifasciatus",
         "origin": "Lake Tanganyika",
+        "picture": "fish/tagged/Neolamprologus_multifasciatus_M.jpg",
         "sizes": {
           "S": {
             "length": 0,
@@ -1284,6 +1328,7 @@
         "common": "Black Piebald",
         "scientific": "Paralabidochromis chromogynos",
         "origin": "Lake Victoria",
+        "picture": "fish/tagged/Paralabidochromis_chromogynos_F.jpg",
         "sizes": {
           "S": {
             "length": 0,
@@ -1313,6 +1358,7 @@
         "common": "Blue Saffire",
         "scientific": "Placido phenochilus",
         "origin": "Lake Victoria",
+        "picture": "fish/tagged/Placido_phenochilius_F.jpg",
         "sizes": {
           "S": {
             "length": 0,
@@ -1342,6 +1388,7 @@
         "common": "Bream",
         "scientific": "Chilotilapia Rhoadesii",
         "origin": "Lake Victoria",
+        "picture": "fish/tagged/Chilotilapia_rhoadesii_M.jpg",
         "sizes": {
           "S": {
             "length": 0,
@@ -1371,6 +1418,7 @@
         "common": "Fischeri",
         "scientific": "Ptyochromus fischeri",
         "origin": "Lake Victoria",
+        "picture": "fish/tagged/Ptyochromus_fisheri.jpg",
         "sizes": {
           "S": {
             "length": 2,
@@ -1690,6 +1738,7 @@
         "common": "Zebra Pleco (L-46)",
         "scientific": "Hypancistrus Zebra L046",
         "origin": "SAmerica",
+        "picture": "fish/tagged/10-7_L46.jpg",
         "sizes": {
           "S": {
             "length": 0,
