@@ -10,10 +10,12 @@ function onOpen() {
 function buildJsonOutput() {
   var speciesSettings = initSettings_("species settings");
   var stockSettings = initSettings_("stock settings");
+  var pictureSettings = initSettings_("pictures settings");
   var species = JSON.parse(getJsonFromSheet(speciesSettings));
   var stock = JSON.parse(getJsonFromSheet(stockSettings));
+  var pictures = JSON.parse(getJsonFromSheet(pictureSettings));
   var model = {
-    fish: filterAndCombineLists(species, stock),
+    fish: filterAndCombineLists(species, stock, pictures),
     postDate: new Date().toUTCString(),
   };
 

@@ -20,8 +20,8 @@ function filterSpecies(species) {
   });
 }
 
-function filterStock(stock) {
-  return stock.filter(function(item) {
+function filterItems(items) {
+  return items.filter(function(item) {
     if (isEmpty(item)) {
       return false;
     }
@@ -64,6 +64,14 @@ function aggregateStock(stock) {
   }, {});
 }
 
+function aggregatePictures(items) {
+  return items.reduce(function(allItems, item) {
+    var id = getId(item);
+    allItems[id] = item.picture;
+    return allItems;
+  }, {});
+}
+
 function aggregateSpecies(species) {
   return species.reduce(function(all, item) {
     var id = getId(item);
@@ -103,15 +111,26 @@ function updateSizeCount(item, stockCount, size) {
   return stockCount[item.id + "|" + size] || 0;
 }
 
-function filterAndCombineLists(species, stock) {
-  var stockDictionary = aggregateStock(filterStock(stock));
+function getPictureId(id, pictureDictionary) {
+  var pictureId = pictureDictionary[id];
+  if (!pictureId) {
+    return null;
+  }
+
+  return "fish/tagged/" + pictureId;
+}
+
+function filterAndCombineLists(species, stock, pictures) {
+  var stockDictionary = aggregateStock(filterItems(stock));
+  var pictureDictionary = aggregatePictures(filterItems(pictures));
   var speciesDictionary = aggregateSpecies(filterSpecies(species));
   var data = [];
 
   Object.keys(speciesDictionary).forEach(function(key) {
     var item = speciesDictionary[key];
     var sizes = combineSizes(item, stockDictionary);
-    data.push({
+    var picture = getPictureId(item.id, pictureDictionary);
+    var model = {
       id: item.id,
       onCaresList: !!item.onCaresList,
       common: item.common,
@@ -119,7 +138,13 @@ function filterAndCombineLists(species, stock) {
       origin: item.origin,
       collectionPoint: item.collectionPoint,
       sizes: sizes,
-    });
+    };
+
+    if (picture) {
+      model.picture = picture;
+    }
+
+    data.push(model);
   });
 
   return data;
