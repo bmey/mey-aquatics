@@ -24,7 +24,7 @@ class App extends Component {
       <div className="App">
         <CloudinaryContext cloudName="bmey">
           <header className="App-header">
-            <h1 className="App-title">Welcome to Mey Aquatics!</h1>
+            <h1 className="App-title">Welcome to Mey's Aquatics!</h1>
           </header>
           <div className="App-content">{this.state.data && <FishList {...this.state.data} />}</div>
           <Credits />
