@@ -1,0 +1,6 @@
+ideas
+https://uxdesign.cc/crafting-a-kickass-filtering-ux-beea1798d64b
+
+Make sure filter changes are separate events in the browser
+
+The sidebar filtering interface on the left.

@@ -1,0 +1,72 @@
+must haves
+species list
+- common
+- scientific
+- origin
+- size
+- length
+- price
+- cares
+? count
+? avail
+? CP
+
+livestock
+- common
+- scientific
+- origin
+- cp
+- count
+- size (none are filled out, though)
++ keeps
+? pair
+? cares
+? food
+? tank
+
+questions:
+- decide what to do with collection point (show X from wild, Y from MA? or just that there are some wild, some MA?)
+- species list is what will show on website (even if no stock)?
+  + 0 fish will show "not avail" / add column to specify (confirm)
+- should there be more than one picture per species? (gender, size)
+- separate entries for species in different origins? (confirm)
+- questionnaire in email
+- Altolamprologus calvus (multiple common names - calvus black, gold head, red fin, white)?
+- Abino dragonblood same scientific name as european dragonblood
+- in stock, not in species
+  + Spotted Talking Catfish (Agamyxis pectinifrons)
+  + Green Terror (Andinoacara rivulatus syn.)
+  + Red Nyasa peacock (Aulonocara Nyassae)
+  + Albino Dragonblood (Aulonocara jacobfreibergi)
+  + Masked Brichardi (Chalinochromis brichardi)
+- in species, not stock
+  + Golden Zebra Danio (Danio rerio)
+  + Neon Tetra (Paracheirodon innesi)
+- in pictures, not in stock or species
+  + Tropheus sp. Red Cheecks
+- common names different in stock vs species
+  + Dogtooth cichlid / Red Top Cichlid (Cynotilpia Afra)
+
+fix in google doc:
+- add # to keep to stock list
+- rows for data need to be right under header (e.g. missing #) 
+- some fish not represented in "species" list (like green terror)
+- fill out size in stock list (B, L, M, S)
+  + currently only on species list
+- depending on answer to multiple picture per species
+  + multiple by size, add column in species list
+  + multiple by gender, add new sheet
+  + multiple by both, add 2 columns in species list
+  + single, add new sheet
+
+  
+other notes:
+- some missing common / scientific name
+- ignoring count, avail, and CP from species list
+- ignoring cares, pair, food, tank from stock list
+- keep headers same or change on settings tabs
+
+to discuss:
+- how to publish
+- how to manage pictures
+- if traffic/use grows, may have to pay

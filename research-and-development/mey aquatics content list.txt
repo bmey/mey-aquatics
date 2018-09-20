@@ -1,0 +1,22 @@
+content
+- fish list
+	- search
+	- filter
+	- pictures
+	- descriptions
+	- numbers
+	- other info (CARES, coming soon, CP)
+- fish profile/detail page (?)
+- about us
+	- who
+	- what we're about
+	- where
+	- why
+	- involvement (clubs, cares)
+- contact us
+	- email
+	- form (?)
+	- facebook page
+- advertise popular, coming soon, or high stocked fish
+- printer-friendly area
+- events (upcoming auction)
