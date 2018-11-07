@@ -2,6 +2,8 @@
 
 context("Navigation", () => {
   beforeEach(() => {
+    cy.server();
+    cy.route("data.json", "fixture:data");
     cy.visit("/");
   });
 
