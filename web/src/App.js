@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 import { CloudinaryContext } from "cloudinary-react";
 import FishList from "./components/FishList";
 import Credits from "./components/Credits";
@@ -12,7 +13,8 @@ class App extends Component {
 
   componentDidMount() {
     const that = this;
-    fetch(`${process.env.REACT_APP_API}/data.json`)
+    axios
+      .get(`${process.env.REACT_APP_API}/data.json`)
       .then(response => response.json())
       .then(json => {
         that.setState({ data: json });
