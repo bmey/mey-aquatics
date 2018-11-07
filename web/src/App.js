@@ -15,7 +15,7 @@ class App extends Component {
     const that = this;
     axios
       .get(`${process.env.REACT_APP_API}/data.json`)
-      .then(response => response.json())
+      .then(response => response.data)
       .then(json => {
         that.setState({ data: json });
       });
