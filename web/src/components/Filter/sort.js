@@ -31,17 +31,10 @@ const sortByHighestPrice = productList => {
 };
 
 const getHighestPrice = sizes => {
-  let highest = 0;
+  const initialBestValue = 0;
+  const highPriceComparator = (current, best) => current > best;
 
-  Object.keys(sizes).forEach(key => {
-    const price = sizes[key].price;
-
-    if (price > highest) {
-      highest = price;
-    }
-  });
-
-  return highest;
+  return getBestPrice(sizes, highPriceComparator, initialBestValue);
 };
 
 const sortByLowestPrice = productList => {
@@ -49,17 +42,24 @@ const sortByLowestPrice = productList => {
 };
 
 const getLowestPrice = sizes => {
-  let lowest = Number.MAX_SAFE_INTEGER;
+  const initialBestValue = Number.MAX_SAFE_INTEGER;
+  const lowPriceComparator = (current, best) => current < best && current > 0;
+
+  return getBestPrice(sizes, lowPriceComparator, initialBestValue);
+};
+
+const getBestPrice = (sizes, comparator, initialValue) => {
+  let bestPrice = initialValue;
 
   Object.keys(sizes).forEach(key => {
-    const price = sizes[key].price;
+    const currentPrice = sizes[key].price;
 
-    if (price < lowest && price > 0) {
-      lowest = price;
+    if (comparator(currentPrice, bestPrice)) {
+      bestPrice = currentPrice;
     }
   });
 
-  return lowest;
+  return bestPrice;
 };
 
 export default sort;
