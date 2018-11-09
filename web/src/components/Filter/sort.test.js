@@ -1,7 +1,7 @@
-import sort from "./filter";
+import sort from "./sort";
 import { SORT_BY } from "./constants";
 
-describe("filter", () => {
+describe("sort", () => {
   it("returns empty array when input is null", () => {
     const result = sort(null);
 
@@ -91,10 +91,7 @@ describe("filter", () => {
   const setupProductItem = (name, price, sizeOptions = {}) => {
     return {
       id: name,
-      onCaresList: false,
       common: name,
-      scientific: name,
-      origin: "country of origin",
       sizes: {
         S: { price },
         M: { price },
@@ -102,12 +99,6 @@ describe("filter", () => {
         B: { price },
         ...sizeOptions,
       },
-    };
-  };
-
-  const createSizeData = price => {
-    return {
-      price,
     };
   };
 });
