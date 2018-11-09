@@ -56,7 +56,20 @@ describe("filter", () => {
     expect(result[2].id).toEqual("A");
   });
 
-  const setupProductItem = (name, price) => {
+  it("sorts by price (high to low) by highest non-zero price for each item", () => {
+    const productList = [
+      setupProductItem("C", 0, { B: { price: 2 } }),
+      setupProductItem("B", 0, { L: { price: 4 } }),
+      setupProductItem("A", 1, { B: { price: 3 } }),
+    ];
+    const result = filter(productList, SORT_BY.PRICE_HIGH_TO_LOW);
+
+    expect(result[0].id).toEqual("B");
+    expect(result[1].id).toEqual("A");
+    expect(result[2].id).toEqual("C");
+  });
+
+  const setupProductItem = (name, price, sizeOptions = {}) => {
     return {
       id: name,
       onCaresList: false,
@@ -64,19 +77,18 @@ describe("filter", () => {
       scientific: name,
       origin: "country of origin",
       sizes: {
-        S: createSizeData(price),
-        M: createSizeData(price),
-        L: createSizeData(price),
-        B: createSizeData(price),
+        S: { price },
+        M: { price },
+        L: { price },
+        B: { price },
+        ...sizeOptions,
       },
     };
   };
 
   const createSizeData = price => {
     return {
-      length: 0,
       price,
-      count: 0,
     };
   };
 });
