@@ -14,7 +14,7 @@ const ErrorPage = () => (
     <div className="App-content text-center">
       <h2 style={{ margin: "30px" }}>Oh no! Something went wrong!</h2>
       <div>
-        <Button color="primary" size="lg" onClick={() => window.location.reload()}>
+        <Button color="primary" size="lg" onClick={() => window.location.reload()} data-test="refresh">
           Refresh and try again
         </Button>
       </div>
