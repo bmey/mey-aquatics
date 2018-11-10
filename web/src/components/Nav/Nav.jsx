@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import { NavLink, Link } from "react-router-dom";
 import { Collapse, Navbar, NavbarToggler, Nav as BootstrapNav, NavItem } from "reactstrap";
 import "./Nav.css";
