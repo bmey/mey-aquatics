@@ -8,22 +8,29 @@ import Nav from "./components/Nav/Nav";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
-const Home = props => (
+const Home = () => (
   <div data-cy="homepage">
     <header className="App-header">
-      <h1 className="App-title">Welcome to Mey's Aquatics!</h1>
+      <div>
+        <h1 className="App-title">Welcome to Mey's Aquatics!</h1>
+        <div className="text-center">
+          <em>Caring for fish since 1970</em>
+        </div>
+      </div>
     </header>
-    <div className="App-content">{props.data && <FishList {...props.data} />}</div>
+    <div className="App-content">
+      <h2>Home</h2>
+    </div>
   </div>
 );
 
-const ProductPage = () => (
-  <div data-cy="productpage">
+const LivestockPage = props => (
+  <div data-cy="livestockpage">
     <header className="App-header">
-      <h1 className="App-title">Welcome to Mey's Aquatics!</h1>
+      <h1 className="App-title">Livestock</h1>
     </header>
     <div className="App-content">
-      <h2>Fish</h2>
+      <div>{props.data && <FishList {...props.data} />}</div>
     </div>
   </div>
 );
@@ -31,7 +38,7 @@ const ProductPage = () => (
 const AboutPage = () => (
   <div data-cy="aboutpage">
     <header className="App-header">
-      <h1 className="App-title">Welcome to Mey's Aquatics!</h1>
+      <h1 className="App-title">About Us</h1>
     </header>
     <div className="App-content">
       <h2>About Us</h2>
@@ -42,7 +49,7 @@ const AboutPage = () => (
 const ContactPage = () => (
   <div data-cy="contactpage">
     <header className="App-header">
-      <h1 className="App-title">Welcome to Mey's Aquatics!</h1>
+      <h1 className="App-title">Contact</h1>
     </header>
     <div className="App-content">
       <h2>Contact</h2>
@@ -74,7 +81,7 @@ class App extends Component {
               <Nav />
 
               <Route path="/" exact render={() => <Home data={this.state.data} />} />
-              <Route path="/fish/" render={() => <ProductPage data={this.state.data} />} />
+              <Route path="/livestock/" render={() => <LivestockPage data={this.state.data} />} />
               <Route path="/about/" render={() => <AboutPage data={this.state.data} />} />
               <Route path="/contact/" render={() => <ContactPage data={this.state.data} />} />
             </div>

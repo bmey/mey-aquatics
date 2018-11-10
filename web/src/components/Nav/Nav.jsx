@@ -31,9 +31,9 @@ export default class Nav extends Component {
         exact: true,
       },
       {
-        path: "/fish/",
-        test: "nav-product",
-        text: "Fish",
+        path: "/livestock/",
+        test: "nav-livestock",
+        text: "Livestock",
       },
       {
         path: "/about/",

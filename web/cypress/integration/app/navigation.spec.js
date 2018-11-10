@@ -14,8 +14,8 @@ context("Navigation", () => {
   it("can navigate to all routes through desktop navbar", () => {
     cy.visit("/");
     cy.get("[data-cy=homepage]").should("be.visible");
-    cy.get("[data-test=nav-product]").click();
-    cy.get("[data-cy=productpage]").should("be.visible");
+    cy.get("[data-test=nav-livestock]").click();
+    cy.get("[data-cy=livestockpage]").should("be.visible");
     cy.get("[data-test=nav-about]").click();
     cy.get("[data-cy=aboutpage]").should("be.visible");
     cy.get("[data-test=nav-contact]").click();
@@ -28,8 +28,8 @@ context("Navigation", () => {
     cy.viewport(320, 480);
     cy.visit("/");
 
-    clickMobileNavLink("product");
-    cy.get("[data-cy=productpage]").should("be.visible");
+    clickMobileNavLink("livestock");
+    cy.get("[data-cy=livestockpage]").should("be.visible");
     clickMobileNavLink("about");
     cy.get("[data-cy=aboutpage]").should("be.visible");
     clickMobileNavLink("contact");
