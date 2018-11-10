@@ -30,14 +30,19 @@ describe("filter", () => {
     expect(result[0].id).toEqual("cares");
   });
 
-  it("only includes items from area of origin when ORIGIN filter applied", () => {
-    const productList = [{ id: "african", origin: "Africa" }, { id: "non-african", origin: "elsewhere" }];
-    const appliedFilters = [{ type: FILTER.ORIGIN, value: "africa" }];
+  it("includes items from areas of origin when ORIGIN filters applied", () => {
+    const productList = [
+      { id: "african", origin: "Africa" },
+      { id: "american", origin: "Americas" },
+      { id: "non-african", origin: "elsewhere" },
+    ];
+    const appliedFilters = [{ type: FILTER.ORIGIN, value: "africa" }, { type: FILTER.ORIGIN, value: "americas" }];
 
     const result = filter(productList, appliedFilters);
 
-    expect(result.length).toBe(1);
+    expect(result.length).toBe(2);
     expect(result[0].id).toEqual("african");
+    expect(result[1].id).toEqual("american");
   });
 
   /*  

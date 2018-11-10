@@ -29,35 +29,30 @@ describe("sort", () => {
     expect(result[1].id).toEqual("Z");
   });
 
-  it("sorts case-insensitive alphabetical by common name when alphabetical specified", () => {
+  it("sorts case-insensitive alphabetical by common name", () => {
     const productList = [setupProductItem("aA"), setupProductItem("B"), setupProductItem("AA"), setupProductItem("aa")];
 
     const result = sort(productList, SORT_BY.ALPHABETICAL);
 
-    expect(result[0].id).toEqual("aA");
-    expect(result[1].id).toEqual("AA");
-    expect(result[2].id).toEqual("aa");
-    expect(result[3].id).toEqual("B");
+    expect(result.map(r => r.id)).toEqual(["aA", "AA", "aa", "B"]);
   });
 
-  it("sorts by price (low to high) when low-to-high specified", () => {
-    const productList = [setupProductItem("C", 10), setupProductItem("B", 15), setupProductItem("A", 10)];
+  it("sorts empty common names to end when alphabetical by common name", () => {
+    const productList = [
+      {
+        id: "empty",
+        common: "",
+      },
+      setupProductItem("A"),
+      {
+        id: "empty2",
+        common: "",
+      },
+    ];
 
-    const result = sort(productList, SORT_BY.PRICE_LOW_TO_HIGH);
+    const result = sort(productList, SORT_BY.ALPHABETICAL);
 
-    expect(result[0].id).toEqual("C");
-    expect(result[1].id).toEqual("A");
-    expect(result[2].id).toEqual("B");
-  });
-
-  it("sorts by price (high to low) when high-to-low specified", () => {
-    const productList = [setupProductItem("C", 10), setupProductItem("B", 15), setupProductItem("A", 10)];
-
-    const result = sort(productList, SORT_BY.PRICE_HIGH_TO_LOW);
-
-    expect(result[0].id).toEqual("B");
-    expect(result[1].id).toEqual("C");
-    expect(result[2].id).toEqual("A");
+    expect(result.map(r => r.id)).toEqual(["A", "empty", "empty2"]);
   });
 
   it("sorts by price (high to low) considering all prices an item lists for various sizes", () => {
