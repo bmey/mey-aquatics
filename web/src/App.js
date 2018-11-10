@@ -8,12 +8,30 @@ import Home from "./components/HomePage";
 import LivestockPage from "./components/LivestockPage";
 import AboutPage from "./components/AboutPage";
 import ContactPage from "./components/ContactPage";
+import ErrorPage from "./components/ErrorPage";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+
+const LoadedApp = ({ data }) => (
+  <CloudinaryContext cloudName="bmey">
+    <Router>
+      <div>
+        <Nav />
+
+        <Route path="/" exact render={() => <Home data={data} />} />
+        <Route path="/livestock/" render={() => <LivestockPage data={data} />} />
+        <Route path="/about/" render={() => <AboutPage data={data} />} />
+        <Route path="/contact/" render={() => <ContactPage data={data} />} />
+      </div>
+    </Router>
+    <Credits />
+  </CloudinaryContext>
+);
 
 class App extends Component {
   state = {
     data: null,
+    showError: false,
   };
 
   componentDidMount() {
@@ -23,27 +41,24 @@ class App extends Component {
       .then(response => response.data)
       .then(json => {
         that.setState({ data: json });
-      });
+      })
+      .catch(response => that.setState({ showError: true }));
   }
 
   render() {
-    return (
-      <div className="App">
-        <CloudinaryContext cloudName="bmey">
-          <Router>
-            <div>
-              <Nav />
+    const { data, showError } = this.state;
+    const isLoading = data === null;
+    let PageComponent = null;
 
-              <Route path="/" exact render={() => <Home data={this.state.data} />} />
-              <Route path="/livestock/" render={() => <LivestockPage data={this.state.data} />} />
-              <Route path="/about/" render={() => <AboutPage data={this.state.data} />} />
-              <Route path="/contact/" render={() => <ContactPage data={this.state.data} />} />
-            </div>
-          </Router>
-          <Credits />
-        </CloudinaryContext>
-      </div>
-    );
+    if (showError) {
+      PageComponent = <ErrorPage data-test="error" data-cy="error" />;
+    } else if (isLoading) {
+      PageComponent = <div data-test="loading">Loading...</div>;
+    } else {
+      PageComponent = <LoadedApp data={data} data-test="loaded" />;
+    }
+
+    return <div className="App">{PageComponent}</div>;
   }
 }
 
