@@ -1,7 +1,7 @@
 import React from "react";
 
 const ContactPage = () => (
-  <div data-cy="aboutpage">
+  <div data-cy="contactpage">
     <header className="App-header">
       <h1 className="App-title">Contact</h1>
     </header>
