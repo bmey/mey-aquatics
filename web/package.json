@@ -16,7 +16,7 @@
   "scripts": {
     "start-js": "react-scripts start",
     "start-server": "json-server mock-server/db.json",
-    "start": "npm-run-all -p -l start-js start-server watch-css",
+    "start": "npm-run-all -p -l start-js start-server watch-css cypress:open",
     "cypress:open": "cypress open",
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
