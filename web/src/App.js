@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Provider } from "react-redux";
+import store from "./redux/store";
 import ErrorPage from "./components/ErrorPage";
 import LoadedApp from "./components/LoadedApp";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -35,7 +37,11 @@ class App extends Component {
       PageComponent = <LoadedApp data={data} data-test="loaded" />;
     }
 
-    return <div className="App">{PageComponent}</div>;
+    return (
+      <Provider store={store}>
+        <div className="App">{PageComponent}</div>
+      </Provider>
+    );
   }
 }
 

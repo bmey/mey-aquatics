@@ -1,5 +1,6 @@
 import React from "react";
-import FishList from "./FishList";
+import FishList from "./Livestock/ProductListContainer";
+import Filter from "./Filter/FilterContainer";
 
 const LivestockPage = props => (
   <div data-cy="livestockpage">
@@ -7,6 +8,7 @@ const LivestockPage = props => (
       <h1 className="App-title">Livestock</h1>
     </header>
     <div className="App-content">
+      <Filter />
       <div>{props.data && <FishList {...props.data} />}</div>
     </div>
   </div>

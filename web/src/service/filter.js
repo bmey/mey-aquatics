@@ -1,5 +1,9 @@
-import { FILTER } from "./constants";
-import { compareCaseInsentitive } from "../../utility/strings";
+import { FILTER } from "../utility/constants";
+import { compareCaseInsentitive } from "../utility/strings";
+
+export const isFilterApplied = (appliedFilters, filterType) => {
+  return appliedFilters.some(filter => filter.type === filterType);
+};
 
 const filter = (productList, appliedFilters = []) => {
   if (!productList) {

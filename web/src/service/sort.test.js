@@ -1,5 +1,5 @@
 import sort from "./sort";
-import { SORT_BY } from "./constants";
+import { SORT_BY } from "../utility/constants";
 
 describe("sort", () => {
   it("returns empty array when input is null", () => {

@@ -14,7 +14,7 @@ const SizeItem = ({ size, length, price, count }) => {
 
 const FishCard = ({ id, onCaresList, common, scientific, origin, sizes, picture }) => {
   return (
-    <Card>
+    <Card data-test-id={id} data-test="livestock-item">
       <CardBody>
         <CardTitle>{common || scientific}</CardTitle>
         <CardSubtitle>{common ? `${scientific} | ${origin}` : { origin }}</CardSubtitle>

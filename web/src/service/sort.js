@@ -1,5 +1,5 @@
-import { SORT_BY } from "./constants";
-import { compareCaseInsentitive } from "../../utility/strings";
+import { SORT_BY } from "../utility/constants";
+import { compareCaseInsentitive } from "../utility/strings";
 
 const sort = (productList, sortType = SORT_BY.ALPHABETICAL) => {
   if (!productList) {

@@ -1,5 +1,5 @@
-import filter from "./filter";
-import { FILTER } from "./constants";
+import filter, { isFilterApplied } from "./filter";
+import { FILTER } from "../utility/constants";
 
 describe("filter", () => {
   it("returns empty array when input is null", () => {
@@ -96,4 +96,15 @@ describe("filter", () => {
       ...options,
     };
   };
+});
+
+describe("isFilterApplied", () => {
+  it("returns false when filter is not applied", () => {
+    const filterType = 0;
+    const appliedFilters = [{ type: 1 }];
+
+    const result = isFilterApplied(appliedFilters, filterType);
+
+    expect(result).toBe(false);
+  });
 });
