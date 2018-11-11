@@ -10,10 +10,12 @@ context("Livestock", () => {
     cy.visit("/livestock");
 
     cy.get("[data-test-filter='endangered']").click();
-
     cy.get("[data-test='livestock-item']")
       .should("have.length", 1)
       .and("have.attr", "data-test-id", "Z");
+
+    cy.get("[data-test-filter='endangered']").click();
+    cy.get("[data-test='livestock-item']").should("have.length", 2);
   });
 });
 

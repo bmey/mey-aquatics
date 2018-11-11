@@ -6,3 +6,10 @@ export const applyFilter = filter => {
     payload: filter,
   };
 };
+
+export const removeFilter = filter => {
+  return {
+    type: ACTIONS.REMOVE_FILTER,
+    payload: filter,
+  };
+};

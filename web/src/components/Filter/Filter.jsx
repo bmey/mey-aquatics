@@ -2,7 +2,7 @@ import React from "react";
 import { isFilterApplied } from "../../service/filter";
 import { FILTER } from "../../utility/constants";
 
-const Filter = ({ appliedFilters, applyFilter }) => {
+const Filter = ({ appliedFilters, applyFilter, removeFilter }) => {
   const isEndangeredChecked = isFilterApplied(appliedFilters, FILTER.CARES_LIST);
   return (
     <div>
@@ -14,7 +14,11 @@ const Filter = ({ appliedFilters, applyFilter }) => {
             <label
               htmlFor="endangered"
               data-test="label-endangered"
-              onClick={() => (isEndangeredChecked ? {} : applyFilter({ type: FILTER.CARES_LIST }))}
+              onClick={() =>
+                isEndangeredChecked
+                  ? removeFilter({ type: FILTER.CARES_LIST })
+                  : applyFilter({ type: FILTER.CARES_LIST })
+              }
             >
               <input
                 name="endangered"
