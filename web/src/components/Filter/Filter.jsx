@@ -13,6 +13,7 @@ const Filter = ({ appliedFilters, applyFilter }) => {
           <div>
             <label
               htmlFor="endangered"
+              data-test="label-endangered"
               onClick={() => (isEndangeredChecked ? {} : applyFilter({ type: FILTER.CARES_LIST }))}
             >
               <input

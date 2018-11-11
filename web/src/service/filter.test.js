@@ -107,4 +107,13 @@ describe("isFilterApplied", () => {
 
     expect(result).toBe(false);
   });
+
+  it("returns true when filter is applied", () => {
+    const filterType = 0;
+    const appliedFilters = [{ type: 0 }];
+
+    const result = isFilterApplied(appliedFilters, filterType);
+
+    expect(result).toBe(true);
+  });
 });
