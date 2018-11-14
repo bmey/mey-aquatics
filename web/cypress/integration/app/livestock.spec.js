@@ -19,13 +19,26 @@ context("Livestock", () => {
     cy.get("[data-test='livestock-item']").should("have.length", 2);
   });
 
-  it("can change sorting", () => {
+  it("can change common name sorting", () => {
     cy.route({ url: "/data.json", status: 200, response: fishData });
     cy.visit("/livestock");
 
     cy.get("[data-test='sort-dropdown']").click();
     cy.get(`[data-test-sort='${SORT_BY.ALPHABETICAL_COMMON_DESCENDING}']`).click();
     cy.get("[data-test='livestock-item']:first").should("have.attr", "data-test-id", "Z");
+  });
+
+  it("can change scientific name sorting", () => {
+    cy.route({ url: "/data.json", status: 200, response: fishData });
+    cy.visit("/livestock");
+
+    cy.get("[data-test='sort-dropdown']").click();
+    cy.get(`[data-test-sort='${SORT_BY.ALPHABETICAL_SCIENTIFIC}']`).click();
+    cy.get("[data-test='livestock-item']:first").should("have.attr", "data-test-id", "Z");
+
+    cy.get("[data-test='sort-dropdown']").click();
+    cy.get(`[data-test-sort='${SORT_BY.ALPHABETICAL_SCIENTIFIC_DESCENDING}']`).click();
+    cy.get("[data-test='livestock-item']:first").should("have.attr", "data-test-id", "A");
   });
 });
 
@@ -35,7 +48,7 @@ const fishData = {
       id: "A",
       onCaresList: false,
       common: "A",
-      scientific: "A",
+      scientific: "ZZ",
       origin: "A",
       sizes: {
         S: {
@@ -49,7 +62,7 @@ const fishData = {
       id: "Z",
       onCaresList: true,
       common: "Z",
-      scientific: "Z",
+      scientific: "AA",
       origin: "Z",
       sizes: {
         S: {

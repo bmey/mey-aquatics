@@ -13,17 +13,30 @@ const sort = (productList, sortType = SORT_BY.ALPHABETICAL_COMMON) => {
     case SORT_BY.PRICE_HIGH_TO_LOW:
       return sortByHighestPrice(productList);
 
+    case SORT_BY.ALPHABETICAL_SCIENTIFIC:
+      return sortAlphabetically(productList, scientificNameSelector);
+
+    case SORT_BY.ALPHABETICAL_SCIENTIFIC_DESCENDING:
+      return sortAlphabetically(productList, scientificNameSelector, true);
+
     case SORT_BY.ALPHABETICAL_COMMON_DESCENDING:
-      return sortAlphabeticalByCommonName(productList, true);
+      return sortAlphabetically(productList, commonNameSelector, true);
 
     case SORT_BY.ALPHABETICAL_COMMON:
     default:
-      return sortAlphabeticalByCommonName(productList);
+      return sortAlphabetically(productList, commonNameSelector);
   }
 };
 
-const sortAlphabeticalByCommonName = (productList, descendingOrder = false) => {
-  return productList.sort((a, b) => compareCaseInsentitive(a.common, b.common, descendingOrder));
+const scientificNameSelector = productItem => productItem.scientific;
+const commonNameSelector = productItem => productItem.common;
+
+const sortAlphabetically = (productList, nameSelector, descendingOrder = false) => {
+  return productList.sort((a, b) => {
+    const nameA = nameSelector(a);
+    const nameB = nameSelector(b);
+    return compareCaseInsentitive(nameA, nameB, descendingOrder);
+  });
 };
 
 const sortByHighestPrice = productList => {
