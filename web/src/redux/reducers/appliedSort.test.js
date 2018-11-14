@@ -6,7 +6,7 @@ describe("appliedSort reducer", () => {
   const initialState = reducer(undefined, {});
 
   it("returns default sort for initial state", () => {
-    expect(initialState).toEqual({ id: SORT_BY.ALPHABETICAL });
+    expect(initialState).toEqual({ id: SORT_BY.ALPHABETICAL_COMMON });
   });
 
   it("returns new sort id when action is CHANGE_SORT", () => {

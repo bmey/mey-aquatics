@@ -32,7 +32,7 @@ describe("sort", () => {
   it("sorts case-insensitive alphabetical by common name", () => {
     const productList = [setupProductItem("aA"), setupProductItem("B"), setupProductItem("AA"), setupProductItem("aa")];
 
-    const result = sort(productList, SORT_BY.ALPHABETICAL);
+    const result = sort(productList, SORT_BY.ALPHABETICAL_COMMON);
 
     expect(result.map(r => r.id)).toEqual(["aA", "AA", "aa", "B"]);
   });
@@ -50,7 +50,7 @@ describe("sort", () => {
       },
     ];
 
-    const result = sort(productList, SORT_BY.ALPHABETICAL);
+    const result = sort(productList, SORT_BY.ALPHABETICAL_COMMON);
 
     expect(result.map(r => r.id)).toEqual(["A", "empty", "empty2"]);
   });
@@ -58,7 +58,7 @@ describe("sort", () => {
   it("sorts case-insensitive alphabetical-descending by common name", () => {
     const productList = [setupProductItem("aA"), setupProductItem("B"), setupProductItem("AA"), setupProductItem("aa")];
 
-    const result = sort(productList, SORT_BY.ALPHABETICAL_DESCENDING);
+    const result = sort(productList, SORT_BY.ALPHABETICAL_COMMON_DESCENDING);
 
     expect(result.map(r => r.id)).toEqual(["B", "aA", "AA", "aa"]);
   });
@@ -76,7 +76,7 @@ describe("sort", () => {
       },
     ];
 
-    const result = sort(productList, SORT_BY.ALPHABETICAL_DESCENDING);
+    const result = sort(productList, SORT_BY.ALPHABETICAL_COMMON_DESCENDING);
 
     expect(result.map(r => r.id)).toEqual(["A", "empty", "empty2"]);
   });

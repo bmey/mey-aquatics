@@ -1,7 +1,7 @@
 import { SORT_BY } from "../utility/constants";
 import { compareCaseInsentitive } from "../utility/strings";
 
-const sort = (productList, sortType = SORT_BY.ALPHABETICAL) => {
+const sort = (productList, sortType = SORT_BY.ALPHABETICAL_COMMON) => {
   if (!productList) {
     return [];
   }
@@ -13,10 +13,10 @@ const sort = (productList, sortType = SORT_BY.ALPHABETICAL) => {
     case SORT_BY.PRICE_HIGH_TO_LOW:
       return sortByHighestPrice(productList);
 
-    case SORT_BY.ALPHABETICAL_DESCENDING:
+    case SORT_BY.ALPHABETICAL_COMMON_DESCENDING:
       return sortAlphabeticalByCommonName(productList, true);
 
-    case SORT_BY.ALPHABETICAL:
+    case SORT_BY.ALPHABETICAL_COMMON:
     default:
       return sortAlphabeticalByCommonName(productList);
   }

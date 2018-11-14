@@ -2,7 +2,7 @@ import ACTIONS from "../actionTypes";
 import { SORT_BY } from "../../utility/constants";
 
 const initialState = {
-  id: SORT_BY.ALPHABETICAL,
+  id: SORT_BY.ALPHABETICAL_COMMON,
 };
 
 export default function(state = initialState, action) {

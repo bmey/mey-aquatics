@@ -24,7 +24,7 @@ context("Livestock", () => {
     cy.visit("/livestock");
 
     cy.get("[data-test='sort-dropdown']").click();
-    cy.get(`[data-test-sort='${SORT_BY.ALPHABETICAL_DESCENDING}']`).click();
+    cy.get(`[data-test-sort='${SORT_BY.ALPHABETICAL_COMMON_DESCENDING}']`).click();
     cy.get("[data-test='livestock-item']:first").should("have.attr", "data-test-id", "Z");
   });
 });
