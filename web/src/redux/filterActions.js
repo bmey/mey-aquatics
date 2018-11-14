@@ -13,3 +13,10 @@ export const removeFilter = filter => {
     payload: filter,
   };
 };
+
+export const changeSort = sortId => {
+  return {
+    type: ACTIONS.CHANGE_SORT,
+    payload: sortId,
+  };
+};

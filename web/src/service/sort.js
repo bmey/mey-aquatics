@@ -13,14 +13,17 @@ const sort = (productList, sortType = SORT_BY.ALPHABETICAL) => {
     case SORT_BY.PRICE_HIGH_TO_LOW:
       return sortByHighestPrice(productList);
 
+    case SORT_BY.ALPHABETICAL_DESCENDING:
+      return sortAlphabeticalByCommonName(productList, true);
+
     case SORT_BY.ALPHABETICAL:
     default:
       return sortAlphabeticalByCommonName(productList);
   }
 };
 
-const sortAlphabeticalByCommonName = productList => {
-  return productList.sort((a, b) => compareCaseInsentitive(a.common, b.common));
+const sortAlphabeticalByCommonName = (productList, descendingOrder = false) => {
+  return productList.sort((a, b) => compareCaseInsentitive(a.common, b.common, descendingOrder));
 };
 
 const sortByHighestPrice = productList => {

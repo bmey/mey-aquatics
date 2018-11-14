@@ -55,6 +55,32 @@ describe("sort", () => {
     expect(result.map(r => r.id)).toEqual(["A", "empty", "empty2"]);
   });
 
+  it("sorts case-insensitive alphabetical-descending by common name", () => {
+    const productList = [setupProductItem("aA"), setupProductItem("B"), setupProductItem("AA"), setupProductItem("aa")];
+
+    const result = sort(productList, SORT_BY.ALPHABETICAL_DESCENDING);
+
+    expect(result.map(r => r.id)).toEqual(["B", "aA", "AA", "aa"]);
+  });
+
+  it("sorts empty common names to end when alphabetical-descending by common name", () => {
+    const productList = [
+      {
+        id: "empty",
+        common: "",
+      },
+      setupProductItem("A"),
+      {
+        id: "empty2",
+        common: "",
+      },
+    ];
+
+    const result = sort(productList, SORT_BY.ALPHABETICAL_DESCENDING);
+
+    expect(result.map(r => r.id)).toEqual(["A", "empty", "empty2"]);
+  });
+
   it("sorts by price (high to low) considering all prices an item lists for various sizes", () => {
     const productList = [
       setupProductItem("C", 0, { B: { price: 2 } }),

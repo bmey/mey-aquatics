@@ -11,10 +11,11 @@ const sortEmptyStringToEnd = (a, b) => {
   }
 };
 
-export const compareCaseInsentitive = (a, b) => {
+export const compareCaseInsentitive = (a, b, descendingOrder = false) => {
   if (isEmpty(a) || isEmpty(b)) {
     return sortEmptyStringToEnd(a, b);
   }
 
-  return a.toLowerCase().localeCompare(b.toLowerCase());
+  const comparison = a.toLowerCase().localeCompare(b.toLowerCase());
+  return descendingOrder ? -1 * comparison : comparison;
 };

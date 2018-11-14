@@ -2,6 +2,7 @@ export const SORT_BY = {
   PRICE_LOW_TO_HIGH: 0,
   PRICE_HIGH_TO_LOW: 1,
   ALPHABETICAL: 2,
+  ALPHABETICAL_DESCENDING: 3,
 };
 
 export const FILTER = {

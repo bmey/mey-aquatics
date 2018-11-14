@@ -1,12 +1,35 @@
 import React from "react";
+import { UncontrolledButtonDropdown, DropdownItem, DropdownToggle, DropdownMenu } from "reactstrap";
 import { isFilterApplied } from "../../service/filter";
 import { FILTER } from "../../utility/constants";
 
-const Filter = ({ appliedFilters, applyFilter, removeFilter }) => {
+const Filter = ({ appliedFilters, applyFilter, removeFilter, changeSort, appliedSortId, sortOptions = [] }) => {
   const isEndangeredChecked = isFilterApplied(appliedFilters, FILTER.CARES_LIST);
   return (
     <div>
-      Filter by
+      <div>Sort by</div>
+      <UncontrolledButtonDropdown setActiveFromChild>
+        <DropdownToggle caret data-test="sort-dropdown">
+          {sortOptions.filter(option => option.id === appliedSortId).map(option => option.name)}
+        </DropdownToggle>
+        <DropdownMenu data-test="sort-dropdown-menu">
+          {sortOptions.map(option => {
+            const isActive = option.id === appliedSortId;
+            return (
+              <DropdownItem
+                active={isActive}
+                key={option.id}
+                data-test-sort={option.id}
+                onClick={() => changeSort(option.id)}
+              >
+                {option.name}
+              </DropdownItem>
+            );
+          })}
+        </DropdownMenu>
+      </UncontrolledButtonDropdown>
+
+      <div>Filter by</div>
       <ul>
         <li>
           <div>Endangered</div>
