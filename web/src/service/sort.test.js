@@ -22,7 +22,7 @@ describe("sort", () => {
 
   describe("common name", () => {
     it("returns default sorting (alphabetical by common name) when no sort specified", () => {
-      const productList = [setupProductItem("Z"), setupProductItem("A")];
+      const productList = [setupCommonCase("Z"), setupCommonCase("A")];
 
       const result = sort(productList);
 
@@ -31,12 +31,7 @@ describe("sort", () => {
     });
 
     it("sorts case-insensitive alphabetical by common name", () => {
-      const productList = [
-        setupProductItem("aA"),
-        setupProductItem("B"),
-        setupProductItem("AA"),
-        setupProductItem("aa"),
-      ];
+      const productList = [setupCommonCase("aA"), setupCommonCase("B"), setupCommonCase("AA"), setupCommonCase("aa")];
 
       const result = sort(productList, SORT_BY.ALPHABETICAL_COMMON);
 
@@ -49,7 +44,7 @@ describe("sort", () => {
           id: "empty",
           common: "",
         },
-        setupProductItem("A"),
+        setupCommonCase("A"),
         {
           id: "empty2",
           common: "",
@@ -62,12 +57,7 @@ describe("sort", () => {
     });
 
     it("sorts case-insensitive alphabetical-descending by common name", () => {
-      const productList = [
-        setupProductItem("aA"),
-        setupProductItem("B"),
-        setupProductItem("AA"),
-        setupProductItem("aa"),
-      ];
+      const productList = [setupCommonCase("aA"), setupCommonCase("B"), setupCommonCase("AA"), setupCommonCase("aa")];
 
       const result = sort(productList, SORT_BY.ALPHABETICAL_COMMON_DESCENDING);
 
@@ -80,7 +70,7 @@ describe("sort", () => {
           id: "empty",
           common: "",
         },
-        setupProductItem("A"),
+        setupCommonCase("A"),
         {
           id: "empty2",
           common: "",
@@ -159,45 +149,10 @@ describe("sort", () => {
     });
   });
 
-  it("sorts by price (high to low) considering all prices an item lists for various sizes", () => {
-    const productList = [
-      setupProductItem("C", 0, { B: { price: 2 } }),
-      setupProductItem("B", 0, { L: { price: 4 } }),
-      setupProductItem("A", 1, { B: { price: 3 } }),
-    ];
-
-    const result = sort(productList, SORT_BY.PRICE_HIGH_TO_LOW);
-
-    expect(result[0].id).toEqual("B");
-    expect(result[1].id).toEqual("A");
-    expect(result[2].id).toEqual("C");
-  });
-
-  it("sorts by price (low to high) using lowest non-zero price for all sizes", () => {
-    const productList = [
-      setupProductItem("C", 0, { B: { price: 2 } }),
-      setupProductItem("B", 0, { L: { price: 4 } }),
-      setupProductItem("A", 5, { B: { price: 1 } }),
-    ];
-
-    const result = sort(productList, SORT_BY.PRICE_LOW_TO_HIGH);
-
-    expect(result[0].id).toEqual("A");
-    expect(result[1].id).toEqual("C");
-    expect(result[2].id).toEqual("B");
-  });
-
-  const setupProductItem = (name, price, sizeOptions = {}) => {
+  const setupCommonCase = name => {
     return {
       id: name,
       common: name,
-      sizes: {
-        S: { price },
-        M: { price },
-        L: { price },
-        B: { price },
-        ...sizeOptions,
-      },
     };
   };
 
