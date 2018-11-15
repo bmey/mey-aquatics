@@ -19,7 +19,7 @@ const Filter = ({ appliedFilters, applyFilter, removeFilter, changeSort, applied
               <DropdownItem
                 active={isActive}
                 key={option.id}
-                data-test-sort={option.id}
+                data-test={`sort-option-${option.id}`}
                 onClick={() => changeSort(option.id)}
               >
                 {option.name}
@@ -47,7 +47,7 @@ const Filter = ({ appliedFilters, applyFilter, removeFilter, changeSort, applied
                 name="endangered"
                 type="checkbox"
                 checked={isEndangeredChecked}
-                data-test-filter="endangered"
+                data-test="filter-endangered"
                 readOnly
               />
               &nbsp; On C.A.R.E.S. List

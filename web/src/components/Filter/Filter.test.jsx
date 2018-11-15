@@ -18,7 +18,7 @@ describe("<Filter />", () => {
 
     const wrapper = shallow(<Filter {...commonProps} appliedFilters={appliedFilters} />);
 
-    const filter = wrapper.find("[data-test-filter='endangered']");
+    const filter = wrapper.find("[data-test='filter-endangered']");
     expect(filter.prop("checked")).toEqual(false);
   });
 
@@ -27,7 +27,7 @@ describe("<Filter />", () => {
 
     const wrapper = shallow(<Filter {...commonProps} appliedFilters={appliedFilters} />);
 
-    const filter = wrapper.find("[data-test-filter='endangered']");
+    const filter = wrapper.find("[data-test='filter-endangered']");
     expect(filter.prop("checked")).toEqual(true);
   });
 
