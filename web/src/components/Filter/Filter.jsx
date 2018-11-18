@@ -2,7 +2,7 @@ import React from "react";
 import { UncontrolledButtonDropdown, DropdownItem, DropdownToggle, DropdownMenu } from "reactstrap";
 import { isFilterApplied } from "../../service/filter";
 import { FILTER } from "../../utility/constants";
-import OriginCheckbox from "./OriginCheckbox";
+import OriginCheckbox from "./OriginCheckboxContainer";
 
 const Filter = ({
   appliedFilters,
@@ -67,16 +67,14 @@ const Filter = ({
         <li>
           <div>Place of origin</div>
           {originOptions.map(origin => {
-            const id = `filter-origin-${origin.id}`;
             return (
-              <div key={id}>
-                <OriginCheckbox {...origin} id={id} />
+              <div key={origin.id}>
+                <OriginCheckbox {...origin} data-test={`filter-origin-${origin.id}`} />
 
                 {origin.subLocations.map(subOrigin => {
-                  const id = `filter-origin-${subOrigin.id}`;
                   return (
-                    <div key={id} style={{ paddingLeft: "20px" }}>
-                      <OriginCheckbox {...subOrigin} id={id} />
+                    <div key={subOrigin.id} style={{ paddingLeft: "20px" }}>
+                      <OriginCheckbox {...subOrigin} data-test={`filter-origin-${subOrigin.id}`} />
                     </div>
                   );
                 })}

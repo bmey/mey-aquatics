@@ -90,11 +90,11 @@ describe("<Filter />", () => {
 
       const wrapper = shallow(<Filter {...commonProps} originOptions={originOptions} />);
 
-      const filters = wrapper.find("[id^='filter-origin']");
+      const filters = wrapper.find("[data-test^='filter-origin']");
       const checked = filters.findWhere(f => f.prop("checked")).map(n => n.prop("id"));
       const unchecked = filters.findWhere(f => !f.prop("checked")).map(n => n.prop("id"));
-      expect(checked).toEqual(["filter-origin-AME", "filter-origin-AME-OTHER"]);
-      expect(unchecked).toEqual(["filter-origin-OTHER"]);
+      expect(checked).toEqual(["AME", "AME-OTHER"]);
+      expect(unchecked).toEqual(["OTHER"]);
     });
   });
 
