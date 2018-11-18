@@ -37,6 +37,18 @@ describe("appliedFilters reducer", () => {
       expect(result.values).toEqual(expect.arrayContaining([originId, "AME_OTHER"]));
     });
 
+    it("adds to origin list when action is APPLY_FILTER and payload type is ORIGIN and other origin filters applied", () => {
+      const filterType = FILTER.ORIGIN;
+      const originId = "OTHER";
+      const action = { type: ACTIONS.APPLY_FILTER, payload: { type: filterType, id: originId } };
+      const state = [{ type: filterType, values: ["AME_OTHER"] }];
+
+      const result = reducer(state, action)[0];
+
+      expect(result.type).toEqual(filterType);
+      expect(result.values).toEqual(expect.arrayContaining([originId, "AME_OTHER"]));
+    });
+
     it("does not remove other filters when action is APPLY_FILTER and payload type is ORIGIN", () => {
       const filterType = FILTER.ORIGIN;
       const originId = "OTHER";
