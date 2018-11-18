@@ -45,7 +45,7 @@ describe("<OriginCheckbox />", () => {
     const wrapper = shallow(
       <OriginCheckbox {...commonProps} id={originId} checked applyFilter={applyFilter} removeFilter={removeFilter} />
     );
-    const subject = wrapper.find(`[data-test='origin-label']`);
+    const subject = wrapper.find(`[data-test='filter-origin-${originId}']`);
     subject.simulate("click");
 
     expect(removeFilter).toBeCalledWith({ type: FILTER.ORIGIN, id: originId });
@@ -65,7 +65,7 @@ describe("<OriginCheckbox />", () => {
         removeFilter={removeFilter}
       />
     );
-    const subject = wrapper.find(`[data-test='origin-label']`);
+    const subject = wrapper.find(`[data-test='filter-origin-${originId}']`);
     subject.simulate("click");
 
     expect(applyFilter).toBeCalledWith({ type: FILTER.ORIGIN, id: originId });

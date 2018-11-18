@@ -45,7 +45,7 @@ describe("<Filter />", () => {
           removeFilter={removeFilter}
         />
       );
-      const filter = wrapper.find("[data-test='label-endangered']");
+      const filter = wrapper.find("[data-test='filter-endangered']");
       filter.simulate("click");
 
       expect(removeFilter).toBeCalledWith({ type: FILTER.CARES_LIST });
@@ -57,7 +57,7 @@ describe("<Filter />", () => {
       const removeFilter = jest.fn();
 
       const wrapper = shallow(<Filter {...commonProps} applyFilter={applyFilter} removeFilter={removeFilter} />);
-      const filter = wrapper.find("[data-test='label-endangered']");
+      const filter = wrapper.find("[data-test='filter-endangered']");
       filter.simulate("click");
 
       expect(applyFilter).toBeCalledWith({ type: FILTER.CARES_LIST });

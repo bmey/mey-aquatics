@@ -43,21 +43,19 @@ const Filter = ({
         <li>
           <div>Endangered</div>
           <div>
-            <label
-              htmlFor="endangered"
-              data-test="label-endangered"
-              onClick={() =>
-                isEndangeredChecked
-                  ? removeFilter({ type: FILTER.CARES_LIST })
-                  : applyFilter({ type: FILTER.CARES_LIST })
-              }
-            >
+            <label htmlFor="endangered">
               <input
                 name="endangered"
+                id="endangered"
                 type="checkbox"
                 checked={isEndangeredChecked}
                 data-test="filter-endangered"
                 readOnly
+                onClick={() =>
+                  isEndangeredChecked
+                    ? removeFilter({ type: FILTER.CARES_LIST })
+                    : applyFilter({ type: FILTER.CARES_LIST })
+                }
               />
               &nbsp; On C.A.R.E.S. List
             </label>
