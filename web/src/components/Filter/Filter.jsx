@@ -2,8 +2,17 @@ import React from "react";
 import { UncontrolledButtonDropdown, DropdownItem, DropdownToggle, DropdownMenu } from "reactstrap";
 import { isFilterApplied } from "../../service/filter";
 import { FILTER } from "../../utility/constants";
+import OriginCheckbox from "./OriginCheckbox";
 
-const Filter = ({ appliedFilters, applyFilter, removeFilter, changeSort, appliedSortId, sortOptions = [] }) => {
+const Filter = ({
+  appliedFilters,
+  applyFilter,
+  removeFilter,
+  changeSort,
+  appliedSortId,
+  sortOptions = [],
+  originOptions = [],
+}) => {
   const isEndangeredChecked = isFilterApplied(appliedFilters, FILTER.CARES_LIST);
   return (
     <div>
@@ -53,6 +62,27 @@ const Filter = ({ appliedFilters, applyFilter, removeFilter, changeSort, applied
               &nbsp; On C.A.R.E.S. List
             </label>
           </div>
+        </li>
+
+        <li>
+          <div>Place of origin</div>
+          {originOptions.map(origin => {
+            const id = `filter-origin-${origin.id}`;
+            return (
+              <div key={id}>
+                <OriginCheckbox {...origin} id={id} />
+
+                {origin.subLocations.map(subOrigin => {
+                  const id = `filter-origin-${subOrigin.id}`;
+                  return (
+                    <div key={id} style={{ paddingLeft: "20px" }}>
+                      <OriginCheckbox {...subOrigin} id={id} />
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          })}
         </li>
       </ul>
     </div>

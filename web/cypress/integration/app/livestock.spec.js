@@ -40,6 +40,17 @@ context("Livestock", () => {
     cy.get(`[data-test='sort-option-${SORT_BY.ALPHABETICAL_SCIENTIFIC_DESCENDING}']`).click();
     cy.get("[data-test^='livestock-item']:first").should("have.attr", "data-test", "livestock-item-A");
   });
+
+  it("can change origin filter", () => {
+    cy.route({ url: "/data.json", status: 200, response: fishData });
+    cy.visit("/livestock");
+
+    cy.get(`[data-test='filter-origin-OTHER']`).click();
+    cy.get("[data-test^='livestock-item']").should("have.length", 0);
+
+    cy.get(`[data-test='filter-origin-AME-OTHER']`).click();
+    cy.get("[data-test^='livestock-item']").should("have.length", 2);
+  });
 });
 
 const fishData = {
@@ -49,7 +60,7 @@ const fishData = {
       onCaresList: false,
       common: "A",
       scientific: "ZZ",
-      origin: "A",
+      origin: "AME-OTHER",
       sizes: {
         S: {
           length: 0,
@@ -63,7 +74,7 @@ const fishData = {
       onCaresList: true,
       common: "Z",
       scientific: "AA",
-      origin: "Z",
+      origin: "AME-OTHER",
       sizes: {
         S: {
           length: 0,
