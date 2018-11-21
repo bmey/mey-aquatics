@@ -1,6 +1,9 @@
 import ACTIONS from "../actionTypes";
 import reducer from "./filters";
 import { FILTER } from "../../utility/constants";
+import getOrigins from "../../service/originList";
+
+jest.mock("../../service/originList", () => jest.fn());
 
 describe("appliedFilters reducer", () => {
   const initialState = reducer(undefined, {});
@@ -72,6 +75,99 @@ describe("appliedFilters reducer", () => {
       expect(result[0].type).toEqual(filterType);
       expect(result[0].values.length).toEqual(1);
       expect(result[0].values[0]).toEqual(originId);
+    });
+
+    it("adds all sub-origins to filter when origin has sub-origins", () => {
+      const originId = "TEST-ALL";
+      getOrigins.mockReturnValue([
+        {
+          id: originId,
+          name: "Top level",
+          subLocations: [
+            {
+              id: "TEST-1",
+              name: "One",
+            },
+            {
+              id: "TEST-2",
+              name: "Two",
+            },
+          ],
+        },
+        {
+          id: "other-top-level",
+          name: "Top level 2",
+          subLocations: [
+            {
+              id: "OTHER-1",
+              name: "One",
+            },
+          ],
+        },
+      ]);
+
+      const filterType = FILTER.ORIGIN;
+      const action = { type: ACTIONS.APPLY_FILTER, payload: { type: filterType, id: originId, hasSubLocations: true } };
+      const state = [{ type: filterType, values: ["OTHER"] }];
+
+      const result = reducer(state, action)[0];
+
+      expect(result.type).toEqual(filterType);
+      expect(result.values).toEqual(expect.arrayContaining(["TEST-1", "TEST-2", "OTHER"]));
+    });
+
+    it("removes all sub-origins from filter when origin has sub-origins", () => {
+      const originId = "TEST-ALL";
+      getOrigins.mockReturnValue([
+        {
+          id: originId,
+          name: "Top level",
+          subLocations: [
+            {
+              id: "TEST-1",
+              name: "One",
+            },
+            {
+              id: "TEST-2",
+              name: "Two",
+            },
+          ],
+        },
+        {
+          id: "other-top-level",
+          name: "Top level 2",
+          subLocations: [
+            {
+              id: "OTHER-1",
+              name: "One",
+            },
+          ],
+        },
+      ]);
+
+      const filterType = FILTER.ORIGIN;
+      const action = {
+        type: ACTIONS.REMOVE_FILTER,
+        payload: { type: filterType, id: originId, hasSubLocations: true },
+      };
+      const state = [{ type: filterType, values: ["OTHER", "TEST-1", "TEST-2"] }];
+
+      const result = reducer(state, action)[0];
+
+      expect(result.type).toEqual(filterType);
+      expect(result.values).toEqual(["OTHER"]);
+    });
+
+    it("removes origin when action is REMOVE_FILTER and payload type is ORIGIN and other origin filters applied", () => {
+      const filterType = FILTER.ORIGIN;
+      const originId = "SHOULD_REMOVE";
+      const action = { type: ACTIONS.REMOVE_FILTER, payload: { type: filterType, id: originId } };
+      const state = [{ type: filterType, values: ["SHOULD_STAY", "SHOULD_REMOVE"] }];
+
+      const result = reducer(state, action)[0];
+
+      expect(result.type).toEqual(filterType);
+      expect(result.values).toEqual(["SHOULD_STAY"]);
     });
   });
 
