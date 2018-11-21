@@ -7,7 +7,7 @@ const ProductListContainer = props => {
 };
 
 const mapStateToProps = state => ({
-  appliedFilters: state.appliedFilters,
+  appliedFilters: state.filters,
   appliedSortId: state.appliedSort.id,
 });
 

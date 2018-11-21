@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import appliedFilters from "./appliedFilters";
+import filters from "./filters";
 import appliedSort from "./appliedSort";
 
-export default combineReducers({ appliedFilters, appliedSort });
+export default combineReducers({ filters, appliedSort });

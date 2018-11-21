@@ -1,5 +1,5 @@
 import ACTIONS from "../actionTypes";
-import reducer from "./appliedFilters";
+import reducer from "./filters";
 import { FILTER } from "../../utility/constants";
 
 describe("appliedFilters reducer", () => {
