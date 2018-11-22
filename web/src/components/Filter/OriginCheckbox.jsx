@@ -1,8 +1,8 @@
 import React from "react";
 import { FILTER } from "../../utility/constants";
 
-const OriginCheckbox = ({ id, checked, name, applyFilter, removeFilter }) => {
-  const payload = { type: FILTER.ORIGIN, id };
+const OriginCheckbox = ({ id, checked, name, hasSubLocations, applyFilter, removeFilter }) => {
+  const payload = { type: FILTER.ORIGIN, id, hasSubLocations };
 
   return (
     <label htmlFor={id}>

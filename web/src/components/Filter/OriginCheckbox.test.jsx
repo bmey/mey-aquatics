@@ -9,6 +9,7 @@ describe("<OriginCheckbox />", () => {
     id,
     name: "test origin",
     checked: false,
+    hasSubLocations: false,
     applyFilter: () => {},
     removeFilter: () => {},
   };
@@ -48,7 +49,7 @@ describe("<OriginCheckbox />", () => {
     const subject = wrapper.find(`[data-test='filter-origin-${originId}']`);
     subject.simulate("click");
 
-    expect(removeFilter).toBeCalledWith({ type: FILTER.ORIGIN, id: originId });
+    expect(removeFilter).toBeCalledWith({ type: FILTER.ORIGIN, id: originId, hasSubLocations: false });
     expect(applyFilter).not.toBeCalled();
   });
 
@@ -68,7 +69,51 @@ describe("<OriginCheckbox />", () => {
     const subject = wrapper.find(`[data-test='filter-origin-${originId}']`);
     subject.simulate("click");
 
-    expect(applyFilter).toBeCalledWith({ type: FILTER.ORIGIN, id: originId });
+    expect(applyFilter).toBeCalledWith({ type: FILTER.ORIGIN, id: originId, hasSubLocations: false });
+    expect(removeFilter).not.toBeCalled();
+  });
+
+  it("removes filter with sublocations when clicked and is checked", () => {
+    const applyFilter = jest.fn();
+    const removeFilter = jest.fn();
+    const originId = "parent-origin";
+
+    const wrapper = shallow(
+      <OriginCheckbox
+        {...commonProps}
+        id={originId}
+        checked
+        hasSubLocations
+        applyFilter={applyFilter}
+        removeFilter={removeFilter}
+      />
+    );
+    const subject = wrapper.find(`[data-test='filter-origin-${originId}']`);
+    subject.simulate("click");
+
+    expect(removeFilter).toBeCalledWith({ type: FILTER.ORIGIN, id: originId, hasSubLocations: true });
+    expect(applyFilter).not.toBeCalled();
+  });
+
+  it("applies filter with sublocations when clicked and is unchecked", () => {
+    const applyFilter = jest.fn();
+    const removeFilter = jest.fn();
+    const originId = "parent-origin";
+
+    const wrapper = shallow(
+      <OriginCheckbox
+        {...commonProps}
+        id={originId}
+        checked={false}
+        hasSubLocations
+        applyFilter={applyFilter}
+        removeFilter={removeFilter}
+      />
+    );
+    const subject = wrapper.find(`[data-test='filter-origin-${originId}']`);
+    subject.simulate("click");
+
+    expect(applyFilter).toBeCalledWith({ type: FILTER.ORIGIN, id: originId, hasSubLocations: true });
     expect(removeFilter).not.toBeCalled();
   });
 });

@@ -65,11 +65,13 @@ const Filter = ({
         <li>
           <div>Place of origin</div>
           {originOptions.map(origin => {
+            const { subLocations, ...rest } = origin;
+
             return (
               <div key={origin.id}>
-                <OriginCheckbox {...origin} data-test={`filter-origin-${origin.id}`} />
+                <OriginCheckbox {...rest} data-test={`filter-origin-${origin.id}`} />
 
-                {origin.subLocations.map(subOrigin => {
+                {subLocations.map(subOrigin => {
                   return (
                     <div key={subOrigin.id} style={{ paddingLeft: "20px" }}>
                       <OriginCheckbox {...subOrigin} data-test={`filter-origin-${subOrigin.id}`} />

@@ -54,9 +54,50 @@ describe("mapStateToOrigin", () => {
     const otherOrigin = result.filter(origin => origin.id !== "AME")[0];
     const checkedSubOrigins = topOrigin.subLocations.filter(origin => origin.checked);
     const uncheckedSubOrigins = topOrigin.subLocations.filter(origin => !origin.checked);
-    expect(topOrigin.checked).toBe(false);
-    expect(otherOrigin.checked).toBe(false);
     expect(checkedSubOrigins.map(s => s.id)).toEqual(expect.arrayContaining(["AME-NORTH", "AME-OTHER"]));
     expect(uncheckedSubOrigins.map(s => s.id)).toEqual(["AME-SOUTH"]);
+  });
+
+  it("returns true for hasSubLocations when has sub-origins", () => {
+    getOrigins.mockReturnValue(originList);
+
+    const result = mapStateToOrigin([]);
+
+    const topOrigin = result.filter(origin => origin.id === "AME")[0];
+    const otherOrigin = result.filter(origin => origin.id === "OTHER")[0];
+    expect(topOrigin.hasSubLocations).toBe(true);
+    expect(otherOrigin.hasSubLocations).toBe(false);
+  });
+
+  it("returns true for checked when all sub-origins are in applied filters", () => {
+    getOrigins.mockReturnValue(originList);
+    const appliedFilters = ["AME-OTHER", "AME-NORTH", "AME-SOUTH"];
+
+    const result = mapStateToOrigin(appliedFilters);
+
+    const topOrigin = result.filter(origin => origin.id === "AME")[0];
+    const otherOrigin = result.filter(origin => origin.id !== "AME")[0];
+    expect(topOrigin.checked).toBe(true);
+    expect(otherOrigin.checked).toBe(false);
+  });
+
+  it("returns false for checked some sub-origins are in applied filters", () => {
+    getOrigins.mockReturnValue(originList);
+    const appliedFilters = ["AME-OTHER", "AME-NORTH"];
+
+    const result = mapStateToOrigin(appliedFilters);
+
+    const topOrigin = result.filter(origin => origin.id === "AME")[0];
+    expect(topOrigin.checked).toBe(false);
+  });
+
+  it("returns true for checked when has no sub-origins and id in applied filters", () => {
+    getOrigins.mockReturnValue(originList);
+    const appliedFilters = ["OTHER"];
+
+    const result = mapStateToOrigin(appliedFilters);
+
+    const otherOrigin = result.filter(origin => origin.id === "OTHER")[0];
+    expect(otherOrigin.checked).toBe(true);
   });
 });
