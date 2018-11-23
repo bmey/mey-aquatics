@@ -45,10 +45,10 @@ context("Livestock", () => {
     cy.route({ url: "/data.json", status: 200, response: fishData });
     cy.visit("/livestock");
 
-    cy.get(`[data-test='filter-origin-OTHER']`).click();
+    cy.get(`[data-test='filter-origin-AF']`).click();
     cy.get("[data-test^='livestock-item']").should("have.length", 0);
 
-    cy.get(`[data-test='filter-origin-AME-OTHER']`).click();
+    cy.get(`[data-test='filter-origin-AM-OTHER']`).click();
     cy.get("[data-test^='livestock-item']").should("have.length", 2);
   });
 });
@@ -60,7 +60,7 @@ const fishData = {
       onCaresList: false,
       common: "A",
       scientific: "ZZ",
-      origin: "AME-OTHER",
+      origin: "AM-OTHER",
       sizes: {
         S: {
           length: 0,
@@ -74,7 +74,7 @@ const fishData = {
       onCaresList: true,
       common: "Z",
       scientific: "AA",
-      origin: "AME-OTHER",
+      origin: "AM-OTHER",
       sizes: {
         S: {
           length: 0,
