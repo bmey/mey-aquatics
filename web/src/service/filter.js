@@ -16,11 +16,13 @@ const filter = (productList, appliedFilters = []) => {
   }
 
   if (appliedFilters.some(filter => filter.type === FILTER.ORIGIN)) {
-    const originFilters = appliedFilters.filter(filter => filter.type === FILTER.ORIGIN);
+    const originFilter = appliedFilters.filter(filter => filter.type === FILTER.ORIGIN)[0].values;
 
-    filteredList = filteredList.filter(product =>
-      originFilters.some(originFilter => compareCaseInsentitive(originFilter.value, product.origin) === 0)
-    );
+    if (originFilter.length > 0) {
+      filteredList = filteredList.filter(product =>
+        originFilter.some(filter => compareCaseInsentitive(filter, product.origin) === 0)
+      );
+    }
   }
 
   return filteredList;

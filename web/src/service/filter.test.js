@@ -32,70 +32,31 @@ describe("filter", () => {
 
   it("includes items from areas of origin when ORIGIN filters applied", () => {
     const productList = [
-      { id: "african", origin: "Africa" },
-      { id: "american", origin: "Americas" },
-      { id: "non-african", origin: "elsewhere" },
+      { id: "test1", origin: "TEST-1" },
+      { id: "test2", origin: "TEST-2" },
+      { id: "test3", origin: "TEST-3" },
     ];
-    const appliedFilters = [{ type: FILTER.ORIGIN, value: "africa" }, { type: FILTER.ORIGIN, value: "americas" }];
+    const appliedFilters = [{ type: FILTER.ORIGIN, values: ["TEST-1", "TEST-3", "OTHER"] }];
 
     const result = filter(productList, appliedFilters);
 
+    expect(result.map(r => r.id)).toEqual(expect.arrayContaining(["test1", "test3"]));
     expect(result.length).toBe(2);
-    expect(result[0].id).toEqual("african");
-    expect(result[1].id).toEqual("american");
   });
 
-  /*  
-* endangered species (on CARES list)
+  it("includes all items when ORIGIN filter is empty", () => {
+    const productList = [
+      { id: "test1", origin: "TEST-1" },
+      { id: "test2", origin: "TEST-2" },
+      { id: "test3", origin: "TEST-3" },
+    ];
+    const appliedFilters = [{ type: FILTER.ORIGIN, values: [] }];
 
-* origin
-	- South East Asia
-		- Indonesia
-		- India
-		- Other
-	- Americas
-		- South America
-		- Costa Rica
-		- Panama
-		- Central America
-		- Other
-	- Africa
-		- Lake Malawi
-		- Lake Tanganyika
-		- Lake Victoria
-		- Congo River
-		- Other
+    const result = filter(productList, appliedFilters);
 
-* length (some range breakdown. example ranges below)
-	- less than 2 inches
-	- 2-5 inches
-	- 5+ inches
-	
-* price (some range breakdown. example ranges below)
-	- under $10 each
-	- $10-$30 each
-	- $30+ each
-	*/
-  //   const setupProductItem = (name, price, sizeOptions = {}) => {
-  //     return {
-  //       id: name,
-  //       common: name,
-  //       sizes: {
-  //         S: { price },
-  //         M: { price },
-  //         L: { price },
-  //         B: { price },
-  //         ...sizeOptions,
-  //       },
-  //     };
-  //   };
-
-  const setupProductItem = (id, options = {}) => {
-    return {
-      id,
-      ...options,
-    };
-  };
+    expect(result.map(r => r.id)).toEqual(expect.arrayContaining(["test1", "test2", "test3"]));
+    expect(result.length).toBe(3);
+  });
 });
 
 describe("isFilterApplied", () => {
