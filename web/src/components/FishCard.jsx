@@ -3,11 +3,11 @@ import { Card, CardBody, CardTitle, CardSubtitle, Badge } from "reactstrap";
 import { Image } from "cloudinary-react";
 import MissingImage from "./MissingImage";
 
-const SizeItem = ({ size, length, price, count }) => {
+const SizeItem = ({ size, length, count }) => {
   return (
     <li className="list-group-item">
       {size}({length}
-      ") - x{count} - ${price}
+      ") - x{count}
     </li>
   );
 };
