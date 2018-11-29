@@ -3,11 +3,15 @@
 @import "bootstrap/scss/mixins";
 
 @include media-breakpoint-down(sm) {
-  .fixed-top-sm {
+  .navbar.fixed-top-sm {
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
     z-index: $zindex-fixed;
+  }
+
+  .fixed-top-sm-spacer {
+    height: 56px;
   }
 }

@@ -46,31 +46,34 @@ export default class Nav extends Component {
       },
     ];
     return (
-      <Navbar color="dark" dark expand="sm" className="fixed-top-sm">
-        <Link to="/" className="navbar-brand mr-auto" onClick={() => this.closeNavbar()}>
-          Mey's Aquatics
-        </Link>
-        <NavbarToggler onClick={() => this.toggleNavbar()} data-test="mobile-nav">
-          Menu
-        </NavbarToggler>
-        <Collapse isOpen={!collapsed} navbar className="justify-content-end">
-          <BootstrapNav navbar className="text-right">
-            {routes.map(route => (
-              <NavItem onClick={() => this.closeNavbar()} key={route.path}>
-                <NavLink
-                  to={route.path}
-                  className="nav-link"
-                  activeClassName="active"
-                  exact={route.exact}
-                  data-test={route.test}
-                >
-                  {route.text}
-                </NavLink>
-              </NavItem>
-            ))}
-          </BootstrapNav>
-        </Collapse>
-      </Navbar>
+      <>
+        <Navbar color="dark" dark expand="sm" className="fixed-top-sm">
+          <Link to="/" className="navbar-brand mr-auto" onClick={() => this.closeNavbar()}>
+            Mey's Aquatics
+          </Link>
+          <NavbarToggler onClick={() => this.toggleNavbar()} data-test="mobile-nav">
+            Menu
+          </NavbarToggler>
+          <Collapse isOpen={!collapsed} navbar className="justify-content-end">
+            <BootstrapNav navbar className="text-right">
+              {routes.map(route => (
+                <NavItem onClick={() => this.closeNavbar()} key={route.path}>
+                  <NavLink
+                    to={route.path}
+                    className="nav-link"
+                    activeClassName="active"
+                    exact={route.exact}
+                    data-test={route.test}
+                  >
+                    {route.text}
+                  </NavLink>
+                </NavItem>
+              ))}
+            </BootstrapNav>
+          </Collapse>
+        </Navbar>
+        <div className="fixed-top-sm-spacer" />
+      </>
     );
   }
 }
