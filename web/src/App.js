@@ -14,14 +14,12 @@ class App extends Component {
   };
 
   componentDidMount() {
-    const that = this;
-    axios
-      .get(`${process.env.REACT_APP_API}/data.json`)
-      .then(response => response.data)
-      .then(json => {
-        that.setState({ data: json });
-      })
-      .catch(response => that.setState({ showError: true }));
+    axios.get(`${process.env.REACT_APP_API}/data.json`).then(
+      response => {
+        this.setState({ data: response.data });
+      },
+      () => this.setState({ showError: true })
+    );
   }
 
   render() {
