@@ -34,7 +34,7 @@ const originList = [
         name: "Lake Malawi",
       },
       {
-        id: "AF-LAVET",
+        id: "AF-LAKET",
         name: "Lake Tang",
       },
       {
