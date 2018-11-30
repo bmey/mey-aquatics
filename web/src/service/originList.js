@@ -27,7 +27,7 @@ const originList = [
     subLocations: [
       {
         id: "AF-CONGO",
-        name: "Congo",
+        name: "Congo River",
       },
       {
         id: "AF-LAKEM",
@@ -35,7 +35,7 @@ const originList = [
       },
       {
         id: "AF-LAKET",
-        name: "Lake Tang",
+        name: "Lake Tanganyika",
       },
       {
         id: "AF-LAKEV",
