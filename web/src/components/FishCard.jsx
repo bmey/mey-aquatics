@@ -1,5 +1,7 @@
 import React from "react";
 import { Card, CardBody, CardTitle, CardSubtitle, Badge } from "reactstrap";
+import { withRouter } from "react-router";
+import { Link } from "react-router-dom";
 import Image from "./Image/Image";
 import MissingImage from "./MissingImage";
 
@@ -12,31 +14,35 @@ const SizeItem = ({ size, length, count }) => {
   );
 };
 
-const FishCard = ({ id, onCaresList, common, scientific, origin, sizes, picture }) => {
+const FishCard = ({ id, onCaresList, common, scientific, origin, sizes, picture, match }) => {
   return (
     <Card data-test={`livestock-item-${id}`}>
       <CardBody>
-        <CardTitle>{common || scientific}</CardTitle>
-        <CardSubtitle>{common ? `${scientific} | ${origin}` : { origin }}</CardSubtitle>
+        <Link to={`${match.url}${id}`}>
+          <CardTitle>{common || scientific}</CardTitle>
+          <CardSubtitle>{common ? `${scientific} | ${origin}` : { origin }}</CardSubtitle>
+        </Link>
       </CardBody>
       <div className="d-flex justify-content-center">
-        {picture ? (
-          <Image
-            className="card-thumbnail"
-            publicId={picture}
-            width="auto"
-            dpr="auto"
-            responsive
-            aspectRatio="16:9"
-            fetchFormat="auto"
-            quality="auto:low"
-            secure="true"
-            crop="fill"
-            alt=""
-          />
-        ) : (
-          <MissingImage />
-        )}
+        <Link to={`${match.url}${id}`}>
+          {picture ? (
+            <Image
+              className="card-thumbnail"
+              publicId={picture}
+              width="auto"
+              dpr="auto"
+              responsive
+              aspectRatio="16:9"
+              fetchFormat="auto"
+              quality="auto:low"
+              secure="true"
+              crop="fill"
+              alt=""
+            />
+          ) : (
+            <MissingImage />
+          )}
+        </Link>
       </div>
       <CardBody>
         <ul className="list-group list-group-flush">
@@ -64,4 +70,4 @@ const FishCard = ({ id, onCaresList, common, scientific, origin, sizes, picture 
   );
 };
 
-export default FishCard;
+export default withRouter(FishCard);
