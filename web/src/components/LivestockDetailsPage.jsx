@@ -1,7 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router";
 import { Button } from "reactstrap";
-import FishCard from "./FishCard";
+import ProductDetails from "./Livestock/ProductDetails";
 
 const LivestockDetailsPage = ({ data, match, history }) => {
   const { itemId } = match.params;
@@ -18,7 +18,7 @@ const LivestockDetailsPage = ({ data, match, history }) => {
             &lt; Go Back
           </Button>
         </div>
-        <div style={{ marginTop: "20px" }}>{model ? <FishCard {...model} /> : "Item not found"}</div>
+        <div style={{ marginTop: "20px" }}>{model ? <ProductDetails {...model} /> : "Item not found"}</div>
       </div>
     </div>
   );
