@@ -12,7 +12,7 @@ https://words.mxbry.com/how-i-used-google-drive-and-firebase-to-give-my-static-s
 * In Firebase, download private key file (Settings > Service accounts > Firebase Admin SDK)
 * Navigate to script editor (Tools > Script Editor)
 * Add private key file with key "service_account" (File > Project properties > Script properties)
-* Add GSApp-Library (Resources > Libraries)
+* Add GSApp-Library (Resources > Libraries) with key MJ5317VIFJyKpi9HCkXOfS0MLm9v2IJHf
 * Add each script in this folder as new file (File > New > Script File)
 * Refresh spreasheet
 * New menu item will appear to publish
