@@ -17,14 +17,14 @@ const SizeItem = ({ size, length, count }) => {
 const FishCard = ({ id, onCaresList, common, scientific, origin, sizes, picture, match }) => {
   return (
     <Card data-test={`livestock-item-${id}`}>
-      <CardBody>
-        <Link to={`${match.url}${id}`}>
+      <Link to={`${match.url}${id}`}>
+        <CardBody>
           <CardTitle>{common || scientific}</CardTitle>
           <CardSubtitle>{common ? `${scientific} | ${origin}` : { origin }}</CardSubtitle>
-        </Link>
-      </CardBody>
-      <div className="d-flex justify-content-center">
-        <Link to={`${match.url}${id}`}>
+        </CardBody>
+      </Link>
+      <Link to={`${match.url}${id}`}>
+        <div className="d-flex justify-content-center">
           {picture ? (
             <Image
               className="card-thumbnail"
@@ -42,8 +42,8 @@ const FishCard = ({ id, onCaresList, common, scientific, origin, sizes, picture,
           ) : (
             <MissingImage />
           )}
-        </Link>
-      </div>
+        </div>
+      </Link>
       <CardBody>
         <ul className="list-group list-group-flush">
           {onCaresList && (
