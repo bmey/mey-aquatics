@@ -64,7 +64,6 @@ const fishData = {
       sizes: {
         S: {
           length: 0,
-          price: 0,
           count: 0,
         },
       },
@@ -78,7 +77,6 @@ const fishData = {
       sizes: {
         S: {
           length: 0,
-          price: 0,
           count: 0,
         },
       },
