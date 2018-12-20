@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, CardBody, CardTitle, CardSubtitle, Badge } from "reactstrap";
-import { Image } from "cloudinary-react";
+import Image from "./Image/Image";
 import MissingImage from "./MissingImage";
 
 const SizeItem = ({ size, length, count }) => {
@@ -32,7 +32,7 @@ const FishCard = ({ id, onCaresList, common, scientific, origin, sizes, picture 
             quality="auto:low"
             secure="true"
             crop="fill"
-            alt={`Image of ${common || scientific} from ${origin}`}
+            alt=""
           />
         ) : (
           <MissingImage />
