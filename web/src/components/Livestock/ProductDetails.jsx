@@ -1,7 +1,9 @@
 import React from "react";
-import { Table } from "reactstrap";
+import { Table, Button } from "reactstrap";
+import { Link } from "react-router-dom";
 import Image from "../Image/Image";
 import MissingImage from "../MissingImage";
+import "./ProductDetails.css";
 
 const sizeMap = [
   {
@@ -49,15 +51,22 @@ const ProductDetails = ({ onCaresList, common, scientific, origin, sizes, pictur
             <MissingImage />
           )}
         </div>
-        <div>
+        <div style={{ marginLeft: "20px" }}>
           <h2>{common || scientific}</h2>
-          <div>Common name: {common}</div>
-          <div>Scientific name: {scientific}</div>
-          <div>Origin: {origin}</div>
-          <div>Endangered: {onCaresList ? "Yes" : "No"}</div>
+          <ul className="product-info">
+            <li>Common name: {common}</li>
+            <li>Scientific name: {scientific}</li>
+            <li>Origin: {origin}</li>
+            <li>Endangered: {onCaresList ? "Yes" : "No"}</li>
+          </ul>
+          <Link to="/contact">
+            <Button color="primary" style={{ marginTop: "20px" }}>
+              Contact us to buy!
+            </Button>
+          </Link>
         </div>
       </div>
-      <h2 style={{ marginTop: "20px" }}>Stock available</h2>
+      <h2 style={{ marginTop: "20px" }}>Stock Available</h2>
       <Table responsive>
         <thead>
           <tr>
@@ -83,6 +92,9 @@ const ProductDetails = ({ onCaresList, common, scientific, origin, sizes, pictur
           })}
         </tbody>
       </Table>
+      <span>
+        Interested in buying? <Link to="/contact">Contact us!</Link>
+      </span>
     </>
   );
 };

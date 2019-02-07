@@ -1,33 +1,18 @@
 import React from "react";
-import { Card, CardBody, CardTitle, CardSubtitle, Badge } from "reactstrap";
+import { Card } from "reactstrap";
 import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
 import Image from "./Image/Image";
 import MissingImage from "./MissingImage";
 
-const SizeItem = ({ size, length, count }) => {
+const FishCard = ({ id, common, scientific, origin, picture, match }) => {
   return (
-    <li className="list-group-item">
-      {size}({length}
-      ") - x{count}
-    </li>
-  );
-};
-
-const FishCard = ({ id, onCaresList, common, scientific, origin, sizes, picture, match }) => {
-  return (
-    <Card data-test={`livestock-item-${id}`}>
-      <Link to={`${match.url}${id}`}>
-        <CardBody>
-          <CardTitle>{common || scientific}</CardTitle>
-          <CardSubtitle>{common ? `${scientific} | ${origin}` : { origin }}</CardSubtitle>
-        </CardBody>
-      </Link>
-      <Link to={`${match.url}${id}`}>
-        <div className="d-flex justify-content-center">
+    <Link to={`${match.url}${id}`}>
+      <Card data-test={`livestock-item-${id}`}>
+        <div className="d-flex justify-content-center card-thumbnail">
           {picture ? (
             <Image
-              className="card-thumbnail"
+              className="card-thumbnail-image"
               publicId={picture}
               width="auto"
               dpr="auto"
@@ -43,30 +28,22 @@ const FishCard = ({ id, onCaresList, common, scientific, origin, sizes, picture,
             <MissingImage />
           )}
         </div>
-      </Link>
-      <CardBody>
-        <ul className="list-group list-group-flush">
-          {onCaresList && (
-            <li className="list-group-item d-flex justify-content-between">
-              <span>
-                <Badge color="success">&#x2714;</Badge> on CARES List
-              </span>
-              <small className="text-right">
-                <a href="https://caresforfish.org/">
-                  <Badge color="dark" pill>
-                    ?
-                  </Badge>{" "}
-                  What is CARES?
-                </a>
-              </small>
-            </li>
-          )}
-          {Object.keys(sizes).map(size => {
-            return <SizeItem key={size} {...{ size, ...sizes[size] }} />;
-          })}
-        </ul>
-      </CardBody>
-    </Card>
+        <div style={{ padding: "0.8rem", fontSize: "0.8rem" }}>
+          <div style={{ color: "#111", marginBottom: "0.8rem" }}>
+            <div style={{ marginBottom: "0.4rempx" }}>{common}</div>
+            <div>
+              <em>{scientific}</em>
+            </div>
+          </div>
+          <div className="d-flex justify-content-between align-items-center">
+            <small className="text-muted">{origin}</small>
+            <Link to={`${match.url}${id}`} style={{ fontSize: "0.8rem" }} href="#">
+              See details
+            </Link>
+          </div>
+        </div>
+      </Card>
+    </Link>
   );
 };
 
