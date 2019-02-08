@@ -2,13 +2,13 @@ import React from "react";
 import { Card } from "reactstrap";
 import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
-import ButtonLink from "./ButtonLink";
+import ButtonLink from "./ButtonLink/ButtonLink";
 import Image from "./Image/Image";
 import MissingImage from "./MissingImage";
 
 const FishCard = ({ id, common, scientific, origin, picture, match }) => {
   return (
-    <ButtonLink to={`${match.url}${id}`}>
+    <ButtonLink to={`${match.url}${id}`} className="button-card">
       <Card data-test={`livestock-item-${id}`}>
         <div className="d-flex justify-content-center card-thumbnail">
           {picture ? (

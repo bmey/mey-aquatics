@@ -17,6 +17,11 @@
     column-count: 5;
   }
 
+  .button-link.button-card {
+    padding: 0;
+    width: 100%;
+  }
+
   .card-thumbnail {
     border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
     overflow: hidden;
