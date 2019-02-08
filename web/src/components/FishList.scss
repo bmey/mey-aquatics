@@ -1,6 +1,7 @@
 @import 'bootstrap/scss/_functions';
 @import 'bootstrap/scss/_variables';
 @import 'bootstrap/scss/mixins/_breakpoints';
+@import '../variables.scss';
 
 .App .card-columns {
   @include media-breakpoint-down(xs) {
@@ -20,9 +21,22 @@
     border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
     overflow: hidden;
 
-    >* {
+    > * {
       width: 100%;
       height: 100%;
+    }
+  }
+
+  .card-body-wrapper {
+    padding: $card-padding-default;
+    font-size: $font-size-default;
+
+    .card-body-text {
+      margin-bottom: $card-padding-default;
+
+      > :not(:last-child) {
+        margin-bottom: ($card-padding-default / 2);
+      }
     }
   }
 }

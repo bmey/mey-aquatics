@@ -12,7 +12,6 @@ const FishCard = ({ id, common, scientific, origin, picture, match }) => {
         <div className="d-flex justify-content-center card-thumbnail">
           {picture ? (
             <Image
-              className="card-thumbnail-image"
               publicId={picture}
               width="auto"
               dpr="auto"
@@ -28,18 +27,16 @@ const FishCard = ({ id, common, scientific, origin, picture, match }) => {
             <MissingImage />
           )}
         </div>
-        <div style={{ padding: "0.8rem", fontSize: "0.8rem" }}>
-          <div style={{ color: "#111", marginBottom: "0.8rem" }}>
-            <div style={{ marginBottom: "0.4rempx" }}>{common}</div>
+        <div className="card-body-wrapper">
+          <div className="text-normal card-body-text">
+            <div>{common}</div>
             <div>
               <em>{scientific}</em>
             </div>
           </div>
           <div className="d-flex justify-content-between align-items-center">
             <small className="text-muted">{origin}</small>
-            <Link to={`${match.url}${id}`} style={{ fontSize: "0.8rem" }} href="#">
-              See details
-            </Link>
+            <Link to={`${match.url}${id}`}>See details</Link>
           </div>
         </div>
       </Card>
