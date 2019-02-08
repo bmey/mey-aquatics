@@ -31,11 +31,10 @@ const sizeMap = [
 const ProductDetails = ({ onCaresList, common, scientific, origin, sizes, picture }) => {
   return (
     <>
-      <div className="d-flex">
-        <div className="d-flex justify-content-center">
+      <div className="product-info">
+        <div className="d-flex justify-content-center info-image">
           {picture ? (
             <Image
-              className="card-thumbnail"
               publicId={picture}
               width="auto"
               dpr="auto"
@@ -51,9 +50,9 @@ const ProductDetails = ({ onCaresList, common, scientific, origin, sizes, pictur
             <MissingImage />
           )}
         </div>
-        <div style={{ marginLeft: "20px" }}>
-          <h2>{common || scientific}</h2>
-          <ul className="product-info">
+        <h2 className="info-header">{common || scientific}</h2>
+        <div className="info-list">
+          <ul>
             <li>Common name: {common}</li>
             <li>Scientific name: {scientific}</li>
             <li>Origin: {origin}</li>
