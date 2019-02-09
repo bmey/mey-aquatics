@@ -8,10 +8,10 @@
 
     @include media-breakpoint-down(sm) {
         flex-direction: column;
+        
         > :last-child {
-            margin-left: $grid-gap-mobile;
-         }
-    
+            margin-top: $grid-gap-default;
+         }    
     }  
 
       @include media-breakpoint-up(md) {
