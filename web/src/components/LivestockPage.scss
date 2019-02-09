@@ -1,0 +1,25 @@
+@import 'bootstrap/scss/_functions';
+@import 'bootstrap/scss/_variables';
+@import 'bootstrap/scss/mixins/_breakpoints';
+@import '../variables.scss';
+
+.App-content {
+    display: flex;
+
+    @include media-breakpoint-down(sm) {
+        flex-direction: column;
+        > :last-child {
+            margin-left: $grid-gap-mobile;
+         }
+    
+    }  
+
+      @include media-breakpoint-up(md) {
+        flex-direction: row;
+        justify-content: space-between;
+
+        > :last-child {
+           margin-left: $grid-gap-default;
+        }
+      }
+}

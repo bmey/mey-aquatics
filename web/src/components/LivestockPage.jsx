@@ -1,6 +1,7 @@
 import React from "react";
 import FishList from "./Livestock/ProductListContainer";
 import Filter from "./Filter/FilterContainer";
+import "./LivestockPage.css";
 
 const LivestockPage = props => (
   <div data-cy="livestockpage">
@@ -9,7 +10,7 @@ const LivestockPage = props => (
     </header>
     <div className="App-content">
       <Filter />
-      <div>{props.data && <FishList {...props.data} />}</div>
+      {props.data && <FishList {...props.data} />}
     </div>
   </div>
 );
