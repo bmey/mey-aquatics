@@ -36,17 +36,15 @@ const ContactPage = () => (
         <li>Question about an item</li>
       </ul>
       <hr />
-      <div className="d-flex justify-content-around">
-        <div>
+      <div className="d-flex justify-content-around contact-content">
+        <div className="d-flex flex-column align-items-center">
           <h3 className="text-center">Email</h3>
-          <div>
-            <a className="button-link" href={`mailto:${email}?${emailQuery}`} target="_top">
-              <Button block color="primary">
-                <MailIcon />
-                &nbsp; {email}
-              </Button>
-            </a>
-          </div>
+          <a className="button-link" href={`mailto:${email}?${emailQuery}`} target="_top">
+            <Button color="primary">
+              <MailIcon />
+              &nbsp; {email}
+            </Button>
+          </a>
         </div>
         <div>
           <h3 className="text-center">Social Media</h3>
