@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "reactstrap";
-import { IoLogoInstagram } from "react-icons/io";
+import { IoLogoInstagram, IoLogoYoutube } from "react-icons/io";
 import MailIcon from "@material-ui/icons/Mail";
 import queryString from "query-string";
 import "./ContactPage.css";
@@ -48,10 +48,16 @@ const ContactPage = () => (
         </div>
         <div>
           <h3 className="text-center">Social Media</h3>
-          <a href="https://www.instagram.com/mey_aquatics/" className="d-flex flex-column align-items-center">
-            <IoLogoInstagram style={{ fontSize: "2rem" }} />
-            &nbsp;Instagram
-          </a>
+          <div className="d-flex justify-content-center contact-social">
+            <a href="https://www.instagram.com/mey_aquatics/" className="d-flex flex-column align-items-center">
+              <IoLogoInstagram style={{ fontSize: "2rem", color: "#111" }} />
+              &nbsp;Instagram
+            </a>
+            <a href="https://www.youtube.com/channel/UCHz4QnaCjtgRpn5Zzei4ejw/" className="d-flex flex-column align-items-center">
+              <IoLogoYoutube style={{ fontSize: "2rem", color: "red" }} />
+              &nbsp;YouTube
+            </a>
+          </div>
         </div>
       </div>
     </div>
