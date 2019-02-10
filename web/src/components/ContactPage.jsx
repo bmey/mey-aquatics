@@ -16,7 +16,7 @@ I am looking to: \n\
 - Buy\n\
 - Trade\n\
 - Question about an item\n\
-- Something\n\
+- Something else\n\
   ",
 });
 
