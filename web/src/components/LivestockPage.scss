@@ -3,7 +3,7 @@
 @import 'bootstrap/scss/mixins/_breakpoints';
 @import '../variables.scss';
 
-.App-content {
+.livestock-list-page {
     display: flex;
 
     @include media-breakpoint-down(sm) {

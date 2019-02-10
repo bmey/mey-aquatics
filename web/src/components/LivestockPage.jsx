@@ -8,7 +8,7 @@ const LivestockPage = props => (
     <header className="App-header">
       <h1 className="App-title">Livestock</h1>
     </header>
-    <div className="App-content">
+    <div className="App-content livestock-list-page">
       <Filter />
       {props.data && <FishList {...props.data} />}
     </div>
