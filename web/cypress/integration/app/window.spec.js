@@ -1,11 +1,11 @@
 /// <reference types="Cypress" />
 
-context("Window", () => {
+context('Window', () => {
   beforeEach(() => {
-    cy.visit("/");
+    cy.visit('/');
   });
 
-  it("title should match company name", () => {
-    cy.title().should("include", "Mey's Aquatics");
+  it('title should match company name', () => {
+    cy.title().should('include', "Mey's Aquatics");
   });
 });
