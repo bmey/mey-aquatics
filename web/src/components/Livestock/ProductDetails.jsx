@@ -1,71 +1,71 @@
-import React from "react";
-import { Table, Button } from "reactstrap";
-import { Link } from "react-router-dom";
-import Image from "../Image/Image";
-import MissingImage from "../MissingImage";
-import "./ProductDetails.css";
+import React from 'react';
+import { Table, Button } from 'reactstrap';
+import { Link } from 'react-router-dom';
+import Image from '../Image/Image';
+import MissingImage from '../MissingImage';
+import './ProductDetails.css';
 
 const sizeMap = [
   {
-    key: "B",
-    displayName: "Breeders",
+    key: 'B',
+    displayName: 'Breeders',
   },
   {
-    key: "L",
-    displayName: "Large",
+    key: 'L',
+    displayName: 'Large',
   },
   {
-    key: "M",
-    displayName: "Medium",
+    key: 'M',
+    displayName: 'Medium',
   },
   {
-    key: "S",
-    displayName: "Small",
+    key: 'S',
+    displayName: 'Small',
   },
   {
-    key: "F",
-    displayName: "Fry",
+    key: 'F',
+    displayName: 'Fry',
   },
 ];
 
 const ProductDetails = ({ onCaresList, common, scientific, origin, sizes, picture }) => {
   return (
     <>
-      <div className="product-info">
-        <div className="d-flex justify-content-center info-image">
+      <div className='product-info'>
+        <div className='d-flex justify-content-center info-image'>
           {picture ? (
             <Image
               publicId={picture}
-              width="auto"
-              dpr="auto"
+              width='auto'
+              dpr='auto'
               responsive
-              aspectRatio="16:9"
-              fetchFormat="auto"
-              quality="auto:low"
-              secure="true"
-              crop="fill"
-              alt=""
+              aspectRatio='16:9'
+              fetchFormat='auto'
+              quality='auto:low'
+              secure='true'
+              crop='fill'
+              alt=''
             />
           ) : (
             <MissingImage />
           )}
         </div>
-        <h2 className="info-header">{common || scientific}</h2>
-        <div className="info-list">
+        <h2 className='info-header'>{common || scientific}</h2>
+        <div className='info-list'>
           <ul>
             <li>Common name: {common}</li>
             <li>Scientific name: {scientific}</li>
             <li>Origin: {origin}</li>
-            <li>Endangered: {onCaresList ? "Yes" : "No"}</li>
+            <li>Endangered: {onCaresList ? 'Yes' : 'No'}</li>
           </ul>
-          <Link to="/contact">
-            <Button color="primary" style={{ marginTop: "20px" }}>
+          <Link to='/contact'>
+            <Button color='primary' style={{ marginTop: '20px' }}>
               Contact us to buy!
             </Button>
           </Link>
         </div>
       </div>
-      <h2 style={{ marginTop: "20px" }}>Stock Available</h2>
+      <h2 style={{ marginTop: '20px' }}>Stock Available</h2>
       <Table responsive>
         <thead>
           <tr>
@@ -84,7 +84,7 @@ const ProductDetails = ({ onCaresList, common, scientific, origin, sizes, pictur
             return (
               <tr key={sizeKey.key}>
                 <td>{sizeKey.displayName}</td>
-                <td>{length ? `${length}"` : <span className="text-muted">(unknown)</span>}</td>
+                <td>{length ? `${length}"` : <span className='text-muted'>(unknown)</span>}</td>
                 <td>{count}</td>
               </tr>
             );
@@ -92,7 +92,7 @@ const ProductDetails = ({ onCaresList, common, scientific, origin, sizes, pictur
         </tbody>
       </Table>
       <span>
-        Interested in buying? <Link to="/contact">Contact us!</Link>
+        Interested in buying? <Link to='/contact'>Contact us!</Link>
       </span>
     </>
   );

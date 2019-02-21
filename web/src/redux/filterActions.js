@@ -1,4 +1,4 @@
-import ACTIONS from "./actionTypes";
+import ACTIONS from './actionTypes';
 
 export const applyFilter = filter => {
   return {

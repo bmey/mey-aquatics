@@ -1,7 +1,7 @@
-import React from "react";
-import { Button, Popover, PopoverHeader, PopoverBody } from "reactstrap";
-import Filter from "./Filter";
-import "./MobileFilter.css";
+import React from 'react';
+import { Button, Popover, PopoverHeader, PopoverBody } from 'reactstrap';
+import Filter from './Filter';
+import './MobileFilter.css';
 
 class MobileFilter extends React.Component {
   state = {
@@ -16,14 +16,19 @@ class MobileFilter extends React.Component {
 
   render() {
     return (
-      <div className="d-flex justify-content-end">
-        <Button id="filter-button" type="button" onClick={this.toggle}>
+      <div className='d-flex justify-content-end'>
+        <Button id='filter-button' type='button' onClick={this.toggle}>
           Filter
         </Button>
-        <Popover placement="bottom" isOpen={this.state.popoverOpen} target="filter-button" toggle={this.toggle}>
+        <Popover
+          placement='bottom'
+          isOpen={this.state.popoverOpen}
+          target='filter-button'
+          toggle={this.toggle}
+        >
           <PopoverHeader>Filter by</PopoverHeader>
           <PopoverBody>
-            <div className="filter-wrapper">
+            <div className='filter-wrapper'>
               <Filter {...this.props} />
             </div>
           </PopoverBody>

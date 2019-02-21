@@ -1,63 +1,63 @@
 const originList = [
   {
-    id: "AM",
-    name: "Americas",
+    id: 'AM',
+    name: 'Americas',
     subLocations: [
       {
-        id: "AM-SAMER",
-        name: "South America",
+        id: 'AM-SAMER',
+        name: 'South America',
       },
       {
-        id: "AM-COSTA",
-        name: "Costa Rica",
+        id: 'AM-COSTA',
+        name: 'Costa Rica',
       },
       {
-        id: "AM-CEAME",
-        name: "Central America",
+        id: 'AM-CEAME',
+        name: 'Central America',
       },
       {
-        id: "AM-OTHER",
-        name: "Other",
+        id: 'AM-OTHER',
+        name: 'Other',
       },
     ],
   },
   {
-    id: "AF",
-    name: "Africa",
+    id: 'AF',
+    name: 'Africa',
     subLocations: [
       {
-        id: "AF-CONGO",
-        name: "Congo River",
+        id: 'AF-CONGO',
+        name: 'Congo River',
       },
       {
-        id: "AF-LAKEM",
-        name: "Lake Malawi",
+        id: 'AF-LAKEM',
+        name: 'Lake Malawi',
       },
       {
-        id: "AF-LAKET",
-        name: "Lake Tanganyika",
+        id: 'AF-LAKET',
+        name: 'Lake Tanganyika',
       },
       {
-        id: "AF-LAKEV",
-        name: "Lake Victoria",
+        id: 'AF-LAKEV',
+        name: 'Lake Victoria',
       },
     ],
   },
   {
-    id: "SEA",
-    name: "South East Asia",
+    id: 'SEA',
+    name: 'South East Asia',
     subLocations: [
       {
-        id: "SEA-INDON",
-        name: "Indonesia",
+        id: 'SEA-INDON',
+        name: 'Indonesia',
       },
       {
-        id: "SEA-INDIA",
-        name: "India",
+        id: 'SEA-INDIA',
+        name: 'India',
       },
       {
-        id: "SEA-OTHER",
-        name: "Other",
+        id: 'SEA-OTHER',
+        name: 'Other',
       },
     ],
   },

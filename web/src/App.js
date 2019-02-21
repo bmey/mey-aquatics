@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import axios from "axios";
-import { Provider } from "react-redux";
-import store from "./redux/store";
-import ErrorPage from "./components/ErrorPage";
-import LoadedApp from "./components/LoadedApp";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
+import React, { Component } from 'react';
+import axios from 'axios';
+import { Provider } from 'react-redux';
+import store from './redux/store';
+import ErrorPage from './components/ErrorPage';
+import LoadedApp from './components/LoadedApp';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 
 class App extends Component {
   state = {
@@ -28,16 +28,16 @@ class App extends Component {
     let PageComponent = null;
 
     if (showError) {
-      PageComponent = <ErrorPage data-test="error" data-cy="error" />;
+      PageComponent = <ErrorPage data-test='error' data-cy='error' />;
     } else if (isLoading) {
-      PageComponent = <div data-test="loading">Loading...</div>;
+      PageComponent = <div data-test='loading'>Loading...</div>;
     } else {
-      PageComponent = <LoadedApp data={data} data-test="loaded" />;
+      PageComponent = <LoadedApp data={data} data-test='loaded' />;
     }
 
     return (
       <Provider store={store}>
-        <div className="App">{PageComponent}</div>
+        <div className='App'>{PageComponent}</div>
       </Provider>
     );
   }

@@ -1,7 +1,7 @@
-import _ from "lodash";
-import ACTIONS from "../actionTypes";
-import { FILTER } from "../../utility/constants";
-import getOrigins from "../../service/originList";
+import _ from 'lodash';
+import ACTIONS from '../actionTypes';
+import { FILTER } from '../../utility/constants';
+import getOrigins from '../../service/originList';
 
 const initialState = [];
 

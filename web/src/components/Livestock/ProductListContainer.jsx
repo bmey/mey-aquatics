@@ -1,6 +1,6 @@
-import React from "react";
-import { connect } from "react-redux";
-import FishList from "../FishList";
+import React from 'react';
+import { connect } from 'react-redux';
+import FishList from '../FishList';
 
 const ProductListContainer = props => {
   return <FishList {...props} />;

@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { NavLink, Link } from "react-router-dom";
-import { Collapse, Navbar, NavbarToggler, Nav as BootstrapNav, NavItem } from "reactstrap";
-import "./Nav.css";
+import React, { Component } from 'react';
+import { NavLink, Link } from 'react-router-dom';
+import { Collapse, Navbar, NavbarToggler, Nav as BootstrapNav, NavItem } from 'reactstrap';
+import './Nav.css';
 
 export default class Nav extends Component {
   state = {
@@ -24,44 +24,44 @@ export default class Nav extends Component {
     const { collapsed } = this.state;
     const routes = [
       {
-        path: "/",
-        test: "nav-home",
-        text: "Home",
+        path: '/',
+        test: 'nav-home',
+        text: 'Home',
         exact: true,
       },
       {
-        path: "/livestock/",
-        test: "nav-livestock",
-        text: "Livestock",
+        path: '/livestock/',
+        test: 'nav-livestock',
+        text: 'Livestock',
       },
       {
-        path: "/about/",
-        test: "nav-about",
-        text: "About",
+        path: '/about/',
+        test: 'nav-about',
+        text: 'About',
       },
       {
-        path: "/contact/",
-        test: "nav-contact",
-        text: "Contact",
+        path: '/contact/',
+        test: 'nav-contact',
+        text: 'Contact',
       },
     ];
     return (
       <>
-        <Navbar color="dark" dark expand="sm" className="fixed-top-sm">
-          <Link to="/" className="navbar-brand mr-auto" onClick={() => this.closeNavbar()}>
+        <Navbar color='dark' dark expand='sm' className='fixed-top-sm'>
+          <Link to='/' className='navbar-brand mr-auto' onClick={() => this.closeNavbar()}>
             Mey's Aquatics
           </Link>
-          <NavbarToggler onClick={() => this.toggleNavbar()} data-test="mobile-nav">
+          <NavbarToggler onClick={() => this.toggleNavbar()} data-test='mobile-nav'>
             Menu
           </NavbarToggler>
-          <Collapse isOpen={!collapsed} navbar className="justify-content-end">
-            <BootstrapNav navbar className="text-right">
+          <Collapse isOpen={!collapsed} navbar className='justify-content-end'>
+            <BootstrapNav navbar className='text-right'>
               {routes.map(route => (
                 <NavItem onClick={() => this.closeNavbar()} key={route.path}>
                   <NavLink
                     to={route.path}
-                    className="nav-link"
-                    activeClassName="active"
+                    className='nav-link'
+                    activeClassName='active'
                     exact={route.exact}
                     data-test={route.test}
                   >
@@ -72,7 +72,7 @@ export default class Nav extends Component {
             </BootstrapNav>
           </Collapse>
         </Navbar>
-        <div className="fixed-top-sm-spacer" />
+        <div className='fixed-top-sm-spacer' />
       </>
     );
   }

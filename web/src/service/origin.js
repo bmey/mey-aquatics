@@ -1,4 +1,4 @@
-import getOrigins from "./originList";
+import getOrigins from './originList';
 
 const mapSubLocations = (subLocations, appliedFilters) =>
   subLocations.map(subOrigin => ({
@@ -20,7 +20,8 @@ const mapStateToOrigins = appliedFilters => {
 
     return {
       ...rest,
-      checked: areAllSubLocationsChecked(subLocationOptions) || appliedFilters.some(f => f === rest.id),
+      checked:
+        areAllSubLocationsChecked(subLocationOptions) || appliedFilters.some(f => f === rest.id),
       subLocations: subLocationOptions,
       hasSubLocations: subLocations.length > 0,
     };

@@ -1,8 +1,8 @@
-import React from "react";
-import { UncontrolledButtonDropdown, DropdownItem, DropdownToggle, DropdownMenu } from "reactstrap";
-import { isFilterApplied } from "../../service/filter";
-import { FILTER } from "../../utility/constants";
-import OriginCheckbox from "./OriginCheckboxContainer";
+import React from 'react';
+import { UncontrolledButtonDropdown, DropdownItem, DropdownToggle, DropdownMenu } from 'reactstrap';
+import { isFilterApplied } from '../../service/filter';
+import { FILTER } from '../../utility/constants';
+import OriginCheckbox from './OriginCheckboxContainer';
 
 const Filter = ({
   appliedFilters,
@@ -18,10 +18,10 @@ const Filter = ({
     <div>
       <div>Sort by</div>
       <UncontrolledButtonDropdown setActiveFromChild>
-        <DropdownToggle caret data-test="sort-dropdown">
+        <DropdownToggle caret data-test='sort-dropdown'>
           {sortOptions.filter(option => option.id === appliedSortId).map(option => option.name)}
         </DropdownToggle>
-        <DropdownMenu data-test="sort-dropdown-menu">
+        <DropdownMenu data-test='sort-dropdown-menu'>
           {sortOptions.map(option => {
             const isActive = option.id === appliedSortId;
             return (
@@ -43,13 +43,13 @@ const Filter = ({
         <li>
           <div>Endangered</div>
           <div>
-            <label htmlFor="endangered">
+            <label htmlFor='endangered'>
               <input
-                name="endangered"
-                id="endangered"
-                type="checkbox"
+                name='endangered'
+                id='endangered'
+                type='checkbox'
                 checked={isEndangeredChecked}
-                data-test="filter-endangered"
+                data-test='filter-endangered'
                 readOnly
                 onClick={() =>
                   isEndangeredChecked
@@ -73,7 +73,7 @@ const Filter = ({
 
                 {subLocations.map(subOrigin => {
                   return (
-                    <div key={subOrigin.id} style={{ paddingLeft: "20px" }}>
+                    <div key={subOrigin.id} style={{ paddingLeft: '20px' }}>
                       <OriginCheckbox {...subOrigin} data-test={`filter-origin-${subOrigin.id}`} />
                     </div>
                   );

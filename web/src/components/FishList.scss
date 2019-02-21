@@ -6,7 +6,7 @@
 .App .card-columns {
   @include media-breakpoint-down(xs) {
     column-count: 2;
-  }  
+  }
   @include media-breakpoint-between(sm, md) {
     column-count: 3;
   }
@@ -23,7 +23,7 @@
   }
 
   .card-thumbnail {
-    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+    border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
     overflow: hidden;
 
     > * {

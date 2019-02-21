@@ -4,22 +4,22 @@
 @import '../variables.scss';
 
 .livestock-list-page {
-    display: flex;
+  display: flex;
 
-    @include media-breakpoint-down(sm) {
-        flex-direction: column;
-        
-        > :last-child {
-            margin-top: $grid-gap-default;
-         }    
-    }  
+  @include media-breakpoint-down(sm) {
+    flex-direction: column;
 
-      @include media-breakpoint-up(md) {
-        flex-direction: row;
-        justify-content: space-between;
+    > :last-child {
+      margin-top: $grid-gap-default;
+    }
+  }
 
-        > :last-child {
-           margin-left: $grid-gap-default;
-        }
-      }
+  @include media-breakpoint-up(md) {
+    flex-direction: row;
+    justify-content: space-between;
+
+    > :last-child {
+      margin-left: $grid-gap-default;
+    }
+  }
 }

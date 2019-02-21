@@ -1,5 +1,5 @@
-import React from "react";
-import { FILTER } from "../../utility/constants";
+import React from 'react';
+import { FILTER } from '../../utility/constants';
 
 const OriginCheckbox = ({ id, checked, name, hasSubLocations, applyFilter, removeFilter }) => {
   const payload = { type: FILTER.ORIGIN, id, hasSubLocations };
@@ -9,13 +9,13 @@ const OriginCheckbox = ({ id, checked, name, hasSubLocations, applyFilter, remov
       <input
         name={id}
         id={id}
-        type="checkbox"
+        type='checkbox'
         checked={checked}
         data-test={`filter-origin-${id}`}
         readOnly
         onClick={() => (checked ? removeFilter(payload) : applyFilter(payload))}
       />
-      <span data-test="origin-name">&nbsp; {name}</span>
+      <span data-test='origin-name'>&nbsp; {name}</span>
     </label>
   );
 };
