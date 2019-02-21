@@ -1,0 +1,22 @@
+{
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "eslint.autoFixOnSave": false,
+  "eslint.run": "onSave",
+  "eslint.options": {
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true,
+        "modules": true
+      }
+    }
+  },
+  "prettier.printWidth": 100,
+  "prettier.trailingComma": "es5",
+  "prettier.stylelintIntegration": true,
+  "prettier.eslintIntegration": true,
+  "prettier.requireConfig": true,
+  "prettier.singleQuote": true
+}
