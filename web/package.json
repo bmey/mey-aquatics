@@ -31,6 +31,7 @@
     "build": "npm-run-all build-css build-js",
     "firebase-deploy": "firebase deploy",
     "deploy": "npm-run-all --serial build firebase-deploy",
+    "lint:fix": "prettier --write \"{src,cypress}/**/*.{js,jsx,scss,json}\" \"*.json\"",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
