@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
 import { IoMdGlobe, IoIosFlame, IoIosWarning } from 'react-icons/io';
+import ContactButton from './ContactButton/ContactButton';
 import './HomePage.css';
 
 const Home = () => (
@@ -53,6 +54,13 @@ const Home = () => (
             <Link to='/livestock/'>View now</Link>
           </div>
         </HomeCard>
+      </div>
+      <div
+        className='d-flex flex-column justify-content-center text-center'
+        style={{ backgroundColor: '#eee', padding: '40px' }}
+      >
+        <h2 style={{ marginBottom: '20px' }}>Contact Us</h2>
+        <ContactButton />
       </div>
     </div>
   </div>

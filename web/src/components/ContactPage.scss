@@ -3,10 +3,6 @@
 @import 'bootstrap/scss/mixins/_breakpoints';
 @import '../variables.scss';
 
-a:hover.button-link {
-  text-decoration: none;
-}
-
 .contact-social > :not(:last-child) {
   margin-right: $grid-gap-default;
 }

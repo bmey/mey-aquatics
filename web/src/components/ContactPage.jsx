@@ -1,23 +1,7 @@
 import React from 'react';
-import { Button } from 'reactstrap';
 import { IoLogoInstagram, IoLogoYoutube } from 'react-icons/io';
-import MailIcon from '@material-ui/icons/Mail';
-import queryString from 'query-string';
+import ContactButton from './ContactButton/ContactButton';
 import './ContactPage.css';
-
-const email = 'meysaquatics@gmail.com';
-const emailQuery = queryString.stringify({
-  subject: "Mey's Aquatics Inquiry",
-  body:
-    '(Please fill out the questions below)\n\n' +
-    'My name is: \n\n' +
-    'The best way to contact me is: \n\n' +
-    'I am looking to: \n' +
-    '- Buy\n' +
-    '- Trade\n' +
-    '- Question about an item\n' +
-    '- Something else\n',
-});
 
 const ContactPage = () => (
   <div data-cy='contactpage'>
@@ -38,12 +22,7 @@ const ContactPage = () => (
       <div className='d-flex justify-content-around contact-content'>
         <div className='d-flex flex-column align-items-center'>
           <h3 className='text-center'>Email</h3>
-          <a className='button-link' href={`mailto:${email}?${emailQuery}`} target='_top'>
-            <Button color='primary'>
-              <MailIcon />
-              &nbsp; {email}
-            </Button>
-          </a>
+          <ContactButton isPrimary />
         </div>
         <div>
           <h3 className='text-center'>Social Media</h3>
