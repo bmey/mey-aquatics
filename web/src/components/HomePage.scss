@@ -1,10 +1,15 @@
+@import 'bootstrap/scss/_functions';
+@import 'bootstrap/scss/_variables';
+@import 'bootstrap/scss/mixins/_breakpoints';
+@import '../variables.scss';
+
 .homepage-header {
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #222;
   height: auto;
-  padding: 40px;
+  padding: $grid-gap-default * 2;
   color: white;
 
   .App-title {
@@ -14,21 +19,79 @@
 
 .home-content {
   > * {
-    margin-bottom: 40px;
+    margin-bottom: $grid-gap-default * 2;
   }
 }
 
+.home-card-container {
+  display: flex;
+  justify-content: center;
+  margin-left: -($grid-gap-default * 2);
+  margin-right: -($grid-gap-default * 2);
+  padding: 0 ($grid-gap-default * 2);
+}
+
 .home-card {
-  width: 250px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   border: 1px solid #eee;
-  padding: 20px;
-  margin: 0 20px;
+  width: 250px;
+  padding: $grid-gap-default;
+  margin: 0 $grid-gap-default;
 
   > {
-    margin: 20px 0;
+    margin: $grid-gap-default 0;
+  }
+
+  .description {
+    margin: 10px 0;
+    font-size: 1.2em;
+  }
+
+  a {
+    margin: ($grid-gap-default / 2) 0 0;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .home-content {
+    > * {
+      margin-bottom: $grid-gap-mobile;
+    }
+  }
+
+  .home-card-container {
+    display: flex;
+    justify-content: center;
+    margin-left: -($grid-gap-mobile * 2);
+    margin-right: -($grid-gap-mobile * 2);
+    padding: 0 ($grid-gap-mobile * 2);
+  }
+
+  .home-card {
+    width: auto;
+    flex-basis: 33%;
+    padding: $grid-gap-mobile;
+    margin: 0 ($grid-gap-mobile / 2);
+
+    > {
+      margin: $grid-gap-mobile 0;
+    }
+
+    .description {
+      font-size: 1em;
+    }
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  .home-card-container {
+    flex-direction: column;
+  }
+
+  .home-card {
+    margin-bottom: $grid-gap-mobile;
   }
 }

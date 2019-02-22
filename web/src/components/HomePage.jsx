@@ -8,7 +8,7 @@ const Home = () => (
   <div data-cy='homepage'>
     <header className='homepage-header'>
       <div>
-        <h1 className='App-title'>Welcome to Mey's Aquatics!</h1>
+        <h1 className='App-title'>Mey's Aquatics</h1>
         <div className='d-flex flex-column align-items-center'>
           <em>Caring for fish since 1970</em>
           <Link to='/livestock/' style={{ marginTop: '40px' }}>
@@ -19,35 +19,38 @@ const Home = () => (
     </header>
     <div className='home-content'>
       <div
-        className='d-flex justify-content-center'
-        style={{ backgroundColor: '#ddd', padding: '40px' }}
+        className='d-flex justify-content-center text-center'
+        style={{ backgroundColor: '#eee', padding: '40px' }}
       >
-        Some text about us
+        We have a wide selection of fish, including rare and endangered species identified by the
+        CARES Fish Preservation Program. Please contact us if you are interested in buying, trading,
+        or to learning about what we do.
       </div>
-      <div className='d-flex flex-columns justify-content-center'>
-        <HomeCard icon={<IoMdGlobe />} description='Across the world'>
-          <ul>
-            <li>Africa</li>
-            <li>Americas</li>
-            <li>Asia</li>
-          </ul>
-        </HomeCard>
-        <HomeCard icon={<IoIosFlame style={{ color: 'red' }} />} description='Hot items!'>
-          <ul>
-            <li>
-              <Link to='/livestock/AF-V-RG'>Ruby Green</Link>
-            </li>
-            <li>
-              <Link to='/livestock/AM-ANGEL-ALTUM'>Altum Angelfish</Link>
-            </li>
-          </ul>
-        </HomeCard>
-        <HomeCard icon={<IoIosWarning />} description='Endangered species'>
-          <div className='d-flex flex-column align-items-center'>
-            <span>
-              <strong>37</strong>&nbsp;species in stock
+      <div className='home-card-container'>
+        <HomeCard icon={<IoMdGlobe />} description='Worldwide'>
+          <div className='d-flex flex-column align-items-center worldwide'>
+            <span className='text-center'>
+              View our fish from different regions around the globe!
             </span>
-            <Button style={{ marginTop: '20px' }}>View now</Button>
+            <Link to='/livestock/'>Africa</Link>
+            <Link to='/livestock/'>Americas</Link>
+            <Link to='/livestock/'>Asia</Link>
+          </div>
+        </HomeCard>
+        <HomeCard icon={<IoIosFlame style={{ color: 'red' }} />} description="What's Hot">
+          <div className='d-flex flex-column align-items-center worldwide'>
+            <span className='text-center'>Check out our most popular and rare items!</span>
+            <Link to='/livestock/AF-V-RG'>Ruby Green</Link>
+            <Link to='/livestock/AM-ANGEL-ALTUM'>Altum Angelfish</Link>
+          </div>
+        </HomeCard>
+        <HomeCard icon={<IoIosWarning />} description='Endangered'>
+          <div className='d-flex flex-column align-items-center'>
+            <span className='text-center'>
+              We have <strong>37&nbsp;endangered</strong> species in stock. Pick one up so you can
+              make a difference, too!
+            </span>
+            <Link to='/livestock/'>View now</Link>
           </div>
         </HomeCard>
       </div>
@@ -59,7 +62,7 @@ const HomeCard = ({ icon, description, children }) => (
   <div className='home-card'>
     <div className='d-flex flex-column align-items-center'>
       <div style={{ fontSize: '3em' }}>{icon}</div>
-      <strong style={{ margin: '10px 0', fontSize: '1.2em' }}>{description}</strong>
+      <strong className='description'>{description}</strong>
     </div>
     {children}
   </div>
