@@ -1,20 +1,17 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
+import queryString from 'query-string';
+import { withRouter } from 'react-router';
 import { applyFilter, removeFilter } from './filters';
-
-// import { withRouter } from 'react-router';
-// import queryString from 'query-string';
 import { SORT_BY } from '../../utility/constants';
-// import _ from 'lodash';
 
+const initialSortId = SORT_BY.ALPHABETICAL_COMMON;
 const FilterContext = React.createContext();
 
 export default FilterContext;
 
-export class FilterProvider extends Component {
-  state = {
-    filters: [],
-    sort: SORT_BY.ALPHABETICAL_COMMON,
-  };
+class Provider extends Component {
+  state = getInitialState(this.props);
 
   handleApplyFilter = payload => {
     const newFilters = applyFilter(this.state.filters, { payload });
@@ -48,21 +45,23 @@ export class FilterProvider extends Component {
   }
 }
 
-// const get = ({ hash }) => {
-//   let filters = [];
-//   let appliedSortId = 2;
-//   if (!_.isEmpty(hash)) {
-//     try {
-//       const result = queryString.parse(hash);
-//       filters = JSON.parse(result.filter);
-//       appliedSortId = +_.get(result, 'sort', 2);
-//     } catch (e) {
-//       console.log(e);
-//     }
-//   }
+const getInitialState = ({ location: { hash } }) => {
+  let filters = [];
+  let sort = initialSortId;
+  if (!_.isEmpty(hash)) {
+    try {
+      const result = queryString.parse(hash);
+      filters = JSON.parse(result.filter);
+      sort = +_.get(result, 'sort', initialSortId);
+    } catch (e) {
+      console.log(e);
+    }
+  }
 
-//   return {
-//     appliedFilters: filters,
-//     appliedSortId,
-//   };
-// };
+  return {
+    filters: filters,
+    sort,
+  };
+};
+
+export const FilterProvider = withRouter(Provider);
