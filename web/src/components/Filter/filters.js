@@ -1,22 +1,8 @@
 import _ from 'lodash';
-import ACTIONS from '../actionTypes';
 import { FILTER } from '../../utility/constants';
 import getOrigins from '../../service/originList';
 
-const initialState = [];
-
-export default function(state = initialState, action) {
-  switch (action.type) {
-    case ACTIONS.APPLY_FILTER:
-      return applyFilter(state, action);
-    case ACTIONS.REMOVE_FILTER:
-      return removeFilter(state, action);
-    default:
-      return state;
-  }
-}
-
-const applyFilter = (state, action) => {
+export const applyFilter = (state, action) => {
   const { type, id, hasSubLocations } = action.payload;
 
   if (type === FILTER.ORIGIN) {
@@ -39,7 +25,7 @@ const applyFilter = (state, action) => {
   return state.some(filter => filter.type === type) ? state : [...state, action.payload];
 };
 
-const removeFilter = (state, action) => {
+export const removeFilter = (state, action) => {
   const { type, id, hasSubLocations } = action.payload;
 
   if (type === FILTER.ORIGIN) {

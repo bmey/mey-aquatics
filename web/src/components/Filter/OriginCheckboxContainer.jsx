@@ -1,8 +1,11 @@
-import { connect } from 'react-redux';
-import { applyFilter, removeFilter } from '../../redux/filterActions';
+import React from 'react';
+import FilterContext from './FilterContext';
 import OriginCheckbox from './OriginCheckbox';
 
-export default connect(
-  null,
-  { applyFilter, removeFilter }
-)(OriginCheckbox);
+const Container = props => (
+  <FilterContext.Consumer>
+    {({ filters, sort, changeSort, ...rest }) => <OriginCheckbox {...props} {...rest} />}
+  </FilterContext.Consumer>
+);
+
+export default Container;

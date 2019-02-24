@@ -1,14 +1,13 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import FilterContext from '../Filter/FilterContext';
 import FishList from '../FishList';
 
 const ProductListContainer = props => {
-  return <FishList {...props} />;
+  return (
+    <FilterContext.Consumer>
+      {({ filters, sort }) => <FishList {...props} appliedFilters={filters} appliedSortId={sort} />}
+    </FilterContext.Consumer>
+  );
 };
 
-const mapStateToProps = state => ({
-  appliedFilters: state.filters,
-  appliedSortId: state.appliedSort.id,
-});
-
-export default connect(mapStateToProps)(ProductListContainer);
+export default ProductListContainer;

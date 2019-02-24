@@ -1,25 +1,20 @@
-import ACTIONS from '../actionTypes';
-import reducer from './filters';
+import { applyFilter, removeFilter } from './filters';
 import { FILTER } from '../../utility/constants';
 import getOrigins from '../../service/originList';
 
 jest.mock('../../service/originList', () => jest.fn());
 
 describe('appliedFilters reducer', () => {
-  const initialState = reducer(undefined, {});
-
-  it('returns empty list for initial state', () => {
-    expect(initialState).toEqual([]);
-  });
+  const initialState = [];
 
   describe('origin filter', () => {
     it.each(['OTHER', 'AME_OTHER'])(
       'adds to origin list when action is APPLY_FILTER and payload type is ORIGIN',
       originId => {
         const filterType = FILTER.ORIGIN;
-        const action = { type: ACTIONS.APPLY_FILTER, payload: { type: filterType, id: originId } };
+        const action = { payload: { type: filterType, id: originId } };
 
-        const result = reducer(initialState, action);
+        const result = applyFilter(initialState, action);
 
         expect(result.length).toEqual(1);
         expect(result[0].type).toEqual(filterType);
@@ -31,10 +26,10 @@ describe('appliedFilters reducer', () => {
     it('adds to origin list when action is APPLY_FILTER and payload type is ORIGIN and other origin filters applied', () => {
       const filterType = FILTER.ORIGIN;
       const originId = 'OTHER';
-      const action = { type: ACTIONS.APPLY_FILTER, payload: { type: filterType, id: originId } };
+      const action = { payload: { type: filterType, id: originId } };
       const state = [{ type: filterType, values: ['AME_OTHER'] }];
 
-      const result = reducer(state, action)[0];
+      const result = applyFilter(state, action)[0];
 
       expect(result.type).toEqual(filterType);
       expect(result.values).toEqual(expect.arrayContaining([originId, 'AME_OTHER']));
@@ -43,10 +38,10 @@ describe('appliedFilters reducer', () => {
     it('adds to origin list when action is APPLY_FILTER and payload type is ORIGIN and other origin filters applied', () => {
       const filterType = FILTER.ORIGIN;
       const originId = 'OTHER';
-      const action = { type: ACTIONS.APPLY_FILTER, payload: { type: filterType, id: originId } };
+      const action = { payload: { type: filterType, id: originId } };
       const state = [{ type: filterType, values: ['AME_OTHER'] }];
 
-      const result = reducer(state, action)[0];
+      const result = applyFilter(state, action)[0];
 
       expect(result.type).toEqual(filterType);
       expect(result.values).toEqual(expect.arrayContaining([originId, 'AME_OTHER']));
@@ -55,10 +50,10 @@ describe('appliedFilters reducer', () => {
     it('does not remove other filters when action is APPLY_FILTER and payload type is ORIGIN', () => {
       const filterType = FILTER.ORIGIN;
       const originId = 'OTHER';
-      const action = { type: ACTIONS.APPLY_FILTER, payload: { type: filterType, id: originId } };
+      const action = { payload: { type: filterType, id: originId } };
       const state = [{ type: FILTER.CARES_LIST }];
 
-      const result = reducer(state, action);
+      const result = applyFilter(state, action);
 
       expect(result.map(r => r.type)).toEqual(
         expect.arrayContaining([filterType, FILTER.CARES_LIST])
@@ -68,10 +63,10 @@ describe('appliedFilters reducer', () => {
     it('does not add duplicate origin filters when action is APPLY_FILTER and payload type is ORIGIN', () => {
       const filterType = FILTER.ORIGIN;
       const originId = 'OTHER';
-      const action = { type: ACTIONS.APPLY_FILTER, payload: { type: filterType, id: originId } };
+      const action = { payload: { type: filterType, id: originId } };
       const state = [{ type: filterType, values: [originId] }];
 
-      const result = reducer(state, action);
+      const result = applyFilter(state, action);
 
       expect(result.length).toEqual(1);
       expect(result[0].type).toEqual(filterType);
@@ -110,12 +105,11 @@ describe('appliedFilters reducer', () => {
 
       const filterType = FILTER.ORIGIN;
       const action = {
-        type: ACTIONS.APPLY_FILTER,
         payload: { type: filterType, id: originId, hasSubLocations: true },
       };
       const state = [{ type: filterType, values: ['OTHER'] }];
 
-      const result = reducer(state, action)[0];
+      const result = applyFilter(state, action)[0];
 
       expect(result.type).toEqual(filterType);
       expect(result.values).toEqual(expect.arrayContaining(['TEST-1', 'TEST-2', 'OTHER']));
@@ -152,12 +146,11 @@ describe('appliedFilters reducer', () => {
 
       const filterType = FILTER.ORIGIN;
       const action = {
-        type: ACTIONS.REMOVE_FILTER,
         payload: { type: filterType, id: originId, hasSubLocations: true },
       };
       const state = [{ type: filterType, values: ['OTHER', 'TEST-1', 'TEST-2'] }];
 
-      const result = reducer(state, action)[0];
+      const result = removeFilter(state, action)[0];
 
       expect(result.type).toEqual(filterType);
       expect(result.values).toEqual(['OTHER']);
@@ -166,10 +159,10 @@ describe('appliedFilters reducer', () => {
     it('removes origin when action is REMOVE_FILTER and payload type is ORIGIN and other origin filters applied', () => {
       const filterType = FILTER.ORIGIN;
       const originId = 'SHOULD_REMOVE';
-      const action = { type: ACTIONS.REMOVE_FILTER, payload: { type: filterType, id: originId } };
+      const action = { payload: { type: filterType, id: originId } };
       const state = [{ type: filterType, values: ['SHOULD_STAY', 'SHOULD_REMOVE'] }];
 
-      const result = reducer(state, action)[0];
+      const result = removeFilter(state, action)[0];
 
       expect(result.type).toEqual(filterType);
       expect(result.values).toEqual(['SHOULD_STAY']);
@@ -178,9 +171,9 @@ describe('appliedFilters reducer', () => {
 
   it('adds filter to list when action is APPLY_FILTER', () => {
     const filterType = FILTER.CARES_LIST;
-    const action = { type: ACTIONS.APPLY_FILTER, payload: { type: filterType } };
+    const action = { payload: { type: filterType } };
 
-    const result = reducer(initialState, action);
+    const result = applyFilter(initialState, action);
 
     expect(result.length).toEqual(1);
     expect(result[0].type).toEqual(filterType);
@@ -188,10 +181,10 @@ describe('appliedFilters reducer', () => {
 
   it('does not add duplicate filters when action is APPLY_FILTER', () => {
     const filterType = FILTER.CARES_LIST;
-    const action = { type: ACTIONS.APPLY_FILTER, payload: { type: filterType } };
+    const action = { payload: { type: filterType } };
     const state = [{ type: filterType }];
 
-    const result = reducer(state, action);
+    const result = applyFilter(state, action);
 
     expect(result.length).toEqual(1);
     expect(result[0].type).toEqual(filterType);
@@ -200,10 +193,10 @@ describe('appliedFilters reducer', () => {
   it('removes filter when action is REMOVE_FILTER', () => {
     const filterType = FILTER.CARES_LIST;
     const otherFilter = 999;
-    const action = { type: ACTIONS.REMOVE_FILTER, payload: { type: filterType } };
+    const action = { payload: { type: filterType } };
     const state = [{ type: filterType }, { type: otherFilter }];
 
-    const result = reducer(state, action);
+    const result = removeFilter(state, action);
 
     expect(result.length).toEqual(1);
     expect(result[0].type).toEqual(otherFilter);
