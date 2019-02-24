@@ -8,7 +8,24 @@ import { SORT_BY } from '../../utility/constants';
 const initialSortId = SORT_BY.ALPHABETICAL_COMMON;
 const FilterContext = React.createContext();
 
-export default FilterContext;
+const getInitialState = ({ location: { hash } }) => {
+  let filters = [];
+  let sort = initialSortId;
+  if (!_.isEmpty(hash)) {
+    try {
+      const result = queryString.parse(hash);
+      filters = JSON.parse(result.filter);
+      sort = +_.get(result, 'sort', initialSortId);
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  return {
+    filters: filters,
+    sort,
+  };
+};
 
 class Provider extends Component {
   state = getInitialState(this.props);
@@ -45,23 +62,5 @@ class Provider extends Component {
   }
 }
 
-const getInitialState = ({ location: { hash } }) => {
-  let filters = [];
-  let sort = initialSortId;
-  if (!_.isEmpty(hash)) {
-    try {
-      const result = queryString.parse(hash);
-      filters = JSON.parse(result.filter);
-      sort = +_.get(result, 'sort', initialSortId);
-    } catch (e) {
-      console.log(e);
-    }
-  }
-
-  return {
-    filters: filters,
-    sort,
-  };
-};
-
 export const FilterProvider = withRouter(Provider);
+export default FilterContext;
