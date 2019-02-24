@@ -1,3 +1,13 @@
 {
-  "extends": ["plugin:prettier/recommended"]
+  "extends": ["plugin:prettier/recommended", "prettier", "prettier/babel", "prettier/standard"],
+  "plugins": ["babel", "prettier", "standard"],
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "es6": true
+  }
 }
