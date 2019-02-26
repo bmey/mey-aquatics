@@ -27,7 +27,7 @@ const FilterContainer = props => (
                 originOptions={originOptions}
                 appliedSortId={sort}
                 appliedFilters={filters}
-                {...context}
+                {...contextActions}
               />
             ) : (
               <Filter
