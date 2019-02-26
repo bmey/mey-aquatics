@@ -50,7 +50,11 @@ const Home = () => (
               View our fish from different regions around the globe!
             </span>
             {regions.map(({ id, description }) => (
-              <Link to={`/livestock/#${getRouteFromOrigin(id)}`} data-test={`view-region-${id}`}>
+              <Link
+                to={`/livestock/#${getRouteFromOrigin(id)}`}
+                key={id}
+                data-test={`view-region-${id}`}
+              >
                 {description}
               </Link>
             ))}
