@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import queryString from 'query-string';
 import { FILTER } from '../../utility/constants';
 import getOrigins from '../../service/originList';
 
@@ -46,4 +47,12 @@ export const removeFilter = (state, action) => {
   }
 
   return state.filter(filter => filter.type !== action.payload.type);
+};
+
+export const getRouteFromOrigin = originId => {
+  const filterState = applyFilter([], {
+    payload: { type: FILTER.ORIGIN, id: originId, hasSubLocations: true },
+  });
+
+  return queryString.stringify({ filter: JSON.stringify(filterState) });
 };

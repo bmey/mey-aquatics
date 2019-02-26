@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
 import { IoMdGlobe, IoIosFlame, IoIosWarning } from 'react-icons/io';
 import ContactButton from './ContactButton/ContactButton';
+import { getRouteFromOrigin } from './Filter/filters';
 import './HomePage.css';
 
 const Home = () => (
@@ -33,9 +34,9 @@ const Home = () => (
             <span className='text-center'>
               View our fish from different regions around the globe!
             </span>
-            <Link to='/livestock/'>Africa</Link>
-            <Link to='/livestock/'>Americas</Link>
-            <Link to='/livestock/'>Asia</Link>
+            <Link to={`/livestock/#${getRouteFromOrigin('AF')}`}>Africa</Link>
+            <Link to={`/livestock/#${getRouteFromOrigin('AM')}`}>Americas</Link>
+            <Link to={`/livestock/#${getRouteFromOrigin('SEA')}`}>Asia</Link>
           </div>
         </HomeCard>
         <HomeCard icon={<IoIosFlame style={{ color: 'red' }} />} description="What's Hot">

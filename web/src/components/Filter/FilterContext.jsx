@@ -5,7 +5,7 @@ import { withRouter } from 'react-router';
 import { applyFilter, removeFilter } from './filters';
 import { SORT_BY } from '../../utility/constants';
 
-const initialSortId = SORT_BY.ALPHABETICAL_COMMON;
+const initialSortId = SORT_BY.DEFAULT;
 const FilterContext = React.createContext();
 
 const getInitialState = ({ location: { hash } }) => {

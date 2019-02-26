@@ -1,7 +1,7 @@
 import { SORT_BY } from '../utility/constants';
 import { compareCaseInsentitive } from '../utility/strings';
 
-const sort = (productList, sortType = SORT_BY.ALPHABETICAL_COMMON) => {
+const sort = (productList, sortType = SORT_BY.DEFAULT) => {
   if (!productList) {
     return [];
   }
