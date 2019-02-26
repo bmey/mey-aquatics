@@ -17,7 +17,7 @@ class MobileFilter extends React.Component {
   render() {
     return (
       <div className='d-flex justify-content-end'>
-        <Button id='filter-button' type='button' onClick={this.toggle}>
+        <Button id='filter-button' type='button' onClick={this.toggle} data-test='filter-button'>
           Filter
         </Button>
         <Popover

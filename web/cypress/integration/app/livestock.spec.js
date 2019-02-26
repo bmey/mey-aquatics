@@ -1,67 +1,77 @@
 /// <reference types="Cypress" />
 import { SORT_BY } from '../../../src/utility/constants';
 
+const canChangeFilters = () => {
+  describe('can change filters', () => {
+    it('common name sorting', () => {
+      cy.get("[data-test='sort-dropdown']").click();
+      cy.get(`[data-test='sort-option-${SORT_BY.ALPHABETICAL_COMMON_DESCENDING}']`).click();
+      cy.get("[data-test^='livestock-item']:first").should(
+        'have.attr',
+        'data-test',
+        'livestock-item-Z'
+      );
+    });
+
+    it('scientific name sorting', () => {
+      cy.get("[data-test='sort-dropdown']").click();
+      cy.get(`[data-test='sort-option-${SORT_BY.ALPHABETICAL_SCIENTIFIC}']`).click();
+      cy.get("[data-test^='livestock-item']:first").should(
+        'have.attr',
+        'data-test',
+        'livestock-item-Z'
+      );
+
+      cy.get("[data-test='sort-dropdown']").click();
+      cy.get(`[data-test='sort-option-${SORT_BY.ALPHABETICAL_SCIENTIFIC_DESCENDING}']`).click();
+      cy.get("[data-test^='livestock-item']:first").should(
+        'have.attr',
+        'data-test',
+        'livestock-item-A'
+      );
+    });
+
+    it('endangered species filter', () => {
+      cy.get("[data-test='filter-endangered']").click();
+      cy.get("[data-test^='livestock-item']")
+        .should('have.length', 1)
+        .and('have.attr', 'data-test', 'livestock-item-Z');
+
+      cy.get("[data-test='filter-endangered']").click();
+      cy.get("[data-test^='livestock-item']").should('have.length', 2);
+    });
+
+    it('origin filter', () => {
+      cy.get(`[data-test='filter-origin-AF']`).click();
+      cy.get("[data-test^='livestock-item']").should('have.length', 0);
+
+      cy.get(`[data-test='filter-origin-AM-OTHER']`).click();
+      cy.get("[data-test^='livestock-item']").should('have.length', 2);
+    });
+  });
+};
+
 context('Livestock', () => {
   beforeEach(() => {
     cy.server();
+    cy.route({ url: '/data.json', status: 200, response: fishData });
   });
 
-  it('can change endangered species filter', () => {
-    cy.route({ url: '/data.json', status: 200, response: fishData });
-    cy.visit('/livestock');
-
-    cy.get("[data-test='filter-endangered']").click();
-    cy.get("[data-test^='livestock-item']")
-      .should('have.length', 1)
-      .and('have.attr', 'data-test', 'livestock-item-Z');
-
-    cy.get("[data-test='filter-endangered']").click();
-    cy.get("[data-test^='livestock-item']").should('have.length', 2);
+  context('view:desktop', () => {
+    beforeEach(() => {
+      cy.visit('/livestock');
+    });
+    canChangeFilters();
   });
 
-  it('can change common name sorting', () => {
-    cy.route({ url: '/data.json', status: 200, response: fishData });
-    cy.visit('/livestock');
+  context('view:mobile', () => {
+    beforeEach(() => {
+      cy.viewport('iphone-6');
+      cy.visit('/livestock');
+      cy.get("[data-test='filter-button']").click();
+    });
 
-    cy.get("[data-test='sort-dropdown']").click();
-    cy.get(`[data-test='sort-option-${SORT_BY.ALPHABETICAL_COMMON_DESCENDING}']`).click();
-    cy.get("[data-test^='livestock-item']:first").should(
-      'have.attr',
-      'data-test',
-      'livestock-item-Z'
-    );
-  });
-
-  it('can change scientific name sorting', () => {
-    cy.route({ url: '/data.json', status: 200, response: fishData });
-    cy.visit('/livestock');
-
-    cy.get("[data-test='sort-dropdown']").click();
-    cy.get(`[data-test='sort-option-${SORT_BY.ALPHABETICAL_SCIENTIFIC}']`).click();
-    cy.get("[data-test^='livestock-item']:first").should(
-      'have.attr',
-      'data-test',
-      'livestock-item-Z'
-    );
-
-    cy.get("[data-test='sort-dropdown']").click();
-    cy.get(`[data-test='sort-option-${SORT_BY.ALPHABETICAL_SCIENTIFIC_DESCENDING}']`).click();
-    cy.get("[data-test^='livestock-item']:first").should(
-      'have.attr',
-      'data-test',
-      'livestock-item-A'
-    );
-  });
-
-  it('can change origin filter', () => {
-    cy.route({ url: '/data.json', status: 200, response: fishData });
-    cy.visit('/livestock');
-
-    cy.get(`[data-test='filter-origin-AF']`).click();
-    cy.get("[data-test^='livestock-item']").should('have.length', 0);
-
-    cy.get(`[data-test='filter-origin-AM-OTHER']`).click();
-    cy.get("[data-test^='livestock-item']").should('have.length', 2);
+    canChangeFilters();
   });
 });
 
