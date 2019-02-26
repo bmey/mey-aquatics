@@ -6,6 +6,21 @@ import ContactButton from './ContactButton/ContactButton';
 import { getRouteFromOrigin } from './Filter/filters';
 import './HomePage.css';
 
+const regions = [
+  {
+    id: 'AF',
+    description: 'Africa',
+  },
+  {
+    id: 'AM',
+    description: 'Americas',
+  },
+  {
+    id: 'SEA',
+    description: 'Asia',
+  },
+];
+
 const Home = () => (
   <div data-cy='homepage'>
     <header className='homepage-header'>
@@ -34,9 +49,11 @@ const Home = () => (
             <span className='text-center'>
               View our fish from different regions around the globe!
             </span>
-            <Link to={`/livestock/#${getRouteFromOrigin('AF')}`}>Africa</Link>
-            <Link to={`/livestock/#${getRouteFromOrigin('AM')}`}>Americas</Link>
-            <Link to={`/livestock/#${getRouteFromOrigin('SEA')}`}>Asia</Link>
+            {regions.map(({ id, description }) => (
+              <Link to={`/livestock/#${getRouteFromOrigin(id)}`} data-test={`view-region-${id}`}>
+                {description}
+              </Link>
+            ))}
           </div>
         </HomeCard>
         <HomeCard icon={<IoIosFlame style={{ color: 'red' }} />} description="What's Hot">
