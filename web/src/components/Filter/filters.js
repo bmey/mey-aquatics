@@ -56,3 +56,11 @@ export const getRouteFromOrigin = originId => {
 
   return queryString.stringify({ filter: JSON.stringify(filterState) });
 };
+
+export const getRouteFromFilter = filterType => {
+  const filterState = applyFilter([], {
+    payload: { type: filterType },
+  });
+
+  return queryString.stringify({ filter: JSON.stringify(filterState) });
+};

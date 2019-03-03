@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
 import { IoMdGlobe, IoIosFlame, IoIosWarning } from 'react-icons/io';
 import ContactButton from './ContactButton/ContactButton';
-import { getRouteFromOrigin } from './Filter/filters';
+import { getRouteFromOrigin, getRouteFromFilter } from './Filter/filters';
 import './HomePage.css';
+import { FILTER } from '../utility/constants';
 
 const regions = [
   {
@@ -73,7 +74,12 @@ const Home = () => (
               We have <strong>37&nbsp;endangered</strong> species in stock. Pick one up so you can
               make a difference, too!
             </span>
-            <Link to='/livestock/'>View now</Link>
+            <Link
+              to={`/livestock/#${getRouteFromFilter(FILTER.CARES_LIST)}`}
+              data-test='view-endangered'
+            >
+              View now
+            </Link>
           </div>
         </HomeCard>
       </div>

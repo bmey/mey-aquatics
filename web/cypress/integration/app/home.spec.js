@@ -1,5 +1,4 @@
 /// <reference types="Cypress" />
-import { SORT_BY } from '../../../src/utility/constants';
 
 const testOrigins = [
   {
@@ -19,6 +18,22 @@ const testOrigins = [
   },
 ];
 
+const itCanUseEndangeredLink = () => {
+  it('can use endangered link', () => {
+    const testData = {
+      fish: [...fishData.fish, { ...setupFish('ENDANGERED'), onCaresList: true }],
+    };
+    cy.route({ url: '/data.json', status: 200, response: testData });
+    cy.visit('/');
+
+    cy.get("[data-test='view-endangered']").click();
+
+    cy.get("[data-test^='livestock-item']")
+      .should('have.length', 1)
+      .should('have.attr', 'data-test', 'livestock-item-ENDANGERED');
+  });
+};
+
 context('Home page', () => {
   beforeEach(() => {
     cy.server();
@@ -26,13 +41,11 @@ context('Home page', () => {
   });
 
   context('view:desktop', () => {
-    beforeEach(() => {
-      cy.visit('/');
-    });
-
     describe('can use region link', () => {
       testOrigins.forEach(({ id, origin, description }) => {
         it(description, () => {
+          cy.visit('/');
+
           cy.get(`[data-test='view-region-${id}']`).click();
 
           cy.get(`[data-test^='filter-origin-${id}']`).should('be.checked');
@@ -44,29 +57,30 @@ context('Home page', () => {
         });
       });
     });
+
+    itCanUseEndangeredLink();
   });
 
   context('view:mobile', () => {
     beforeEach(() => {
       cy.viewport('iphone-6');
+    });
+
+    it('can use region link', () => {
+      const { id, origin } = testOrigins[0];
       cy.visit('/');
+      cy.get(`[data-test='view-region-${id}']`).click();
+      cy.get("[data-test='filter-button']").click();
+
+      cy.get(`[data-test^='filter-origin-${id}']`).should('be.checked');
+      cy.get("[data-test^='livestock-item']").should(
+        'have.attr',
+        'data-test',
+        `livestock-item-${origin}`
+      );
     });
 
-    describe('can use region link', () => {
-      testOrigins.forEach(({ id, origin, description }) => {
-        it(description, () => {
-          cy.get(`[data-test='view-region-${id}']`).click();
-          cy.get("[data-test='filter-button']").click();
-
-          cy.get(`[data-test^='filter-origin-${id}']`).should('be.checked');
-          cy.get("[data-test^='livestock-item']").should(
-            'have.attr',
-            'data-test',
-            `livestock-item-${origin}`
-          );
-        });
-      });
-    });
+    itCanUseEndangeredLink();
   });
 });
 
