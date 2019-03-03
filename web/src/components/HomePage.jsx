@@ -4,6 +4,7 @@ import { Button } from 'reactstrap';
 import { IoMdGlobe, IoIosFlame, IoIosWarning } from 'react-icons/io';
 import ContactButton from './ContactButton/ContactButton';
 import { getRouteFromOrigin, getRouteFromFilter } from './Filter/filters';
+import { countEndangeredSpecies } from '../service/stats';
 import './HomePage.css';
 import { FILTER } from '../utility/constants';
 
@@ -22,7 +23,7 @@ const regions = [
   },
 ];
 
-const Home = () => (
+const Home = ({ data: { fish } }) => (
   <div data-cy='homepage'>
     <header className='homepage-header'>
       <div>
@@ -71,8 +72,8 @@ const Home = () => (
         <HomeCard icon={<IoIosWarning />} description='Endangered'>
           <div className='d-flex flex-column align-items-center'>
             <span className='text-center'>
-              We have <strong>37&nbsp;endangered</strong> species in stock. Pick one up so you can
-              make a difference, too!
+              We have <strong>{countEndangeredSpecies(fish)}&nbsp;endangered</strong> species in
+              stock. Pick one up so you can make a difference, too!
             </span>
             <Link
               to={`/livestock/#${getRouteFromFilter(FILTER.CARES_LIST)}`}
