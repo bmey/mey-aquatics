@@ -8,7 +8,7 @@ describe('mapStateToOrigin', () => {
     {
       id: 'AME',
       name: 'Americas',
-      subLocations: [
+      subOrigins: [
         {
           id: 'AME-OTHER',
           name: 'Other',
@@ -26,7 +26,7 @@ describe('mapStateToOrigin', () => {
     {
       id: 'OTHER',
       name: 'Other',
-      subLocations: [],
+      subOrigins: [],
     },
   ];
 
@@ -38,7 +38,7 @@ describe('mapStateToOrigin', () => {
 
     result.forEach(origin => {
       expect(origin.checked).toBe(false);
-      origin.subLocations.forEach(subOrigin => {
+      origin.subOrigins.forEach(subOrigin => {
         expect(subOrigin.checked).toBe(false);
       });
     });
@@ -52,23 +52,23 @@ describe('mapStateToOrigin', () => {
 
     const topOrigin = result.filter(origin => origin.id === 'AME')[0];
     const otherOrigin = result.filter(origin => origin.id !== 'AME')[0];
-    const checkedSubOrigins = topOrigin.subLocations.filter(origin => origin.checked);
-    const uncheckedSubOrigins = topOrigin.subLocations.filter(origin => !origin.checked);
+    const checkedSubOrigins = topOrigin.subOrigins.filter(origin => origin.checked);
+    const uncheckedSubOrigins = topOrigin.subOrigins.filter(origin => !origin.checked);
     expect(checkedSubOrigins.map(s => s.id)).toEqual(
       expect.arrayContaining(['AME-NORTH', 'AME-OTHER'])
     );
     expect(uncheckedSubOrigins.map(s => s.id)).toEqual(['AME-SOUTH']);
   });
 
-  it('returns true for hasSubLocations when has sub-origins', () => {
+  it('returns true for hasSubOrigins when has sub-origins', () => {
     getOrigins.mockReturnValue(originList);
 
     const result = mapStateToOrigin([]);
 
     const topOrigin = result.filter(origin => origin.id === 'AME')[0];
     const otherOrigin = result.filter(origin => origin.id === 'OTHER')[0];
-    expect(topOrigin.hasSubLocations).toBe(true);
-    expect(otherOrigin.hasSubLocations).toBe(false);
+    expect(topOrigin.hasSubOrigins).toBe(true);
+    expect(otherOrigin.hasSubOrigins).toBe(false);
   });
 
   it('returns true for checked when all sub-origins are in applied filters', () => {

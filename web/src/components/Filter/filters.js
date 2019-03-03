@@ -4,7 +4,7 @@ import { FILTER } from '../../utility/constants';
 import getOrigins from '../../service/originList';
 
 export const applyFilter = (state, action) => {
-  const { type, id, hasSubLocations } = action.payload;
+  const { type, id, hasSubOrigins } = action.payload;
 
   if (type === FILTER.ORIGIN) {
     let idsToAdd = [id];
@@ -12,10 +12,10 @@ export const applyFilter = (state, action) => {
     const existingFilter = state.filter(f => f.type === FILTER.ORIGIN)[0];
     const existingValues = existingFilter ? existingFilter.values : [];
 
-    if (hasSubLocations) {
+    if (hasSubOrigins) {
       idsToAdd = getOrigins()
         .filter(o => o.id === id)[0]
-        .subLocations.map(s => s.id);
+        .subOrigins.map(s => s.id);
     }
 
     const values = _.union(existingValues, idsToAdd);
@@ -27,7 +27,7 @@ export const applyFilter = (state, action) => {
 };
 
 export const removeFilter = (state, action) => {
-  const { type, id, hasSubLocations } = action.payload;
+  const { type, id, hasSubOrigins } = action.payload;
 
   if (type === FILTER.ORIGIN) {
     let idsToRemove = [id];
@@ -35,10 +35,10 @@ export const removeFilter = (state, action) => {
     const existingFilter = state.filter(f => f.type === FILTER.ORIGIN)[0];
     const existingValues = existingFilter ? existingFilter.values : [];
 
-    if (hasSubLocations) {
+    if (hasSubOrigins) {
       idsToRemove = getOrigins()
         .filter(o => o.id === id)[0]
-        .subLocations.map(s => s.id);
+        .subOrigins.map(s => s.id);
     }
 
     const values = existingValues.filter(v => !idsToRemove.includes(v));
@@ -51,7 +51,7 @@ export const removeFilter = (state, action) => {
 
 export const getRouteFromOrigin = originId => {
   const filterState = applyFilter([], {
-    payload: { type: FILTER.ORIGIN, id: originId, hasSubLocations: true },
+    payload: { type: FILTER.ORIGIN, id: originId, hasSubOrigins: true },
   });
 
   return queryString.stringify({ filter: JSON.stringify(filterState) });

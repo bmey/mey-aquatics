@@ -74,7 +74,7 @@ describe('<Filter />', () => {
           id: 'AME',
           name: 'Americas',
           checked: true,
-          subLocations: [
+          subOrigins: [
             {
               id: 'AME-OTHER',
               name: 'Other',
@@ -86,7 +86,7 @@ describe('<Filter />', () => {
           id: 'OTHER',
           name: 'Other',
           checked: false,
-          subLocations: [],
+          subOrigins: [],
         },
       ];
 

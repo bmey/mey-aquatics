@@ -2,7 +2,7 @@ const originList = [
   {
     id: 'AM',
     name: 'Americas',
-    subLocations: [
+    subOrigins: [
       {
         id: 'AM-SAMER',
         name: 'South America',
@@ -24,7 +24,7 @@ const originList = [
   {
     id: 'AF',
     name: 'Africa',
-    subLocations: [
+    subOrigins: [
       {
         id: 'AF-CONGO',
         name: 'Congo River',
@@ -46,7 +46,7 @@ const originList = [
   {
     id: 'SEA',
     name: 'South East Asia',
-    subLocations: [
+    subOrigins: [
       {
         id: 'SEA-INDON',
         name: 'Indonesia',

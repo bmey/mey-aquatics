@@ -9,7 +9,7 @@ describe('<OriginCheckbox />', () => {
     id,
     name: 'test origin',
     checked: false,
-    hasSubLocations: false,
+    hasSubOrigins: false,
     applyFilter: () => {},
     removeFilter: () => {},
   };
@@ -58,7 +58,7 @@ describe('<OriginCheckbox />', () => {
     expect(removeFilter).toBeCalledWith({
       type: FILTER.ORIGIN,
       id: originId,
-      hasSubLocations: false,
+      hasSubOrigins: false,
     });
     expect(applyFilter).not.toBeCalled();
   });
@@ -82,12 +82,12 @@ describe('<OriginCheckbox />', () => {
     expect(applyFilter).toBeCalledWith({
       type: FILTER.ORIGIN,
       id: originId,
-      hasSubLocations: false,
+      hasSubOrigins: false,
     });
     expect(removeFilter).not.toBeCalled();
   });
 
-  it('removes filter with sublocations when clicked and is checked', () => {
+  it('removes filter with subOrigins when clicked and is checked', () => {
     const applyFilter = jest.fn();
     const removeFilter = jest.fn();
     const originId = 'parent-origin';
@@ -97,7 +97,7 @@ describe('<OriginCheckbox />', () => {
         {...commonProps}
         id={originId}
         checked
-        hasSubLocations
+        hasSubOrigins
         applyFilter={applyFilter}
         removeFilter={removeFilter}
       />
@@ -108,12 +108,12 @@ describe('<OriginCheckbox />', () => {
     expect(removeFilter).toBeCalledWith({
       type: FILTER.ORIGIN,
       id: originId,
-      hasSubLocations: true,
+      hasSubOrigins: true,
     });
     expect(applyFilter).not.toBeCalled();
   });
 
-  it('applies filter with sublocations when clicked and is unchecked', () => {
+  it('applies filter with subOrigins when clicked and is unchecked', () => {
     const applyFilter = jest.fn();
     const removeFilter = jest.fn();
     const originId = 'parent-origin';
@@ -123,7 +123,7 @@ describe('<OriginCheckbox />', () => {
         {...commonProps}
         id={originId}
         checked={false}
-        hasSubLocations
+        hasSubOrigins
         applyFilter={applyFilter}
         removeFilter={removeFilter}
       />
@@ -134,7 +134,7 @@ describe('<OriginCheckbox />', () => {
     expect(applyFilter).toBeCalledWith({
       type: FILTER.ORIGIN,
       id: originId,
-      hasSubLocations: true,
+      hasSubOrigins: true,
     });
     expect(removeFilter).not.toBeCalled();
   });

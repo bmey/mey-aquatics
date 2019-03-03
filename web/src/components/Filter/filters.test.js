@@ -80,7 +80,7 @@ describe('appliedFilters reducer', () => {
         {
           id: originId,
           name: 'Top level',
-          subLocations: [
+          subOrigins: [
             {
               id: 'TEST-1',
               name: 'One',
@@ -94,7 +94,7 @@ describe('appliedFilters reducer', () => {
         {
           id: 'other-top-level',
           name: 'Top level 2',
-          subLocations: [
+          subOrigins: [
             {
               id: 'OTHER-1',
               name: 'One',
@@ -105,7 +105,7 @@ describe('appliedFilters reducer', () => {
 
       const filterType = FILTER.ORIGIN;
       const action = {
-        payload: { type: filterType, id: originId, hasSubLocations: true },
+        payload: { type: filterType, id: originId, hasSubOrigins: true },
       };
       const state = [{ type: filterType, values: ['OTHER'] }];
 
@@ -121,7 +121,7 @@ describe('appliedFilters reducer', () => {
         {
           id: originId,
           name: 'Top level',
-          subLocations: [
+          subOrigins: [
             {
               id: 'TEST-1',
               name: 'One',
@@ -135,7 +135,7 @@ describe('appliedFilters reducer', () => {
         {
           id: 'other-top-level',
           name: 'Top level 2',
-          subLocations: [
+          subOrigins: [
             {
               id: 'OTHER-1',
               name: 'One',
@@ -146,7 +146,7 @@ describe('appliedFilters reducer', () => {
 
       const filterType = FILTER.ORIGIN;
       const action = {
-        payload: { type: filterType, id: originId, hasSubLocations: true },
+        payload: { type: filterType, id: originId, hasSubOrigins: true },
       };
       const state = [{ type: filterType, values: ['OTHER', 'TEST-1', 'TEST-2'] }];
 
