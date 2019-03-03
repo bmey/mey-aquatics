@@ -35,7 +35,7 @@
         "id": "AF-M-AFRA",
         "onCaresList": false,
         "origin": "AF-LAKEM",
-        "picture": "fish/tagged/Cynotilapia_Afra.jpg",
+        "picture": "Cynotilapia_Afra.jpg",
         "scientific": "Cynotilpia Afra",
         "sizes": {
           "B": {
@@ -65,7 +65,7 @@
         "id": "AF-M-BREAM",
         "onCaresList": false,
         "origin": "AF-LAKEM",
-        "picture": "fish/tagged/Chilotilapia_rhoadesii_M.jpg",
+        "picture": "Chilotilapia_rhoadesii_M.jpg",
         "scientific": "Chilotilapia Rhoadesii",
         "sizes": {
           "B": {
@@ -124,7 +124,7 @@
         "id": "AF-M-JACOB",
         "onCaresList": false,
         "origin": "AF-LAKEM",
-        "picture": "fish/tagged/Aulonocara_jacobfreibergi_M.jpg",
+        "picture": "Aulonocara_jacobfreibergi_M.jpg",
         "scientific": "Aulonocara jacobfreibergi",
         "sizes": {
           "B": {
@@ -154,7 +154,7 @@
         "id": "AF-M-JACOB-ALBINO",
         "onCaresList": false,
         "origin": "AF-LAKEM",
-        "picture": "fish/tagged/Aulonocara_jacobfreibergi_M.jpg",
+        "picture": "Aulonocara_jacobfreibergi_M.jpg",
         "scientific": "Aulonocara jacobfreibergi",
         "sizes": {
           "B": {
@@ -184,7 +184,7 @@
         "id": "AF-M-LWANDA",
         "onCaresList": true,
         "origin": "AF-LAKEM",
-        "picture": "fish/tagged/Aulonocara_sp._LwandaM.jpg",
+        "picture": "Aulonocara_sp._LwandaM.jpg",
         "scientific": "Aulonocara sp. Lwanda",
         "sizes": {
           "B": {
@@ -214,7 +214,7 @@
         "id": "AF-M-NYASSAE",
         "onCaresList": false,
         "origin": "AF-LAKEM",
-        "picture": "fish/tagged/Aulonocara_Nyassae.jpg",
+        "picture": "Aulonocara_Nyassae.jpg",
         "scientific": "Aulonocara nyassae",
         "sizes": {
           "B": {
@@ -302,7 +302,7 @@
         "id": "AF-M-SAPPHIRE",
         "onCaresList": true,
         "origin": "AF-LAKEM",
-        "picture": "fish/tagged/Placido_phenochilius_F.jpg",
+        "picture": "Placido_phenochilius_F.jpg",
         "scientific": "Placido phenochilus",
         "sizes": {
           "B": {
@@ -593,7 +593,7 @@
         "id": "AF-T-MULTI",
         "onCaresList": false,
         "origin": "AF-LAKET",
-        "picture": "fish/tagged/Neolamprologus_multifasciatus_M.jpg",
+        "picture": "Neolamprologus_multifasciatus_M.jpg",
         "scientific": "Neolamprologus multifasciatus",
         "sizes": {
           "B": {
@@ -826,7 +826,7 @@
         "id": "AF-V-FISCHERI",
         "onCaresList": true,
         "origin": "AF-LAKEV",
-        "picture": "fish/tagged/Ptyochromus_fisheri.jpg",
+        "picture": "Ptyochromus_fisheri.jpg",
         "scientific": "Ptyochromus fischeri",
         "sizes": {
           "B": {
@@ -856,7 +856,7 @@
         "id": "AF-V-KENYA",
         "onCaresList": true,
         "origin": "AF-LAKEV",
-        "picture": "fish/tagged/Haplochromis_Kenya_Gold_F.jpg",
+        "picture": "Haplochromis_Kenya_Gold_F.jpg",
         "scientific": "Haplochromis Kenya Gold",
         "sizes": {
           "B": {
@@ -886,7 +886,7 @@
         "id": "AF-V-OBLIQ",
         "onCaresList": true,
         "origin": "AF-LAKEV",
-        "picture": "fish/tagged/Hapolochromus_murchasin_2.jpg",
+        "picture": "Hapolochromus_murchasin_2.jpg",
         "scientific": "Hapolochromus murchasin",
         "sizes": {
           "B": {
@@ -916,7 +916,7 @@
         "id": "AF-V-RG",
         "onCaresList": true,
         "origin": "AF-LAKEV",
-        "picture": "fish/tagged/Haplochromus_sp._Ruby_Green_M.jpg",
+        "picture": "Haplochromus_sp._Ruby_Green_M.jpg",
         "scientific": "Haplochromis sp. Ruby Green",
         "sizes": {
           "B": {
@@ -946,7 +946,7 @@
         "id": "AF-V-ROCK",
         "onCaresList": true,
         "origin": "AF-LAKEV",
-        "picture": "fish/tagged/Paralabidochromis_sauvagei.jpg",
+        "picture": "Paralabidochromis_sauvagei.jpg",
         "scientific": "Paralabidochromis sauvagei",
         "sizes": {
           "B": {
@@ -976,7 +976,7 @@
         "id": "AM-AMAZONIA",
         "onCaresList": false,
         "origin": "AM-SAMER",
-        "picture": "fish/tagged/Cichlasoma_Amazonia_F.jpg",
+        "picture": "Cichlasoma_Amazonia_F.jpg",
         "scientific": "Cichlasoma amazonia",
         "sizes": {
           "B": {
@@ -1238,7 +1238,7 @@
         "id": "AM-GEAYI",
         "onCaresList": false,
         "origin": "AM-SAMER",
-        "picture": "fish/tagged/Guianacara_geayi.jpg",
+        "picture": "Guianacara_geayi.jpg",
         "scientific": "Guianacara geayi",
         "sizes": {
           "B": {
@@ -1297,7 +1297,7 @@
         "id": "AM-GREEN-T",
         "onCaresList": false,
         "origin": "AM-SAMER",
-        "picture": "fish/tagged/Andinoacara_rivulatus.jpg",
+        "picture": "Andinoacara_rivulatus.jpg",
         "scientific": "Andinoacara rivulatus syn.",
         "sizes": {
           "B": {
@@ -1327,7 +1327,7 @@
         "id": "AM-MIDAS",
         "onCaresList": false,
         "origin": "AM-COSTA",
-        "picture": "fish/tagged/Amphilophus_citrinellus_F.jpg",
+        "picture": "Amphilophus_citrinellus_F.jpg",
         "scientific": "Amphilophus citrinellus",
         "sizes": {
           "B": {
@@ -1357,7 +1357,7 @@
         "id": "AM-PLECO-046",
         "onCaresList": true,
         "origin": "AM-SAMER",
-        "picture": "fish/tagged/10-7_L46.jpg",
+        "picture": "10-7_L46.jpg",
         "scientific": "Hypancistrus Zebra L046",
         "sizes": {
           "B": {
@@ -1474,7 +1474,7 @@
         "id": "AM-VIEJA",
         "onCaresList": false,
         "origin": "AM-CEAME",
-        "picture": "fish/tagged/Vieja_Fenestratus_Pink.jpg",
+        "picture": "Vieja_Fenestratus_Pink.jpg",
         "scientific": "Vieja fenestratus \"pink\"",
         "sizes": {
           "B": {
