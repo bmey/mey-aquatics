@@ -1,3 +1,6 @@
+@import 'bootstrap/scss/_functions';
+@import 'bootstrap/scss/_variables';
+@import 'bootstrap/scss/mixins/_breakpoints';
 @import '../node_modules/modern-normalize/modern-normalize.css';
 @import './variables.scss';
 
@@ -11,5 +14,44 @@ a {
   .text-normal,
   &.text-normal {
     color: $font-color-default;
+  }
+}
+
+.body-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.body-content {
+  flex: 1 0 auto;
+}
+
+.body-footer {
+  flex-shrink: 0;
+  color: #fefefe;
+
+  .nav-link {
+    padding: 2px 0;
+  }
+
+  padding: 0.5rem 1rem;
+
+  .navbar-legal {
+    font-size: 0.8rem;
+    color: #aeaeae;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .navbar-legal {
+    flex-direction: row !important;
+
+    > * {
+      margin: 0 10px;
+    }
   }
 }
