@@ -19,7 +19,7 @@ const routes = [
   },
   {
     path: '/livestock/',
-    name: 'Livestock',
+    name: 'Live Stock',
     showInNav: true,
     exact: true,
     component: LivestockPage,

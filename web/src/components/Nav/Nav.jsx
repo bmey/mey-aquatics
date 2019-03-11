@@ -32,7 +32,7 @@ export default class Nav extends Component {
       {
         path: '/livestock/',
         test: 'nav-livestock',
-        text: 'Livestock',
+        text: 'Live Stock',
       },
       {
         path: '/about/',
