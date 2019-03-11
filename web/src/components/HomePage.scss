@@ -18,7 +18,7 @@
 }
 
 .home-content {
-  > * {
+  > *:not(:last-child) {
     margin-bottom: $grid-gap-default * 2;
   }
 }
@@ -57,7 +57,7 @@
 
 @include media-breakpoint-down(sm) {
   .home-content {
-    > * {
+    > *:not(:last-child) {
       margin-bottom: $grid-gap-mobile;
     }
   }
