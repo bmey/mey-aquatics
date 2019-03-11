@@ -16,3 +16,14 @@ export const FILTER = {
   CARES_LIST: 0,
   ORIGIN: 1,
 };
+
+export const SOCIAL_MEDIA = [
+  {
+    id: 'Instagram',
+    href: 'https://www.instagram.com/mey_aquatics/',
+  },
+  {
+    id: 'YouTube',
+    href: 'https://www.youtube.com/channel/UCHz4QnaCjtgRpn5Zzei4ejw/',
+  },
+];

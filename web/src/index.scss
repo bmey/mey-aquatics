@@ -55,3 +55,24 @@ a {
     }
   }
 }
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  > * {
+    margin: 10px;
+    flex-grow: 1;
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  .footer-content {
+    justify-content: flex-start;
+
+    > * {
+      flex-basis: 40%;
+    }
+  }
+}
