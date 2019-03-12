@@ -37,7 +37,9 @@ const FishCard = ({ id, common, scientific, origin, picture, match }) => {
           </div>
           <div className='d-flex justify-content-between align-items-center'>
             <small className='text-muted'>{origin}</small>
-            <Link to={`${match.url}${id}`}>See details</Link>
+            <Link to={`${match.url}${id}`} tabIndex={-1}>
+              See details
+            </Link>
           </div>
         </div>
       </Card>
