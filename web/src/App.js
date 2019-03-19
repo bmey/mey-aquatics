@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import ErrorPage from './components/ErrorPage';
 import LoadedApp from './components/LoadedApp';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 class App extends Component {

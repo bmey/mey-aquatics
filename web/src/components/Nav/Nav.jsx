@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { Collapse, Navbar, NavbarToggler, Nav as BootstrapNav, NavItem } from 'reactstrap';
+import Logo from '../Logo/Logo';
 import './Nav.css';
 
 export default class Nav extends Component {
@@ -47,8 +48,9 @@ export default class Nav extends Component {
     ];
     return (
       <>
-        <Navbar color='dark' dark expand='sm' className='fixed-top-sm'>
+        <Navbar color='light' light expand='sm' className='fixed-top-sm'>
           <Link to='/' className='navbar-brand mr-auto' onClick={() => this.closeNavbar()}>
+            <Logo />
             Mey's Aquatics
           </Link>
           <NavbarToggler onClick={() => this.toggleNavbar()} data-test='mobile-nav'>

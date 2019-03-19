@@ -1,6 +1,7 @@
 @import 'bootstrap/scss/functions';
 @import 'bootstrap/scss/variables';
 @import 'bootstrap/scss/mixins';
+@import 'variables';
 
 @include media-breakpoint-down(sm) {
   .navbar.fixed-top-sm {
@@ -14,4 +15,11 @@
   .fixed-top-sm-spacer {
     height: 56px;
   }
+}
+
+.navbar-brand svg {
+  line-height: 30px;
+  height: 30px;
+  margin-right: 10px;
+  fill: $font-color-default;
 }

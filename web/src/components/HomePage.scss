@@ -1,19 +1,33 @@
 @import 'bootstrap/scss/_functions';
 @import 'bootstrap/scss/_variables';
 @import 'bootstrap/scss/mixins/_breakpoints';
-@import '../variables.scss';
+@import 'colors';
+@import 'variables';
 
 .homepage-header {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #222;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: $color-primary;
   height: auto;
   padding: $grid-gap-default * 2;
-  color: white;
+  color: $dark;
 
   .App-title {
     font-size: 2.5em;
+  }
+}
+
+.homepage-header-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: auto;
+  padding: $grid-gap-default * 2;
+  color: $dark;
+
+  .App-title {
+    font-size: 3em;
   }
 }
 

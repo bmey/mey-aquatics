@@ -1,11 +1,13 @@
+@import 'colors';
+
 .App-header {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #222;
+  background-color: $color-primary;
   height: 100px;
   padding: 20px;
-  color: white;
+  color: $dark;
 }
 
 .App-content {

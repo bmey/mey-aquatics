@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
 import { IoMdGlobe, IoIosFlame, IoIosWarning } from 'react-icons/io';
 import ContactButton from './ContactButton/ContactButton';
+import Logo from './Logo/Logo';
 import { getRouteFromOrigin, getRouteFromFilter } from './Filter/filters';
 import { countEndangeredSpecies } from '../service/stats';
 import './HomePage.css';
@@ -26,20 +27,23 @@ const regions = [
 const Home = ({ data: { fish } }) => (
   <div data-cy='homepage'>
     <header className='homepage-header'>
-      <div>
+      <div className='homepage-header-text text-left'>
         <h1 className='App-title'>Mey's Aquatics</h1>
-        <div className='d-flex flex-column align-items-center'>
+        <div className='d-flex flex-column'>
           <em>Caring for fish since 1970</em>
           <Link to='/livestock/' style={{ marginTop: '40px' }}>
             <Button color='primary'>Browse our stock</Button>
           </Link>
         </div>
       </div>
+      <div>
+        <Logo className='logo' />
+      </div>
     </header>
     <div className='home-content'>
       <div
-        className='d-flex justify-content-center text-center'
-        style={{ backgroundColor: '#eee', padding: '40px' }}
+        className='d-flex justify-content-center text-center bg-gray'
+        style={{ padding: '40px' }}
       >
         We have a wide selection of fish, including rare and endangered species identified by the
         CARES Fish Preservation Program. Please contact us if you are interested in buying, trading,
@@ -85,8 +89,8 @@ const Home = ({ data: { fish } }) => (
         </HomeCard>
       </div>
       <div
-        className='d-flex flex-column justify-content-center text-center'
-        style={{ backgroundColor: '#eee', padding: '40px' }}
+        className='d-flex flex-column justify-content-center text-center bg-gray'
+        style={{ padding: '40px' }}
       >
         <h2 style={{ marginBottom: '20px' }}>Contact Us</h2>
         <ContactButton />
