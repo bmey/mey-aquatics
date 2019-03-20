@@ -24,6 +24,10 @@ a {
   background-color: lighten($color-gray-dark, 65%);
 }
 
+.color-primary {
+  color: $primary;
+}
+
 .logo {
   width: 100%;
   height: 100%;

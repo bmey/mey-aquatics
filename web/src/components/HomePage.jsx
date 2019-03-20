@@ -39,14 +39,6 @@ const Home = ({ data: { fish } }) => (
       </div>
     </header>
     <div className='home-content'>
-      <div
-        className='d-flex justify-content-center text-center bg-gray'
-        style={{ padding: '40px' }}
-      >
-        We have a wide selection of fish, including rare and endangered species identified by the
-        CARES Fish Preservation Program. Please contact us if you are interested in buying, trading,
-        or to learning about what we do.
-      </div>
       <div className='home-card-container'>
         <HomeCard icon={<IoMdGlobe />} description='Worldwide'>
           <div className='d-flex flex-column align-items-center worldwide'>
@@ -64,7 +56,7 @@ const Home = ({ data: { fish } }) => (
             ))}
           </div>
         </HomeCard>
-        <HomeCard icon={<IoIosFlame style={{ color: 'red' }} />} description="What's Hot">
+        <HomeCard icon={<IoIosFlame className='color-primary' />} description="What's Hot">
           <div className='d-flex flex-column align-items-center worldwide'>
             <span className='text-center'>Check out our most popular and rare items!</span>
             <Link to='/livestock/AF-V-RG'>Ruby Green</Link>
@@ -91,6 +83,13 @@ const Home = ({ data: { fish } }) => (
         style={{ padding: '40px' }}
       >
         <h2 style={{ marginBottom: '20px' }}>Contact Us</h2>
+
+        <p className='text-center'>
+          We have a wide selection of fish, including rare and endangered species identified by the
+          CARES Fish Preservation Program. Please contact us if you are interested in buying,
+          trading, or to learning about what we do.
+        </p>
+
         <ContactButton />
       </div>
     </div>
