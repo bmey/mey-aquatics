@@ -1,12 +1,12 @@
 $color-primary: #3fd170;
-$color-complementary: #dd4001; //#ff694d;
+$color-complementary: #dd4001;
 $color-secondary-1: #a840c5;
 $color-secondary-2: #ffcb4d;
-$color-gray-dark: #404841;
+$color-gray-dark: #414542;
 $color-gray-light: #f9fbfa;
 
 // bootstrap overrides
-$primary: $color-complementary;
+$primary: $color-secondary-1;
 $secondary: $color-gray-dark;
 $light: $color-gray-light;
 $dark: $color-gray-dark;

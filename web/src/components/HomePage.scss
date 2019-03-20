@@ -7,14 +7,19 @@
 .homepage-header {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-items: center;
   background-color: $color-primary;
   height: auto;
-  padding: $grid-gap-default * 2;
+  padding: $grid-gap-default * 3;
   color: $dark;
 
-  .App-title {
-    font-size: 2.5em;
+  button.btn-primary {
+    margin-top: 40px;
+  }
+
+  .logo-container {
+    max-width: 10rem;
   }
 }
 
@@ -23,7 +28,6 @@
   flex-direction: column;
   justify-content: center;
   height: auto;
-  padding: $grid-gap-default * 2;
   color: $dark;
 
   .App-title {
@@ -100,6 +104,16 @@
       font-size: 1em;
     }
   }
+
+  .homepage-header-text {
+    .App-title {
+      font-size: 2em;
+    }
+  }
+
+  .logo-container {
+    flex-basis: 30%;
+  }
 }
 
 @include media-breakpoint-down(xs) {
@@ -109,5 +123,33 @@
 
   .home-card {
     margin-bottom: $grid-gap-mobile;
+  }
+
+  .homepage-header {
+    flex-direction: column;
+    padding: $grid-gap-mobile * 3;
+
+    button.btn-primary {
+      margin-top: $grid-gap-mobile;
+    }
+
+    svg {
+      height: 3em;
+    }
+  }
+
+  .homepage-header-text {
+    align-items: center;
+    padding: $grid-gap-mobile;
+
+    .App-title {
+      font-size: 1.5em;
+    }
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .logo-container {
+    margin-right: 40px;
   }
 }

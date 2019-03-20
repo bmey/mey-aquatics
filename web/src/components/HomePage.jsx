@@ -27,17 +27,15 @@ const regions = [
 const Home = ({ data: { fish } }) => (
   <div data-cy='homepage'>
     <header className='homepage-header'>
-      <div className='homepage-header-text text-left'>
-        <h1 className='App-title'>Mey's Aquatics</h1>
-        <div className='d-flex flex-column'>
-          <em>Caring for fish since 1970</em>
-          <Link to='/livestock/' style={{ marginTop: '40px' }}>
-            <Button color='primary'>Browse our stock</Button>
-          </Link>
-        </div>
-      </div>
-      <div>
+      <div className='logo-container'>
         <Logo className='logo' />
+      </div>
+      <div className='homepage-header-text'>
+        <h1 className='App-title'>Mey's Aquatics</h1>
+        <em>Caring for fish since 1970</em>
+        <Link to='/livestock/'>
+          <Button color='primary'>Browse our stock</Button>
+        </Link>
       </div>
     </header>
     <div className='home-content'>
