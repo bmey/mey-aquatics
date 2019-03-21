@@ -107,6 +107,10 @@
     }
   }
 
+  .homepage-header {
+    padding: ($grid-gap-mobile * 3) ($grid-gap-mobile * 5);
+  }
+
   .homepage-header-text {
     .App-title {
       font-size: 2em;
@@ -124,7 +128,17 @@
   }
 
   .home-card {
+    max-width: 75%;
+    margin: auto;
     margin-bottom: $grid-gap-mobile;
+
+    &.priority-item {
+      order: 1;
+    }
+
+    &:not(.priority-item) {
+      order: 2;
+    }
   }
 
   .homepage-header {

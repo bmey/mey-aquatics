@@ -56,7 +56,11 @@ const Home = ({ data: { fish } }) => (
             ))}
           </div>
         </HomeCard>
-        <HomeCard icon={<IoIosFlame className='color-primary' />} description="What's Hot">
+        <HomeCard
+          icon={<IoIosFlame className='color-primary' />}
+          description="What's Hot"
+          className='priority-item'
+        >
           <div className='d-flex flex-column align-items-center worldwide'>
             <span className='text-center'>Check out our most popular and rare items!</span>
             <Link to='/livestock/AF-V-RG'>Ruby Green</Link>
@@ -96,8 +100,8 @@ const Home = ({ data: { fish } }) => (
   </div>
 );
 
-const HomeCard = ({ icon, description, children }) => (
-  <div className='home-card'>
+const HomeCard = ({ icon, description, children, className = '' }) => (
+  <div className={`home-card ${className}`}>
     <div className='d-flex flex-column align-items-center'>
       <div style={{ fontSize: '3em' }}>{icon}</div>
       <strong className='description'>{description}</strong>
