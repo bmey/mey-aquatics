@@ -9,8 +9,6 @@ $card-border-radius: calc(0.5rem - 1px);
 .App .card-list {
   display: flex;
   flex-flow: row wrap;
-  align-content: flex-start;
-  align-items: stretch;
   padding: $grid-gap-mobile / 2;
   margin: -$grid-gap-mobile;
 
@@ -31,13 +29,12 @@ $card-border-radius: calc(0.5rem - 1px);
   }
   @include media-breakpoint-up(xl) {
     .button-link.button-card {
-      flex-basis: 19%;
+      flex-basis: 18%;
     }
   }
 
   .button-link.button-card {
     padding: 0;
-    width: 100%;
     cursor: pointer;
     margin: $grid-gap-mobile / 2;
     border: 1px solid lighten($dark, 50%);
@@ -46,6 +43,7 @@ $card-border-radius: calc(0.5rem - 1px);
     flex-direction: column;
     justify-content: space-between;
     align-items: stretch;
+    flex-grow: 1;
 
     &:hover,
     &:focus {
