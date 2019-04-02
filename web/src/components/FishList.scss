@@ -45,7 +45,7 @@ $card-border-radius: calc(0.5rem - 1px);
     flex-direction: column;
     justify-content: space-between;
     align-items: stretch;
-    transition: translate 0.3s;
+    transition: all 0.3s;
 
     &:hover,
     &:focus {
