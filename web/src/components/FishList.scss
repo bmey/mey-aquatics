@@ -8,9 +8,11 @@ $card-border-radius: calc(0.5rem - 1px);
 
 .App .card-list {
   display: flex;
+  flex-grow: 1;
   flex-flow: row wrap;
   padding: $grid-gap-mobile / 2;
   margin: -$grid-gap-mobile;
+  align-content: flex-start;
 
   @include media-breakpoint-down(xs) {
     .button-link.button-card {
@@ -43,7 +45,6 @@ $card-border-radius: calc(0.5rem - 1px);
     flex-direction: column;
     justify-content: space-between;
     align-items: stretch;
-    flex-grow: 1;
 
     &:hover,
     &:focus {
