@@ -12,7 +12,6 @@ const FishCard = ({ id, common, scientific, origin, picture, match }) => {
         {picture ? (
           <Image
             publicId={picture}
-            width='500'
             dpr='auto'
             responsive
             aspectRatio='16:9'
