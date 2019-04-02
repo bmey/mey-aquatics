@@ -45,11 +45,14 @@ $card-border-radius: calc(0.5rem - 1px);
     flex-direction: column;
     justify-content: space-between;
     align-items: stretch;
+    transition: translate 0.3s;
 
     &:hover,
     &:focus {
       outline: none;
       box-shadow: 0px 0px 10px 0.1px $primary;
+      border-color: $primary;
+      transform: translate(0, -0.2rem);
     }
   }
 
