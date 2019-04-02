@@ -1,5 +1,4 @@
 import React from 'react';
-import { CardColumns } from 'reactstrap';
 import filter from '../service/filter';
 import sort from '../service/sort';
 import FishCard from './FishCard';
@@ -9,11 +8,11 @@ const FishList = ({ fish, appliedFilters, appliedSortId }) => {
   const filteredList = filter(fish, appliedFilters);
 
   return (
-    <CardColumns>
+    <div className='card-list'>
       {sort(filteredList, appliedSortId).map(item => (
         <FishCard key={item.id} {...item} />
       ))}
-    </CardColumns>
+    </div>
   );
 };
 
