@@ -1,5 +1,6 @@
 {
   "data.json": {
+    "hotItems": ["AF-BUF", "AM-ANGEL-ALTUM"],
     "fish": [
       {
         "common": "Buffalo Head",

@@ -24,7 +24,7 @@ const regions = [
   },
 ];
 
-const Home = ({ data: { fish } }) => (
+const Home = ({ data: { fish, hotItems = [] } }) => (
   <div data-cy='homepage'>
     <header className='homepage-header'>
       <div className='logo-container'>
@@ -63,8 +63,10 @@ const Home = ({ data: { fish } }) => (
         >
           <div className='d-flex flex-column align-items-center worldwide'>
             <span className='text-center'>Check out our most popular and rare items!</span>
-            <Link to='/livestock/AF-V-RG'>Ruby Green</Link>
-            <Link to='/livestock/AM-ANGEL-ALTUM'>Altum Angelfish</Link>
+            {hotItems.map(id => {
+              const itemModel = fish.find(item => item.id == id);
+              return <Link to={`/livestock/${id}`}>{itemModel.common}</Link>;
+            })}
           </div>
         </HomeCard>
         <HomeCard icon={<IoIosWarning />} description='Endangered'>

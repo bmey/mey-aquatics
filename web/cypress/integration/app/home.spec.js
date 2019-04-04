@@ -34,6 +34,25 @@ const itCanUseEndangeredLink = () => {
   });
 };
 
+const itCanUseHotItemLink = () => {
+  it('can navigate to a "hot" item', () => {
+    const testId = 'test-hot-id';
+    const common = 'Test Hot Item';
+    const testData = {
+      fish: [...fishData.fish, { ...setupFish(testId), common }],
+      hotItems: [testId],
+    };
+    cy.route({ url: '/data.json', status: 200, response: testData });
+    cy.visit('/');
+
+    cy.get('a')
+      .contains(common)
+      .click();
+
+    cy.contains(common);
+  });
+};
+
 context('Home page', () => {
   beforeEach(() => {
     cy.server();
@@ -58,6 +77,7 @@ context('Home page', () => {
       });
     });
 
+    itCanUseHotItemLink();
     itCanUseEndangeredLink();
   });
 
@@ -80,6 +100,7 @@ context('Home page', () => {
       );
     });
 
+    itCanUseHotItemLink();
     itCanUseEndangeredLink();
   });
 });
@@ -90,6 +111,13 @@ const setupFish = origin => {
     common: origin,
     scientific: origin,
     origin: origin,
+    sizes: {
+      S: {},
+      M: {},
+      L: {},
+      B: {},
+      F: {},
+    },
   };
 };
 
