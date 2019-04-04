@@ -5,7 +5,7 @@ import ProductDetails from './Livestock/ProductDetails';
 
 const LivestockDetailsPage = ({ data, match, history }) => {
   const { itemId } = match.params;
-  let model = data.fish.find(item => item.id === itemId);
+  let model = data.fish.find(item => item.id.toUpperCase() === itemId.toUpperCase());
 
   return (
     <div data-cy='livestockpage'>
