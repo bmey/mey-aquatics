@@ -64,8 +64,17 @@ const Home = ({ data: { fish, hotItems = [] } }) => (
           <div className='d-flex flex-column align-items-center worldwide'>
             <span className='text-center'>Check out our most popular and rare items!</span>
             {hotItems.map(id => {
-              const itemModel = fish.find(item => item.id == id);
-              return <Link to={`/livestock/${id}`}>{itemModel.common}</Link>;
+              const upperCaseId = id.toUpperCase();
+              const itemModel = fish.find(item => item.id.toUpperCase() === upperCaseId);
+              if (!itemModel) {
+                return null;
+              }
+
+              return (
+                <Link to={`/livestock/${upperCaseId}`} data-test={`view-hot-${id}`} key={id}>
+                  {itemModel.common}
+                </Link>
+              );
             })}
           </div>
         </HomeCard>
