@@ -8,18 +8,14 @@ function onOpen() {
 }
 
 function buildJsonOutput() {
-  var speciesSettings = initSettings_("species settings");
-  var stockSettings = initSettings_("stock settings");
-  var species = JSON.parse(getJsonFromSheet(speciesSettings));
-  var stock = JSON.parse(getJsonFromSheet(stockSettings));
+  var species = getModelFromSheet("species settings");
+  var stock = getModelFromSheet("stock settings");
+  var hotItemsSheetModel = getModelFromSheet("hot items settings");
   var model = {
-    fish: filterAndCombineLists(species, stock),
     postDate: new Date().toUTCString(),
+    hotItems: getHotItems(hotItemsSheetModel),
+    fish: filterAndCombineLists(species, stock),
   };
-
-  if (speciesSettings.options) {
-    model.options = JSON.parse(speciesSettings.options);
-  }
 
   return model;
 }
@@ -61,6 +57,11 @@ function validateAndTranslateHeader(headerSettings, headerValue) {
   }
 
   return headerValue;
+}
+
+function getModelFromSheet(sheetName) {
+  var settings = initSettings_(sheetName);
+  return JSON.parse(getJsonFromSheet(settings));
 }
 
 function getJsonFromSheet(settings) {

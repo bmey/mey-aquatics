@@ -68,11 +68,11 @@ function updateSizeCount(item, stockCount, size) {
 function getOriginId(item) {
   var subOriginId = toKebabCase(item.origin ? item.origin.replace(/\s+/g, "").substr(0, 5) : "OTHER");
   var continentId = item.id.split("-")[0];
-
+  
   if (subOriginId === "SEASI" || subOriginId === "AFRIC") {
-    subOriginId = "OTHER";
+    subOriginId = "OTHER"; 
   }
-
+  
   return continentId + "-" + subOriginId;
 }
 
@@ -98,12 +98,19 @@ function filterAndCombineLists(species, stock) {
     };
 
     if (item.picture) {
-      model.picture = "fish/tagged/" + item.picture;
+      model.picture = item.picture;
     }
-
+    
     model.sizes = combineSizes(model, stockDictionary);
     data.push(model);
   });
 
   return data;
+}
+
+function getHotItems(hotItemsSheetModel) {
+ return hotItemsSheetModel.reduce(function(result, item) {
+    result.push(item.id);
+    return result;
+  }, []); 
 }
