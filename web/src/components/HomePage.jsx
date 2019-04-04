@@ -71,7 +71,7 @@ const Home = ({ data: { fish, hotItems = [] } }) => (
               }
 
               return (
-                <Link to={`/livestock/${upperCaseId}`} data-test={`view-hot-${id}`} key={id}>
+                <Link to={`/livestock/${id}`} data-test={`view-hot-${id}`} key={id}>
                   {itemModel.common}
                 </Link>
               );
