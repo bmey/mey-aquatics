@@ -1,4 +1,4 @@
-import getOrigins from './originList';
+import getOrigins, { nameHash } from './originList';
 
 const mapSubOrigins = (subOrigins, appliedFilters) =>
   subOrigins.map(subOrigin => ({
@@ -29,4 +29,10 @@ const mapStateToOrigins = appliedFilters => {
   return newState;
 };
 
+const removeOtherTag = originId => originId.replace('-OTHER', '');
+const getOriginDisplayName = originId => {
+  return nameHash[removeOtherTag(originId)];
+};
+
+export { getOriginDisplayName };
 export default mapStateToOrigins;

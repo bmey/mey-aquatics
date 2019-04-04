@@ -4,12 +4,7 @@ import { Link } from 'react-router-dom';
 import ButtonLink from './ButtonLink/ButtonLink';
 import Image from './Image/Image';
 import MissingImage from './MissingImage';
-import { nameHash } from '../service/originList';
-
-const removeOtherTag = originId => originId.replace('-OTHER', '');
-const getOriginDisplayName = originId => {
-  return nameHash[removeOtherTag(originId)];
-};
+import { getOriginDisplayName } from '../service/origin';
 
 const FishCard = ({ id, common, scientific, origin, picture, match }) => {
   return (

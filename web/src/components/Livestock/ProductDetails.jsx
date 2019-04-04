@@ -3,6 +3,7 @@ import { Table, Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import Image from '../Image/Image';
 import MissingImage from '../MissingImage';
+import { getOriginDisplayName } from '../../service/origin';
 import './ProductDetails.css';
 
 const sizeMap = [
@@ -55,7 +56,7 @@ const ProductDetails = ({ onCaresList, common, scientific, origin, sizes, pictur
           <ul>
             <li>Common name: {common}</li>
             <li>Scientific name: {scientific}</li>
-            <li>Origin: {origin}</li>
+            <li>Origin: {getOriginDisplayName(origin)}</li>
             <li>Endangered: {onCaresList ? 'Yes' : 'No'}</li>
           </ul>
           <Link to='/contact'>
