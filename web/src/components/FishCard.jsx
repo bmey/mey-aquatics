@@ -4,6 +4,12 @@ import { Link } from 'react-router-dom';
 import ButtonLink from './ButtonLink/ButtonLink';
 import Image from './Image/Image';
 import MissingImage from './MissingImage';
+import { nameHash } from '../service/originList';
+
+const removeOtherTag = originId => originId.replace('-OTHER', '');
+const getOriginDisplayName = originId => {
+  return nameHash[removeOtherTag(originId)];
+};
 
 const FishCard = ({ id, common, scientific, origin, picture, match }) => {
   return (
@@ -33,7 +39,7 @@ const FishCard = ({ id, common, scientific, origin, picture, match }) => {
           </div>
         </div>
         <div className='d-flex justify-content-between align-items-center'>
-          <small className='text-muted'>{origin}</small>
+          <small className='text-muted'>{getOriginDisplayName(origin)}</small>
           <Link to={`${match.url}${id}`} tabIndex={-1}>
             See details
           </Link>

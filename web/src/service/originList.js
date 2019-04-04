@@ -1,65 +1,44 @@
+export const nameHash = {
+  AM: 'Americas',
+  'AM-SAMER': 'South America',
+  'AM-COSTA': 'Costa Rica',
+  'AM-CEAME': 'Central America',
+  'AM-OTHER': 'Other',
+  AF: 'Africa',
+  'AF-CONGO': 'Congo River',
+  'AF-LAKEM': 'Lake Malawi',
+  'AF-LAKET': 'Lake Tanganyika',
+  'AF-LAKEV': 'Lake Victoria',
+  SEA: 'South East Asia',
+  'SEA-INDON': 'Indonesia',
+  'SEA-INDIA': 'India',
+  'SEA-OTHER': 'Other',
+};
+
 const originList = [
   {
     id: 'AM',
-    name: 'Americas',
-    subOrigins: [
-      {
-        id: 'AM-SAMER',
-        name: 'South America',
-      },
-      {
-        id: 'AM-COSTA',
-        name: 'Costa Rica',
-      },
-      {
-        id: 'AM-CEAME',
-        name: 'Central America',
-      },
-      {
-        id: 'AM-OTHER',
-        name: 'Other',
-      },
-    ],
+    name: nameHash['AM'],
+    subOrigins: ['SAMER', 'COSTA', 'CEAME', 'OTHER'].map(subId => ({
+      id: `AM-${subId}`,
+      name: nameHash[`AM-${subId}`],
+    })),
   },
   {
     id: 'AF',
     name: 'Africa',
-    subOrigins: [
-      {
-        id: 'AF-CONGO',
-        name: 'Congo River',
-      },
-      {
-        id: 'AF-LAKEM',
-        name: 'Lake Malawi',
-      },
-      {
-        id: 'AF-LAKET',
-        name: 'Lake Tanganyika',
-      },
-      {
-        id: 'AF-LAKEV',
-        name: 'Lake Victoria',
-      },
-    ],
+    subOrigins: ['CONGO', 'LAKEM', 'LAKET', 'LAKEV'].map(subId => ({
+      id: `AF-${subId}`,
+      name: nameHash[`AF-${subId}`],
+    })),
   },
   {
     id: 'SEA',
     name: 'South East Asia',
-    subOrigins: [
-      {
-        id: 'SEA-INDON',
-        name: 'Indonesia',
-      },
-      {
-        id: 'SEA-INDIA',
-        name: 'India',
-      },
-      {
-        id: 'SEA-OTHER',
-        name: 'Other',
-      },
-    ],
+    subOrigins: ['INDON', 'INDIA', 'OTHER'].map(subId => ({
+      id: `SEA-${subId}`,
+      name: nameHash[`SEA-${subId}`],
+    })),
   },
 ];
 
