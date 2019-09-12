@@ -5,6 +5,7 @@ import Image from '../Image/Image';
 import MissingImage from '../MissingImage';
 import { getOriginDisplayName } from '../../service/origin';
 import './ProductDetails.css';
+import { priceDisplay } from './priceDisplay';
 
 const sizeMap = [
   {
@@ -67,24 +68,30 @@ const ProductDetails = ({ onCaresList, common, scientific, origin, sizes, pictur
         </div>
       </div>
       <h2 style={{ marginTop: '20px' }}>Stock Available</h2>
-      <Table responsive>
+      <Table responsive striped hover>
         <thead>
           <tr>
             <th>Size</th>
-            <th>Length (in)</th>
-            <th>Quantity</th>
+            <th>Price (each)</th>
+            <th>Length (inch)</th>
+            <th>In Stock</th>
           </tr>
         </thead>
         <tbody>
           {sizeMap.map(sizeKey => {
-            const { count, length } = sizes[sizeKey.key];
+            const { count, length, price } = sizes[sizeKey.key];
             if (count === 0) {
               return null;
             }
 
+            const formattedPrice = priceDisplay(price);
+
             return (
               <tr key={sizeKey.key}>
                 <td>{sizeKey.displayName}</td>
+                <td>
+                  {formattedPrice ? formattedPrice : <span className='text-muted'>(unknown)</span>}
+                </td>
                 <td>{length ? `${length}"` : <span className='text-muted'>(unknown)</span>}</td>
                 <td>{count}</td>
               </tr>
