@@ -89,11 +89,11 @@ function filterAndCombineLists(species, stock) {
       scientific: item.scientific,
       origin: getOriginId(item),
       sizes: {
-        F: { length: +item.sizeF || 0 },
-        S: { length: +item.sizeS || 0 },
-        M: { length: +item.sizeM || 0 },
-        L: { length: +item.sizeL || 0 },
-        B: { length: +item.sizeB || 0 },
+        F: { length: +item.sizeF || 0, price: item.priceF },
+        S: { length: +item.sizeS || 0, price: item.priceS },
+        M: { length: +item.sizeM || 0, price: item.priceM },
+        L: { length: +item.sizeL || 0, price: item.priceL },
+        B: { length: +item.sizeB || 0, price: item.priceB },
       },
     };
 
