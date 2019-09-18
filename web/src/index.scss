@@ -63,6 +63,14 @@ a {
   }
 }
 
+.a11y-offscreen {
+  position: absolute !important;
+  left: 0 !important;
+  bottom: -1 !important;
+  z-index: -1 !important;
+  opacity: 0;
+}
+
 @include media-breakpoint-up(sm) {
   .navbar-legal {
     flex-direction: row !important;

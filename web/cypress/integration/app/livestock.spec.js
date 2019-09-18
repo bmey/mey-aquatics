@@ -1,6 +1,16 @@
 /// <reference types="Cypress" />
 import { SORT_BY } from '../../../src/utility/constants';
 
+const setupDataResponse = (fishData = defaultFishData) => {
+  cy.route({
+    url: '/data.json',
+    status: 200,
+    response: {
+      fish: fishData
+    }
+  });
+};
+
 const canChangeFilters = () => {
   describe('can change filters', () => {
     it('common name sorting', () => {
@@ -54,18 +64,43 @@ const canChangeFilters = () => {
 context('Livestock', () => {
   beforeEach(() => {
     cy.server();
-    cy.route({ url: '/data.json', status: 200, response: fishData });
+  });
+
+  it('search submit returns filtered list', () => {
+    setupDataResponse([
+      setupFish(),
+      setupFish({
+        id: 'test-id-1',
+        common: 'foo',
+      })
+    ]);
+    cy.visit('/livestock');
+
+    cy.get("[data-test='search-input']").type('foo');
+    cy.get("[data-test='search-submit']").click();
+
+    cy.get("[data-test^='livestock-item']")
+      .should('have.length', 1)
+      .first()
+      .should(
+        'have.attr',
+        'data-test',
+        'livestock-item-test-id-1'
+      );
   });
 
   context('view:desktop', () => {
     beforeEach(() => {
+      setupDataResponse();
       cy.visit('/livestock');
     });
+
     canChangeFilters();
   });
 
   context('view:mobile', () => {
     beforeEach(() => {
+      setupDataResponse();
       cy.viewport('iphone-6');
       cy.visit('/livestock');
       cy.get("[data-test='filter-button']").click();
@@ -75,33 +110,29 @@ context('Livestock', () => {
   });
 });
 
-const fishData = {
-  fish: [
-    {
-      id: 'A',
-      onCaresList: false,
-      common: 'A',
-      scientific: 'ZZ',
-      origin: 'AM-OTHER',
-      sizes: {
-        S: {
-          length: 0,
-          count: 0,
-        },
+const setupFish = (overrides = {}) => {
+  return {
+    id: 'A',
+    onCaresList: false,
+    common: 'A',
+    scientific: 'ZZ',
+    origin: 'AM-OTHER',
+    sizes: {
+      S: {
+        length: 0,
+        count: 0,
       },
     },
-    {
-      id: 'Z',
-      onCaresList: true,
-      common: 'Z',
-      scientific: 'AA',
-      origin: 'AM-OTHER',
-      sizes: {
-        S: {
-          length: 0,
-          count: 0,
-        },
-      },
-    },
-  ],
+    ...overrides,
+  };
 };
+
+const defaultFishData = [
+  setupFish(),
+  setupFish({
+    id: 'Z',
+    onCaresList: true,
+    common: 'Z',
+    scientific: 'AA',
+  }),
+];

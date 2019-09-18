@@ -60,6 +60,32 @@ describe('filter', () => {
     expect(result.map(r => r.id)).toEqual(expect.arrayContaining(['test1', 'test2', 'test3']));
     expect(result.length).toBe(3);
   });
+
+  it('only includes items that match search term', () => {
+    const productList = [
+      { id: 'test1', common: 'TEST-1' },
+      { id: 'test2', common: 'TEST-2' },
+    ];
+    const appliedFilters = [{ type: FILTER.SEARCH, value: "2" }];
+
+    const result = filter(productList, appliedFilters);
+
+    expect(result.map(r => r.id)).toEqual(expect.arrayContaining(['test2']));
+    expect(result.length).toBe(1);
+  });
+
+  it('includes items with scientific name that match search term', () => {
+    const productList = [
+      { id: 'test1', common: 'TEST-1', scientific: 'foo' },
+      { id: 'test2', common: 'TEST-2', scientific: 'bar' },
+    ];
+    const appliedFilters = [{ type: FILTER.SEARCH, value: "bar" }];
+
+    const result = filter(productList, appliedFilters);
+
+    expect(result.map(r => r.id)).toEqual(expect.arrayContaining(['test2']));
+    expect(result.length).toBe(1);
+  });
 });
 
 describe('isFilterApplied', () => {

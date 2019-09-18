@@ -15,6 +15,7 @@ export const SORT_BY = {
 export const FILTER = {
   CARES_LIST: 0,
   ORIGIN: 1,
+  SEARCH: 2,
 };
 
 export const SOCIAL_MEDIA = [

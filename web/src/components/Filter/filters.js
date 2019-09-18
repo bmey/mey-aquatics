@@ -23,7 +23,9 @@ export const applyFilter = (state, action) => {
     return [...otherFilters, { type, values }];
   }
 
-  return state.some(filter => filter.type === type) ? state : [...state, action.payload];
+  return state.some(filter => filter.type === type)
+    ? [...state.filter(filter => filter.type !== type), action.payload]
+    : [...state, action.payload];
 };
 
 export const removeFilter = (state, action) => {

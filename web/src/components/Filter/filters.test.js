@@ -190,6 +190,21 @@ describe('appliedFilters reducer', () => {
     expect(result[0].type).toEqual(filterType);
   });
 
+  it('merges duplicate filter when action is APPLY_FILTER and payload type is not ORIGIN', () => {
+    const filterType = FILTER.SEARCH;
+    const action = { payload: { type: filterType, value: 'new' } };
+    const state = [{ type: filterType, value: 'old' }, { type: FILTER.CARES_LIST }];
+
+    const result = applyFilter(state, action);
+
+    expect(result).toEqual(
+      expect.arrayContaining([
+        { type: filterType, value: 'new' },
+        { type: FILTER.CARES_LIST }
+      ])
+    );
+  });
+
   it('removes filter when action is REMOVE_FILTER', () => {
     const filterType = FILTER.CARES_LIST;
     const otherFilter = 999;

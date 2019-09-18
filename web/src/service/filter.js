@@ -1,9 +1,13 @@
 import { FILTER } from '../utility/constants';
-import { compareCaseInsentitive } from '../utility/strings';
+import { compareCaseInsentitive, containsCaseInsensitive } from '../utility/strings';
 
 export const isFilterApplied = (appliedFilters, filterType) => {
   return appliedFilters.some(filter => filter.type === filterType);
 };
+
+export const getFilter = (appliedFilters, filterType) => {
+  return appliedFilters.filter(filter => filter.type === filterType)[0];
+}
 
 const filter = (productList, appliedFilters = []) => {
   if (!productList) {
@@ -11,16 +15,25 @@ const filter = (productList, appliedFilters = []) => {
   }
 
   let filteredList = productList;
-  if (appliedFilters.some(filter => filter.type === FILTER.CARES_LIST)) {
+  if (isFilterApplied(appliedFilters, FILTER.SEARCH)) {
+    const searchTerm = getFilter(appliedFilters, FILTER.SEARCH).value;
+
+    filteredList = filteredList.filter(product => {
+      const subject = product.common.concat(' ', product.scientific);
+      return containsCaseInsensitive(subject, searchTerm);
+    });
+  }
+
+  if (isFilterApplied(appliedFilters, FILTER.CARES_LIST)) {
     filteredList = filteredList.filter(product => product.onCaresList);
   }
 
-  if (appliedFilters.some(filter => filter.type === FILTER.ORIGIN)) {
-    const originFilter = appliedFilters.filter(filter => filter.type === FILTER.ORIGIN)[0].values;
+  if (isFilterApplied(appliedFilters, FILTER.ORIGIN)) {
+    const originFilters = getFilter(appliedFilters, FILTER.ORIGIN).values;
 
-    if (originFilter.length > 0) {
+    if (originFilters.length > 0) {
       filteredList = filteredList.filter(product =>
-        originFilter.some(filter => compareCaseInsentitive(filter, product.origin) === 0)
+        originFilters.some(filter => compareCaseInsentitive(filter, product.origin) === 0)
       );
     }
   }
