@@ -21,7 +21,7 @@ a {
 }
 
 .bg-gray {
-  background-color: lighten($color-gray-dark, 65%);
+  background-color: $bg-gray;
 }
 
 .color-primary {
