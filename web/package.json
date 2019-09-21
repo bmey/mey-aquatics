@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^3.9.2",
-    "@material-ui/icons": "^3.0.2",
+    "@material-ui/core": "^4.4.2",
+    "@material-ui/icons": "^4.4.1",
     "axios": "^0.18.0",
-    "bootstrap": "^4.1.3",
+    "bootstrap": "^4.3.1",
     "cloudinary-react": "^1.0.6",
     "lodash": "^4.17.11",
     "modern-normalize": "^0.5.0",
@@ -15,8 +15,8 @@
     "react-dom": "^16.9.0",
     "react-icons": "^3.7.0",
     "react-media": "^1.10.0",
-    "react-router-dom": "^4.3.1",
-    "reactstrap": "^6.4.0"
+    "react-router-dom": "^5.0.1",
+    "reactstrap": "^8.0.1"
   },
   "scripts": {
     "start-js": "react-app-rewired start",
