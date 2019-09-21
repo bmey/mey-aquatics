@@ -7,7 +7,6 @@ $color-gray-light: #f9fbfa;
 
 $bg-gray: lighten($color-gray-dark, 65%);
 
-
 // bootstrap overrides
 $primary: $color-secondary-1;
 $secondary: $color-gray-dark;
@@ -18,5 +17,5 @@ $theme-colors: (
   'primary': $primary,
   'secondary': $secondary,
   'light': $light,
-  'dark': $dark
+  'dark': $dark,
 );

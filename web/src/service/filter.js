@@ -7,7 +7,7 @@ export const isFilterApplied = (appliedFilters, filterType) => {
 
 export const getFilter = (appliedFilters, filterType) => {
   return appliedFilters.filter(filter => filter.type === filterType)[0];
-}
+};
 
 const filter = (productList, appliedFilters = []) => {
   if (!productList) {

@@ -6,8 +6,8 @@ const setupDataResponse = (fishData = defaultFishData) => {
     url: '/data.json',
     status: 200,
     response: {
-      fish: fishData
-    }
+      fish: fishData,
+    },
   });
 };
 
@@ -72,7 +72,7 @@ context('Livestock', () => {
       setupFish({
         id: 'test-id-1',
         common: 'foo',
-      })
+      }),
     ]);
     cy.visit('/livestock');
 
@@ -82,11 +82,7 @@ context('Livestock', () => {
     cy.get("[data-test^='livestock-item']")
       .should('have.length', 1)
       .first()
-      .should(
-        'have.attr',
-        'data-test',
-        'livestock-item-test-id-1'
-      );
+      .should('have.attr', 'data-test', 'livestock-item-test-id-1');
   });
 
   context('view:desktop', () => {

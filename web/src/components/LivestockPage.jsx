@@ -14,17 +14,19 @@ const LivestockPage = props => (
         <div className='search'>
           <SearchContainer />
         </div>
-        {props.data && <>
-          <div className='results'>
-            <ResultsContainer {...props.data} />
-          </div>
-          <div className='filter'>
-            <Filter />
-          </div>
-          <div className='data'>
-            <FishList {...props.data} />
-          </div>
-        </>}
+        {props.data && (
+          <>
+            <div className='results'>
+              <ResultsContainer {...props.data} />
+            </div>
+            <div className='filter'>
+              <Filter />
+            </div>
+            <div className='data'>
+              <FishList {...props.data} />
+            </div>
+          </>
+        )}
       </div>
     </div>
   </FilterProvider>

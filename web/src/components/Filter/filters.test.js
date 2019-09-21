@@ -198,10 +198,7 @@ describe('appliedFilters reducer', () => {
     const result = applyFilter(state, action);
 
     expect(result).toEqual(
-      expect.arrayContaining([
-        { type: filterType, value: 'new' },
-        { type: FILTER.CARES_LIST }
-      ])
+      expect.arrayContaining([{ type: filterType, value: 'new' }, { type: FILTER.CARES_LIST }])
     );
   });
 

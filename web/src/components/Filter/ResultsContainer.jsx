@@ -10,31 +10,30 @@ const ResultsContainer = ({ fish }) => (
     {context => {
       const { filters } = context;
       const filteredList = filter(fish, filters);
-      const searchFilter = isFilterApplied(filters, FILTER.SEARCH) ? getFilter(filters, FILTER.SEARCH) : {};
+      const searchFilter = isFilterApplied(filters, FILTER.SEARCH)
+        ? getFilter(filters, FILTER.SEARCH)
+        : {};
       const searchTerm = searchFilter.value;
 
-      let fromFiltersText = "";
+      let fromFiltersText = '';
       if (filters.length > 1) {
-        const filtersSuffix = filters.length > 2 ? "filters" : "filter";
+        const filtersSuffix = filters.length > 2 ? 'filters' : 'filter';
         fromFiltersText = ` and ${filters.length - 1} other ${filtersSuffix}`;
       }
 
       return (
         <Media query='(min-width: 768px)'>
-          {matches =>
+          {matches => (
             <span>
-              <strong>
-                {filteredList.length}
-              </strong>&nbsp;results
-              {matches && searchTerm ?
-                (
-                  <span>
-                    &nbsp;for {`"${searchTerm}"`}{fromFiltersText}
-                  </span>
-                )
-                : null}
+              <strong>{filteredList.length}</strong>&nbsp;results
+              {matches && searchTerm ? (
+                <span>
+                  &nbsp;for {`"${searchTerm}"`}
+                  {fromFiltersText}
+                </span>
+              ) : null}
             </span>
-          }
+          )}
         </Media>
       );
     }}

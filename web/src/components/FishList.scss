@@ -14,11 +14,11 @@ $card-border-radius: calc(0.5rem - 1px);
   margin: -$grid-gap-mobile;
   align-content: flex-start;
 
-  @include media-breakpoint-between(xs,sm) {
+  @include media-breakpoint-between(xs, sm) {
     justify-content: center;
   }
 
-  @include media-breakpoint-down(xs) {    
+  @include media-breakpoint-down(xs) {
     .button-link.button-card {
       flex-basis: 45%;
     }

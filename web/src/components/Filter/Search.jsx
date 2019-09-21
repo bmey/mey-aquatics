@@ -5,23 +5,23 @@ import { FILTER } from '../../utility/constants';
 import { isEmpty } from '../../utility/strings';
 import './Search.css';
 
-const id = "search-input";
+const id = 'search-input';
 class Search extends React.Component {
   state = {
-    value: this.props.searchTerm || "",
-  }
+    value: this.props.searchTerm || '',
+  };
 
-  onChange = (event) => {
+  onChange = event => {
     this.setState({
-      value: event.target.value
+      value: event.target.value,
     });
-  }
+  };
 
-  onKeyUp = (event) => {
+  onKeyUp = event => {
     if (event.key === 'Enter') {
       this.onSubmit();
     }
-  }
+  };
 
   onSubmit = () => {
     const { applyFilter, removeFilter } = this.props;
@@ -32,12 +32,14 @@ class Search extends React.Component {
     } else if (this.props.searchTerm !== searchTerm) {
       applyFilter({ type: FILTER.SEARCH, value: searchTerm });
     }
-  }
+  };
 
   render() {
     return (
       <FormGroup>
-        <Label for={id} className="a11y-offscreen">Search</Label>
+        <Label for={id} className='a11y-offscreen'>
+          Search
+        </Label>
         <InputGroup>
           <Input
             name={id}
@@ -49,9 +51,14 @@ class Search extends React.Component {
             onKeyUp={this.onKeyUp}
             autoComplete={false}
           />
-          <InputGroupAddon addonType="append">
-            <Button id="search-submit" data-test="search-submit" color="primary" onClick={this.onSubmit}>
-              <SearchIcon className="icon" />
+          <InputGroupAddon addonType='append'>
+            <Button
+              id='search-submit'
+              data-test='search-submit'
+              color='primary'
+              onClick={this.onSubmit}
+            >
+              <SearchIcon className='icon' />
               Search
             </Button>
           </InputGroupAddon>

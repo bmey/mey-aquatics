@@ -1,4 +1,3 @@
-const unknownText = '(unknown)';
 const locale = 'en-US';
 const options = {
   style: 'currency',

@@ -62,11 +62,8 @@ describe('filter', () => {
   });
 
   it('only includes items that match search term', () => {
-    const productList = [
-      { id: 'test1', common: 'TEST-1' },
-      { id: 'test2', common: 'TEST-2' },
-    ];
-    const appliedFilters = [{ type: FILTER.SEARCH, value: "2" }];
+    const productList = [{ id: 'test1', common: 'TEST-1' }, { id: 'test2', common: 'TEST-2' }];
+    const appliedFilters = [{ type: FILTER.SEARCH, value: '2' }];
 
     const result = filter(productList, appliedFilters);
 
@@ -79,7 +76,7 @@ describe('filter', () => {
       { id: 'test1', common: 'TEST-1', scientific: 'foo' },
       { id: 'test2', common: 'TEST-2', scientific: 'bar' },
     ];
-    const appliedFilters = [{ type: FILTER.SEARCH, value: "bar" }];
+    const appliedFilters = [{ type: FILTER.SEARCH, value: 'bar' }];
 
     const result = filter(productList, appliedFilters);
 
