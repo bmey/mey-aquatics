@@ -1,0 +1,92 @@
+.checkbox {
+  position: relative;
+  cursor: pointer;
+  transition: all 250ms cubic-bezier(.4,.0,.23,1);//all .1s linear;
+
+  > *, * {
+    transition: all 250ms cubic-bezier(.4,.0,.23,1);//all .1s linear;
+  }
+
+  input[type=checkbox] {
+    opacity: .02;
+    border: 0 none;
+    margin: 0;
+    outline: 0 none;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    bottom: auto;
+    left: 0;
+    z-index: -1;
+  }
+
+//input[type='checkbox']{ height: 0; width: 0; }
+
+
+//   transition: color 250ms cubic-bezier(.4,.0,.23,1);
+
+// input[type=checkbox] + svg{
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   margin-right: 1em;
+//   width: 1em;
+//   height: 1em;
+//   background: transparent;
+//   border: 2px solid #9E9E9E;
+//   border-radius: 2px;
+//   cursor: pointer;  
+//   transition: all 250ms cubic-bezier(.4,.0,.23,1);
+// }
+
+// input[type=checkbox]:checked + svg {
+//   border: .5em solid #FFEB3B;
+//   animation: shrink-bounce 200ms cubic-bezier(.4,.0,.23,1);
+// }
+// input[type=checkbox]:checked + svg:before{
+//   content: "";
+//   position: absolute;
+//   top: .6em;
+//   left: .2em;
+//   border-right: 3px solid transparent;
+//   border-bottom: 3px solid transparent;
+//   transform: rotate(45deg);
+//   transform-origin: 0% 100%;
+//   animation: checkbox-check 125ms 250ms cubic-bezier(.4,.0,.23,1) forwards;
+// }
+
+// @keyframes shrink-bounce{
+//   0%{
+//     transform: scale(1);
+//   }
+//   33%{    
+//     transform: scale(.85);
+//   }
+//   100%{
+//     transform: scale(1);    
+//   }
+// }
+// @keyframes checkbox-check{
+//   0%{
+//     width: 0;
+//     height: 0;
+//     border-color: #212121;
+//     transform: translate3d(0,0,0) rotate(45deg);
+//   }
+//   33%{
+//     width: .2em;
+//     height: 0;
+//     transform: translate3d(0,0,0) rotate(45deg);
+//   }
+//   100%{    
+//     width: .2em;
+//     height: .5em;    
+//     border-color: #212121;
+//     transform: translate3d(0,-.5em,0) rotate(45deg);
+//   }
+//}
+
+  // input[type=checkbox] {
+  //   color: red;
+  // }
+}

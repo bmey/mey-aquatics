@@ -4,6 +4,17 @@ import ErrorPage from './components/ErrorPage';
 import LoadedApp from './components/LoadedApp';
 import './App.css';
 
+//import { createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
+
+const theme = {};
+// createMuiTheme({
+//   palette: {
+//     primary: { main: '#a840c5' },
+//     secondary: { main: '#414542' },
+//   },
+// });
+
 class App extends Component {
   state = {
     data: null,
@@ -32,7 +43,13 @@ class App extends Component {
       PageComponent = <LoadedApp data={data} data-test='loaded' />;
     }
 
-    return <div className='App'>{PageComponent}</div>;
+    return (
+      <div className='App'>
+        <ThemeProvider theme={theme}>
+          {PageComponent}
+        </ThemeProvider>
+      </div>
+    );
   }
 }
 

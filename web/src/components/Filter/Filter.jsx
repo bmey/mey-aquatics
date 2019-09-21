@@ -3,6 +3,7 @@ import { UncontrolledButtonDropdown, DropdownItem, DropdownToggle, DropdownMenu 
 import { isFilterApplied } from '../../service/filter';
 import { FILTER } from '../../utility/constants';
 import OriginCheckbox from './OriginCheckbox';
+import Checkbox from './Checkbox';
 
 const Filter = ({
   appliedFilters,
@@ -16,9 +17,9 @@ const Filter = ({
   const isEndangeredChecked = isFilterApplied(appliedFilters, FILTER.CARES_LIST);
   return (
     <div>
-      <div>Sort by</div>
-      <UncontrolledButtonDropdown setActiveFromChild>
-        <DropdownToggle caret data-test='sort-dropdown'>
+      <div><strong>Sort by</strong></div>
+      <UncontrolledButtonDropdown setActiveFromChild outline>
+        <DropdownToggle caret data-test='sort-dropdown' outline>
           {sortOptions.filter(option => option.id === appliedSortId).map(option => option.name)}
         </DropdownToggle>
         <DropdownMenu data-test='sort-dropdown-menu'>
@@ -38,32 +39,33 @@ const Filter = ({
         </DropdownMenu>
       </UncontrolledButtonDropdown>
 
-      <div>Filter by</div>
-      <ul>
+      <div style={{ marginTop: '20px' }}><strong>Filter by</strong></div>
+      <ul style={{
+        margin: '0 0 0 10px',
+        padding: 0,
+        listStyleType: 'none',
+      }}>
         <li>
-          <div>Endangered</div>
+          <strong>Endangered</strong>
           <div>
-            <label htmlFor='endangered'>
-              <input
-                name='endangered'
-                id='endangered'
-                type='checkbox'
-                checked={isEndangeredChecked}
-                data-test='filter-endangered'
-                readOnly
-                onClick={() =>
-                  isEndangeredChecked
-                    ? removeFilter({ type: FILTER.CARES_LIST })
-                    : applyFilter({ type: FILTER.CARES_LIST })
-                }
-              />
+            <Checkbox
+              id='endangered'
+              checked={isEndangeredChecked}
+              data-test='filter-endangered'
+              readOnly
+              onClick={() =>
+                isEndangeredChecked
+                  ? removeFilter({ type: FILTER.CARES_LIST })
+                  : applyFilter({ type: FILTER.CARES_LIST })
+              }
+            >
               &nbsp; On C.A.R.E.S. List
-            </label>
+            </Checkbox>
           </div>
         </li>
 
         <li>
-          <div>Place of origin</div>
+          <strong>Place of origin</strong>
           {originOptions.map(origin => {
             const { subOrigins, ...rest } = origin;
             const filterActions = { applyFilter, removeFilter };
