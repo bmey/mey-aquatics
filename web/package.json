@@ -23,6 +23,7 @@
     "start-server": "json-server mock-server/db.json",
     "start": "npm-run-all -p -l start-js start-server build-css cypress:open",
     "cypress:open": "cypress open",
+    "cypress:run": "cypress run --config watchForFileChanges=false,video=false",
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
     "watch-css": "yarn build-css --watch",
     "build-js": "react-app-rewired build",
@@ -31,6 +32,8 @@
     "deploy": "npm-run-all --serial build firebase-deploy",
     "lint:fix": "prettier --write \"{src,cypress}/**/*.{js,jsx,scss,json}\" \"*.json\"",
     "test": "react-scripts test --env=jsdom",
+    "test:integration": "start-server-and-test start-js http://localhost:3000 cypress:run",
+    "test:all": "cross-env CI=true BROWSER=none npm-run-all -p -l test:integration test",
     "stats": "npm run build-js -- --stats",
     "analyze": "npx webpack-bundle-analyzer ./build/bundle-stats.json",
     "eject": "react-scripts eject"
@@ -50,6 +53,7 @@
     "react-app-rewired": "^2.1.3",
     "react-scripts": "3.1.2",
     "react-test-renderer": "^16.9.0",
+    "start-server-and-test": "^1.10.2",
     "stylelint": "^11.0.0",
     "stylelint-config-recommended": "^3.0.0",
     "webpack-bundle-analyzer": "^3.1.0"
