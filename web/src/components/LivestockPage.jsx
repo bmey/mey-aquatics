@@ -1,33 +1,25 @@
 import React from 'react';
-import FishList from './Livestock/ProductListContainer';
-import Filter from './Filter/FilterContainer';
+import { Route, Switch } from 'react-router-dom';
+import LivestockDetailsPage from './LivestockDetailsPage';
+import DefaultListPage from './Livestock/DefaultListPage';
 import SearchContainer from './Filter/SearchContainer';
-import ResultsContainer from './Filter/ResultsContainer';
 import { FilterProvider } from './Filter/FilterContext';
+import MobileFilter from './Filter/MobileFilter';
 import './LivestockPage.css';
 
 const LivestockPage = props => (
   <FilterProvider>
     <div data-cy='livestockpage'>
       <h1 className='a11y-offscreen'>Live Stock</h1>
-      <div className='livestock-list-page'>
-        <div className='search'>
-          <SearchContainer />
-        </div>
-        {props.data && (
-          <>
-            <div className='results'>
-              <ResultsContainer {...props.data} />
-            </div>
-            <div className='filter'>
-              <Filter />
-            </div>
-            <div className='data'>
-              <FishList {...props.data} />
-            </div>
-          </>
-        )}
+      <div className='search'>
+        <SearchContainer />
       </div>
+
+      <Switch>
+        <Route exact path='/livestock/' render={() => <DefaultListPage {...props} />} />
+        <Route path='/livestock/filter' render={() => <MobileFilter {...props} />} />
+        <Route path='/livestock/:itemId' render={() => <LivestockDetailsPage {...props} />} />
+      </Switch>
     </div>
   </FilterProvider>
 );

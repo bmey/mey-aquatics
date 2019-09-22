@@ -1,97 +1,18 @@
-@import 'bootstrap/scss/_functions';
-@import 'bootstrap/scss/_variables';
-@import 'bootstrap/scss/mixins/_breakpoints';
 @import '../variables.scss';
 
-$outside-gutter-size: 20px;
+.search {
+  background-color: $bg-gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  align-self: stretch;
+  height: 75px;
+  padding: 5px $grid-gap-default;
 
-.livestock-list-page {
-  display: grid;
-  grid-template-rows: [search] 75px [results] 50px [body] auto [end];
-
-  @include media-breakpoint-up(md) {
-    grid-template-columns: [first] 240px [second] auto [end];
-    grid-column-gap: $grid-gap-default;
-    grid-row-gap: $grid-gap-default / 2;
-
-    .results {
-      grid-column: first / end;
-    }
-
-    .filter {
-      grid-row: body;
-      grid-column: first / second;
-      align-self: start;
-
-      margin-left: $outside-gutter-size;
-    }
-
-    .data {
-      grid-column: second / end;
-      padding-right: $outside-gutter-size;
-    }
-  }
-
-  @include media-breakpoint-down(sm) {
-    grid-template-columns: [first] 1fr [second] auto [end];
-    grid-row-gap: $grid-gap-mobile / 2;
-
-    .filter {
-      grid-row: results;
-      grid-column: second / end;
-      justify-self: end;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding-right: $outside-gutter-size;
-    }
-
-    .results {
-      grid-column: first / second;
-      justify-self: start;
-    }
-
-    .data {
-      grid-column: first / end;
-      padding: 0 ($outside-gutter-size - 5px);
-    }
-  }
-
-  .search {
-    grid-row: search;
-    grid-column: first / end;
-    align-self: stretch;
-
-    padding: 5px $outside-gutter-size;
-  }
-
-  .results {
-    grid-row: results;
-    align-self: stretch;
-
-    padding: 5px $outside-gutter-size;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .data {
-    grid-row: body;
-    align-self: stretch;
-  }
-
-  .search {
-    background-color: $bg-gray;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
-
-    .form-group {
-      margin: 0;
-      max-width: 600px;
-      width: 100%;
-    }
+  .form-group {
+    margin: 0;
+    max-width: 600px;
+    width: 100%;
   }
 }

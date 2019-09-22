@@ -31,6 +31,9 @@ class Search extends React.Component {
       removeFilter({ type: FILTER.SEARCH });
     } else if (this.props.searchTerm !== searchTerm) {
       applyFilter({ type: FILTER.SEARCH, value: searchTerm });
+      if (this.props.location.pathName !== '/livestock/') {
+        this.props.history.push('/livestock/');
+      }
     }
   };
 

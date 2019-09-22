@@ -11,11 +11,14 @@ const setupDataResponse = (fishData = defaultFishData) => {
   });
 };
 
-const canChangeFilters = () => {
+const canChangeFilters = (isMobile = false) => {
   describe('can change filters', () => {
     it('common name sorting', () => {
       cy.get("[data-test='sort-dropdown']").click();
       cy.get(`[data-test='sort-option-${SORT_BY.ALPHABETICAL_COMMON_DESCENDING}']`).click();
+      if (isMobile) {
+        cy.get("[data-test='go-back']").click();
+      }
       cy.get("[data-test^='livestock-item']:first").should(
         'have.attr',
         'data-test',
@@ -26,14 +29,23 @@ const canChangeFilters = () => {
     it('scientific name sorting', () => {
       cy.get("[data-test='sort-dropdown']").click();
       cy.get(`[data-test='sort-option-${SORT_BY.ALPHABETICAL_SCIENTIFIC}']`).click();
+      if (isMobile) {
+        cy.get("[data-test='go-back']").click();
+      }
       cy.get("[data-test^='livestock-item']:first").should(
         'have.attr',
         'data-test',
         'livestock-item-Z'
       );
 
+      if (isMobile) {
+        cy.get("[data-test='filter-button']").click();
+      }
       cy.get("[data-test='sort-dropdown']").click();
       cy.get(`[data-test='sort-option-${SORT_BY.ALPHABETICAL_SCIENTIFIC_DESCENDING}']`).click();
+      if (isMobile) {
+        cy.get("[data-test='go-back']").click();
+      }
       cy.get("[data-test^='livestock-item']:first").should(
         'have.attr',
         'data-test',
@@ -43,19 +55,37 @@ const canChangeFilters = () => {
 
     it('endangered species filter', () => {
       cy.get("[data-test='filter-endangered']").click();
+      if (isMobile) {
+        cy.get("[data-test='go-back']").click();
+      }
       cy.get("[data-test^='livestock-item']")
         .should('have.length', 1)
         .and('have.attr', 'data-test', 'livestock-item-Z');
 
+      if (isMobile) {
+        cy.get("[data-test='filter-button']").click();
+      }
       cy.get("[data-test='filter-endangered']").click();
+      if (isMobile) {
+        cy.get("[data-test='go-back']").click();
+      }
       cy.get("[data-test^='livestock-item']").should('have.length', 2);
     });
 
     it('origin filter', () => {
       cy.get(`[data-test='filter-origin-AF']`).click();
+      if (isMobile) {
+        cy.get("[data-test='go-back']").click();
+      }
       cy.get("[data-test^='livestock-item']").should('have.length', 0);
 
+      if (isMobile) {
+        cy.get("[data-test='filter-button']").click();
+      }
       cy.get(`[data-test='filter-origin-AM-OTHER']`).click();
+      if (isMobile) {
+        cy.get("[data-test='go-back']").click();
+      }
       cy.get("[data-test^='livestock-item']").should('have.length', 2);
     });
   });
@@ -102,7 +132,7 @@ context('Livestock', () => {
       cy.get("[data-test='filter-button']").click();
     });
 
-    canChangeFilters();
+    canChangeFilters(true);
   });
 });
 

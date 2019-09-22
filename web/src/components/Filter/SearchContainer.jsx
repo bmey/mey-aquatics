@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import { FILTER } from '../../utility/constants';
 import { isFilterApplied, getFilter } from '../../service/filter';
 import Search from './Search';
@@ -18,4 +19,4 @@ const SearchContainer = props => (
   </FilterContext.Consumer>
 );
 
-export default SearchContainer;
+export default withRouter(SearchContainer);

@@ -93,6 +93,7 @@ context('Home page', () => {
       cy.get("[data-test='filter-button']").click();
 
       cy.get(`[data-test^='filter-origin-${id}'] input[type=checkbox]`).should('be.checked');
+      cy.get("[data-test='go-back']").click();
       cy.get("[data-test^='livestock-item']").should(
         'have.attr',
         'data-test',

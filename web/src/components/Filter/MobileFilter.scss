@@ -1,8 +1,15 @@
-.filter-wrapper {
-  max-height: 60vh;
-  overflow-y: scroll;
+.mobile-filter-wrapper {
+  padding: 6px 20px;
+}
 
-  // adjust for scrollbar
-  margin-right: -12px;
-  padding-right: 10px;
+.mobile-filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-filter-body {
+  margin-top: 6px;
+  padding-top: 15px;
+  border-top: 1px solid #ccc;
 }

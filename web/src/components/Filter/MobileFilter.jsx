@@ -1,41 +1,28 @@
 import React from 'react';
-import { Button, Popover, PopoverHeader, PopoverBody } from 'reactstrap';
-import Filter from './Filter';
+import { Button } from 'reactstrap';
+import Filter from './FilterContainer';
+import ResultsContainer from './ResultsContainer';
 import './MobileFilter.css';
 
-class MobileFilter extends React.Component {
-  state = {
-    popoverOpen: false,
-  };
-
-  toggle = () => {
-    this.setState({
-      popoverOpen: !this.state.popoverOpen,
-    });
-  };
-
-  render() {
-    return (
-      <div className='d-flex justify-content-end'>
-        <Button id='filter-button' type='button' data-test='filter-button'>
-          Filter
-        </Button>
-        <Popover
-          placement='bottom'
-          isOpen={this.state.popoverOpen}
-          target='filter-button'
-          toggle={this.toggle}
+const MobileFilter = props =>
+  props.data && (
+    <div className='mobile-filter-wrapper'>
+      <div className='mobile-filter-header'>
+        <ResultsContainer {...props.data} />
+        <Button
+          onClick={props.history.goBack}
+          type='button'
+          outline
+          color='secondary'
+          data-test='go-back'
         >
-          <PopoverHeader>Filter by</PopoverHeader>
-          <PopoverBody>
-            <div className='filter-wrapper'>
-              <Filter {...this.props} />
-            </div>
-          </PopoverBody>
-        </Popover>
+          &lt; Go Back
+        </Button>
       </div>
-    );
-  }
-}
+      <div className='mobile-filter-body'>
+        <Filter />
+      </div>
+    </div>
+  );
 
 export default MobileFilter;
