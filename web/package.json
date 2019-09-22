@@ -21,8 +21,8 @@
   },
   "scripts": {
     "start-js": "react-app-rewired start",
-    "start-server": "json-server mock-server/db.json",
-    "start": "npm-run-all -p -l start-js start-server build-css cypress:open",
+    "start-server": "json-server --host 192.168.1.235 mock-server/db.json",
+    "start": "npm-run-all -p -l start-js start-server",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run --config watchForFileChanges=false,video=false",
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",

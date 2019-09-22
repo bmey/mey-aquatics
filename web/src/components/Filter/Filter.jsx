@@ -4,6 +4,7 @@ import { isFilterApplied } from '../../service/filter';
 import { FILTER } from '../../utility/constants';
 import OriginCheckbox from './OriginCheckbox';
 import Checkbox from './Checkbox';
+import { Foo } from './Foo';
 
 const Filter = ({
   appliedFilters,
@@ -13,14 +14,26 @@ const Filter = ({
   appliedSortId,
   sortOptions = [],
   originOptions = [],
+  ...contextActions,
 }) => {
+  //contextActions.addLog(`originOptions:`);
+  // console.log('renderFilter');
+
+  const options = originOptions.map(origin => {
+    const { subOrigins, ...rest } = origin;
+    const filterActions = { applyFilter, removeFilter };
+    return (
+      <Foo key={origin.id} origin={origin} subOrigins={subOrigins} />
+    );
+  });
+
   const isEndangeredChecked = isFilterApplied(appliedFilters, FILTER.CARES_LIST);
   return (
     <div>
       <div>
         <strong>Sort by</strong>
       </div>
-      <UncontrolledButtonDropdown setActiveFromChild outline>
+      <UncontrolledButtonDropdown setActiveFromChild>
         <DropdownToggle caret data-test='sort-dropdown' outline>
           {sortOptions.filter(option => option.id === appliedSortId).map(option => option.name)}
         </DropdownToggle>
@@ -71,28 +84,7 @@ const Filter = ({
 
         <li>
           <strong>Place of origin</strong>
-          {originOptions.map(origin => {
-            const { subOrigins, ...rest } = origin;
-            const filterActions = { applyFilter, removeFilter };
-
-            return (
-              <div key={origin.id}>
-                <OriginCheckbox {...rest} {...filterActions} data-test={`filter-origin-${origin.id}`} />
-
-                {subOrigins.map(subOrigin => {
-                  return (
-                    <OriginCheckbox
-                      {...subOrigin}
-                      {...filterActions}
-                      key={subOrigin.id}
-                      data-test={`filter-origin-${subOrigin.id}`}
-                      style={{ marginLeft: '20px' }}
-                    />
-                  );
-                })}
-              </div>
-            );
-          })}
+          {options}
         </li>
       </ul>
     </div>

@@ -11,7 +11,7 @@ class Checkbox extends React.Component {
   render() {
     const { id, children, checked, onClick, style, ...restProps } = this.props;
     return (
-      <label htmlFor={id} class='checkbox-wrapper' onClick={this.handleClick} style={style}>
+      <label htmlFor={id} className='checkbox-wrapper' onClick={this.handleClick} style={style}>
         <MaterialCheckbox
           name={id}
           id={id}
