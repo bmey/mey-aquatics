@@ -1,22 +1,28 @@
 import React from 'react';
 import { FILTER } from '../../utility/constants';
+import Checkbox from './Checkbox';
 
-const OriginCheckbox = ({ id, checked, name, hasSubOrigins, applyFilter, removeFilter }) => {
+const OriginCheckbox = ({
+  id,
+  checked,
+  name,
+  hasSubOrigins,
+  applyFilter,
+  removeFilter,
+  ...restProps
+}) => {
   const payload = { type: FILTER.ORIGIN, id, hasSubOrigins };
 
   return (
-    <label htmlFor={id}>
-      <input
-        name={id}
-        id={id}
-        type='checkbox'
-        checked={checked}
-        data-test={`filter-origin-${id}`}
-        readOnly
-        onClick={() => (checked ? removeFilter(payload) : applyFilter(payload))}
-      />
-      <span data-test='origin-name'>&nbsp; {name}</span>
-    </label>
+    <Checkbox
+      {...restProps}
+      id={id}
+      data-test={`filter-origin-${id}`}
+      checked={checked}
+      onClick={() => (checked ? removeFilter(payload) : applyFilter(payload))}
+    >
+      <span data-test='origin-name'>{name}</span>
+    </Checkbox>
   );
 };
 

@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
 import ErrorPage from './components/ErrorPage';
 import LoadedApp from './components/LoadedApp';
 import './App.css';
+
+const theme = createMuiTheme({
+  palette: {
+    primary: { main: '#a840c5' },
+    secondary: { main: '#414542' },
+  },
+});
 
 class App extends Component {
   state = {
@@ -32,7 +41,11 @@ class App extends Component {
       PageComponent = <LoadedApp data={data} data-test='loaded' />;
     }
 
-    return <div className='App'>{PageComponent}</div>;
+    return (
+      <ThemeProvider theme={theme}>
+        <div className='App'>{PageComponent}</div>
+      </ThemeProvider>
+    );
   }
 }
 
