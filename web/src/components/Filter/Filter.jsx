@@ -77,7 +77,7 @@ const Filter = ({
 
             return (
               <div key={origin.id}>
-                <OriginCheckbox {...rest} {...filterActions} />
+                <OriginCheckbox {...rest} {...filterActions} data-test={`filter-origin-${origin.id}`} />
 
                 {subOrigins.map(subOrigin => {
                   return (
@@ -85,6 +85,7 @@ const Filter = ({
                       {...subOrigin}
                       {...filterActions}
                       key={subOrigin.id}
+                      data-test={`filter-origin-${subOrigin.id}`}
                       style={{ marginLeft: '20px' }}
                     />
                   );

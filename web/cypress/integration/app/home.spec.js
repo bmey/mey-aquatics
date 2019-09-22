@@ -67,7 +67,7 @@ context('Home page', () => {
 
           cy.get(`[data-test='view-region-${id}']`).click();
 
-          cy.get(`[data-test^='filter-origin-${id}']`).should('be.checked');
+          cy.get(`[data-test^='filter-origin-${id}'] input[type=checkbox]`).should('be.checked');
           cy.get("[data-test^='livestock-item']").should(
             'have.attr',
             'data-test',
@@ -92,7 +92,7 @@ context('Home page', () => {
       cy.get(`[data-test='view-region-${id}']`).click();
       cy.get("[data-test='filter-button']").click();
 
-      cy.get(`[data-test^='filter-origin-${id}']`).should('be.checked');
+      cy.get(`[data-test^='filter-origin-${id}'] input[type=checkbox]`).should('be.checked');
       cy.get("[data-test^='livestock-item']").should(
         'have.attr',
         'data-test',
