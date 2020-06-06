@@ -3,7 +3,7 @@ function onOpen() {
   SpreadsheetApp.getUi()
     .createMenu("Publish to Database")
     .addItem("Publish to database", "publish")
-    .addItem("Generate Wholesale Prices", "createWholesaleCsv")
+    .addItem("Generate wholesale prices", "createWholesaleCsv")
     .addItem("Test publish", "testPublish")
     .addToUi();
 }
