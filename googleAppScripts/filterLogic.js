@@ -3,7 +3,7 @@ function isEmpty(item) {
 }
 
 function filterSpecies(species) {
-  return species.filter(function(item) {
+  return species.filter(function (item) {
     if (isEmpty(item)) {
       return false;
     }
@@ -17,7 +17,7 @@ function filterSpecies(species) {
 }
 
 function filterStock(items) {
-  return items.filter(function(item) {
+  return items.filter(function (item) {
     if (isEmpty(item)) {
       return false;
     }
@@ -40,7 +40,7 @@ function getId(item) {
 }
 
 function aggregateStock(stock) {
-  return stock.reduce(function(allStock, item) {
+  return stock.reduce(function (allStock, item) {
     var id = getId(item).concat("|", item.size.toUpperCase());
     if (id in allStock) {
       allStock[id] += +item.count;
@@ -68,11 +68,11 @@ function updateSizeCount(item, stockCount, size) {
 function getOriginId(item) {
   var subOriginId = toKebabCase(item.origin ? item.origin.replace(/\s+/g, "").substr(0, 5) : "OTHER");
   var continentId = item.id.split("-")[0];
-  
+
   if (subOriginId === "SEASI" || subOriginId === "AFRIC") {
-    subOriginId = "OTHER"; 
+    subOriginId = "OTHER";
   }
-  
+
   return continentId + "-" + subOriginId;
 }
 
@@ -81,7 +81,7 @@ function filterAndCombineLists(species, stock) {
   var species = filterSpecies(species);
   var data = [];
 
-  species.forEach(function(item) {
+  species.forEach(function (item) {
     var model = {
       id: getId(item),
       onCaresList: !!item.onCaresList,
@@ -89,18 +89,18 @@ function filterAndCombineLists(species, stock) {
       scientific: item.scientific,
       origin: getOriginId(item),
       sizes: {
-        F: { length: +item.sizeF || 0, price: item.priceF },
-        S: { length: +item.sizeS || 0, price: item.priceS },
-        M: { length: +item.sizeM || 0, price: item.priceM },
-        L: { length: +item.sizeL || 0, price: item.priceL },
-        B: { length: +item.sizeB || 0, price: item.priceB },
+        F: { length: +item.sizeF || 0, price: item.priceF, wholesalePrice: item.wholesalePriceF },
+        S: { length: +item.sizeS || 0, price: item.priceS, wholesalePrice: item.wholesalePriceS },
+        M: { length: +item.sizeM || 0, price: item.priceM, wholesalePrice: item.wholesalePriceM },
+        L: { length: +item.sizeL || 0, price: item.priceL, wholesalePrice: item.wholesalePriceL },
+        B: { length: +item.sizeB || 0, price: item.priceB, wholesalePrice: item.wholesalePriceB },
       },
     };
 
     if (item.picture) {
       model.picture = item.picture;
     }
-    
+
     model.sizes = combineSizes(model, stockDictionary);
     data.push(model);
   });
@@ -109,8 +109,8 @@ function filterAndCombineLists(species, stock) {
 }
 
 function getHotItems(hotItemsSheetModel) {
- return hotItemsSheetModel.reduce(function(result, item) {
+  return hotItemsSheetModel.reduce(function (result, item) {
     result.push(item.id);
     return result;
-  }, []); 
+  }, []);
 }

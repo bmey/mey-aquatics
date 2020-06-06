@@ -3,6 +3,7 @@ function onOpen() {
   SpreadsheetApp.getUi()
     .createMenu("Publish to Database")
     .addItem("Publish to database", "publish")
+    .addItem("Generate Wholesale Prices", "createWholesaleCsv")
     .addItem("Test publish", "testPublish")
     .addToUi();
 }
@@ -33,6 +34,36 @@ function getOAuthToken() {
 
   serverToken.addUser(clientEmail).requestToken();
   return serverToken.getToken(clientEmail).token;
+}
+
+const sizes = ["F", "S", "M", "L", "B"];
+function createWholesaleCsv() {
+  var output = buildJsonOutput();
+  var flatFish = output.fish.reduce((agg, fish) => {
+    sizes.forEach(size => {
+      const sizeModel = fish.sizes[size];
+      if (sizeModel && sizeModel.count > 0) {
+        const price = sizeModel.wholesalePrice || sizeModel.price;
+        agg.push([
+          `${fish.common} (${size})`,
+          fish.scientific,
+          sizeModel.length ? `${sizeModel.length}"` : "--",
+          sizeModel.count,
+          price ? `$${price}` : "(ask)",
+        ]);
+      }
+    });
+    return agg;
+  }, [["Common", "Scientific", "Length (inches)", "Count", "Price Each"]]);
+
+  let csvString = flatFish.map(e => e.join(",")).join("\n");
+  const fileName = `Wholesale Prices ${new Date().toLocaleDateString()}.csv`;
+  const file = DriveApp.createFile(fileName, csvString);
+  var t = HtmlService.createTemplateFromFile('downloadCsvTemplate');
+  t.data = { csv: file.getDownloadUrl(), fileName };
+  const htmlOutput = t.evaluate();
+
+  SpreadsheetApp.getUi().showModalDialog(htmlOutput, fileName);
 }
 
 function testPublish() {
