@@ -24,92 +24,107 @@ const regions = [
   },
 ];
 
-const Home = ({ data: { fish, hotItems = [] } }) => (
-  <div data-cy='homepage'>
-    <header className='homepage-header'>
-      <div className='logo-container'>
-        <Logo className='logo' />
-      </div>
-      <div className='homepage-header-text'>
-        <h1 className='App-title'>Mey's Aquatics</h1>
-        <em>Caring for fish since 1970</em>
-        <Link to='/livestock/'>
-          <Button color='primary'>Browse our stock</Button>
-        </Link>
-      </div>
-    </header>
-    <div className='home-content'>
-      <div className='home-card-container'>
-        <HomeCard icon={<IoMdGlobe />} description='Worldwide'>
-          <div className='d-flex flex-column align-items-center worldwide'>
-            <span className='text-center'>
-              View our fish from different regions around the globe!
-            </span>
-            {regions.map(({ id, description }) => (
-              <Link
-                to={`/livestock/#${getRouteFromOrigin(id)}`}
-                key={id}
-                data-test={`view-region-${id}`}
-              >
-                {description}
-              </Link>
-            ))}
-          </div>
-        </HomeCard>
-        <HomeCard
-          icon={<IoIosFlame className='color-primary' />}
-          description="What's Hot"
-          className='priority-item'
-        >
-          <div className='d-flex flex-column align-items-center worldwide'>
-            <span className='text-center'>Check out our most popular and rare items!</span>
-            {hotItems.map(id => {
-              const upperCaseId = id.toUpperCase();
-              const itemModel = fish.find(item => item.id.toUpperCase() === upperCaseId);
-              if (!itemModel) {
-                return null;
-              }
+class Home extends React.Component {
+  componentWillUnmount() {
+    console.log('unmounting');
+  }
 
-              return (
-                <Link to={`/livestock/${id}`} data-test={`view-hot-${id}`} key={id}>
-                  {itemModel.common}
-                </Link>
-              );
-            })}
+  render() {
+    const { data: { fish, hotItems = [] }, className } = this.props;
+    return (
+      // <ReactCSSTransitionGroup
+      //   transitionName="example"
+      //   transitionEnterTimeout={500}
+      //   transitionLeaveTimeout={300}
+      // >
+      <div data-cy='homepage' key='asdfgg' className={className} >
+        <header className='homepage-header'>
+          <div className='logo-container'>
+            <Logo className='logo' />
           </div>
-        </HomeCard>
-        <HomeCard icon={<IoIosWarning />} description='Endangered'>
-          <div className='d-flex flex-column align-items-center'>
-            <span className='text-center'>
-              We have <strong>{countEndangeredSpecies(fish)}&nbsp;endangered</strong> species in
-              stock. Pick one up so you can make a difference, too!
-            </span>
-            <Link
-              to={`/livestock/#${getRouteFromFilter(FILTER.CARES_LIST)}`}
-              data-test='view-endangered'
-            >
-              View now
+          <div className='homepage-header-text'>
+            <h1 className='App-title'>Mey's Aquatics</h1>
+            <em>Caring for fish since 1970</em>
+            <Link to='/livestock/'>
+              <Button color='primary'>Browse our stock</Button>
             </Link>
           </div>
-        </HomeCard>
-      </div>
-      <div
-        className='d-flex flex-column justify-content-center text-center bg-gray'
-        style={{ padding: '40px' }}
-      >
-        <h2 style={{ marginBottom: '20px' }}>Contact Us</h2>
+        </header>
+        <div className='home-content'>
+          <div className='home-card-container'>
+            <HomeCard icon={<IoMdGlobe />} description='Worldwide'>
+              <div className='d-flex flex-column align-items-center worldwide'>
+                <span className='text-center'>
+                  View our fish from different regions around the globe!
+            </span>
+                {regions.map(({ id, description }) => (
+                  <Link
+                    to={`/livestock/#${getRouteFromOrigin(id)}`}
+                    key={id}
+                    data-test={`view-region-${id}`}
+                  >
+                    {description}
+                  </Link>
+                ))}
+              </div>
+            </HomeCard>
+            <HomeCard
+              icon={<IoIosFlame className='color-primary' />}
+              description="What's Hot"
+              className='priority-item'
+            >
+              <div className='d-flex flex-column align-items-center worldwide'>
+                <span className='text-center'>Check out our most popular and rare items!</span>
+                {hotItems.map(id => {
+                  const upperCaseId = id.toUpperCase();
+                  const itemModel = fish.find(item => item.id.toUpperCase() === upperCaseId);
+                  if (!itemModel) {
+                    return null;
+                  }
 
-        <p className='text-center'>
-          We have a wide selection of fish, including rare and endangered species identified by the
-          CARES Fish Preservation Program. Please contact us if you are interested in buying,
-          trading, or to learning about what we do.
+                  return (
+                    <Link to={`/livestock/${id}`} data-test={`view-hot-${id}`} key={id}>
+                      {itemModel.common}
+                    </Link>
+                  );
+                })}
+              </div>
+            </HomeCard>
+            <HomeCard icon={<IoIosWarning />} description='Endangered'>
+              <div className='d-flex flex-column align-items-center'>
+                <span className='text-center'>
+                  We have <strong>{countEndangeredSpecies(fish)}&nbsp;endangered</strong> species in
+                  stock. Pick one up so you can make a difference, too!
+            </span>
+                <Link
+                  to={`/livestock/#${getRouteFromFilter(FILTER.CARES_LIST)}`}
+                  data-test='view-endangered'
+                >
+                  View now
+            </Link>
+              </div>
+            </HomeCard>
+          </div>
+          <div
+            className='d-flex flex-column justify-content-center text-center bg-gray'
+            style={{ padding: '40px' }}
+          >
+            <h2 style={{ marginBottom: '20px' }}>Contact Us</h2>
+
+            <p className='text-center'>
+              We have a wide selection of fish, including rare and endangered species identified by the
+              CARES Fish Preservation Program. Please contact us if you are interested in buying,
+              trading, or to learning about what we do.
         </p>
 
-        <ContactButton />
+            <ContactButton />
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-);
+      // </ReactCSSTransitionGroup>
+    );
+  }
+}
 
 const HomeCard = ({ icon, description, children, className = '' }) => (
   <div className={`home-card ${className}`}>

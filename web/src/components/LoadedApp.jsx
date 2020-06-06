@@ -7,6 +7,8 @@ import Home from './HomePage';
 import LivestockPage from './LivestockPage';
 import AboutPage from './AboutPage';
 import ContactPage from './ContactPage';
+import { CSSTransition } from 'react-transition-group'
+//import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 const routes = [
   {
@@ -14,34 +16,62 @@ const routes = [
     name: 'Home',
     exact: true,
     showInNav: true,
-    component: Home,
+    Component: Home,
   },
   {
     path: '/livestock/',
     name: 'Live Stock',
     showInNav: true,
-    component: LivestockPage,
+    Component: LivestockPage,
   },
-  { path: '/about/', name: 'About', showInNav: true, component: AboutPage },
-  { path: '/contact/', name: 'Contact', showInNav: true, component: ContactPage },
+  { path: '/about/', name: 'About', showInNav: true, Component: AboutPage },
+  { path: '/contact/', name: 'Contact', showInNav: true, Component: ContactPage },
 ];
 
 const LoadedApp = ({ data }) => (
-  <CloudinaryContext cloudName='bmey'>
+  <CloudinaryContext cloudName='bmey' key='loaded-app'>
     <Router>
-      <div className='body-container'>
-        <div className='body-content' data-test='loaded'>
-          <Nav />
-
-          <Route path='/' exact render={() => <Home data={data} />} />
-          <Route path='/livestock/' render={props => <LivestockPage {...props} data={data} />} />
-          <Route path='/about/' render={() => <AboutPage data={data} />} />
-          <Route path='/contact/' render={() => <ContactPage data={data} />} />
-        </div>
+      <div className='body-container page-container'>
+        <Nav />
+        {routes.map(({ path, exact, Component }) => (
+          <Route key={path} exact={exact} path={path}>
+            {({ match, ...rest }) => (
+              <CSSTransition
+                in={match != null}
+                timeout={2000}
+                classNames="page"
+                unmountOnExit
+                data-test='loaded'
+              >
+                {(childProps) => {
+                  console.log('render csstransition child', childProps)
+                  return (<><Component className={`body-content page`} data={data} {...rest} match={match} />
+                    <div className={`filler-${childProps}`} style={{ flex: 'grow', minHeight: '100%' }}></div>
+                  </>)
+                }
+                }
+              </CSSTransition>
+            )}
+          </Route>
+        ))}
         <Footer routes={routes} />
       </div>
     </Router>
   </CloudinaryContext>
 );
+
+// const withTransition = (children) => (
+//   <ReactCSSTransitionGroup
+//     transitionName="example"
+//     transitionEnterTimeout={1000}
+//     transitionLeaveTimeout={1000}
+//     transitionEnter={true}
+//     transitionLeave={true}
+//     transitionAppear={true}
+//     transitionAppearTimeout={500}
+//   >
+//     {children}
+//   </ReactCSSTransitionGroup>
+// )
 
 export default LoadedApp;

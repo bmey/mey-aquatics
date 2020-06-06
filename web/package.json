@@ -13,10 +13,12 @@
     "modern-normalize": "^0.5.0",
     "query-string": "^6.2.0",
     "react": "^16.9.0",
+    "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.9.0",
     "react-icons": "^3.7.0",
     "react-media": "^1.10.0",
     "react-router-dom": "^5.0.1",
+    "react-transition-group": "^4.3.0",
     "reactstrap": "^8.0.1"
   },
   "scripts": {

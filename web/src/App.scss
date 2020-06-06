@@ -17,3 +17,83 @@
 .App-title {
   font-size: 1.5em;
 }
+
+
+.example-enter {
+  opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 1000ms ease-in;
+}
+
+.example-leave {
+  opacity: 1;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 1000ms ease-in;
+}
+
+.example-appear {
+  opacity: 0.01;
+}
+
+.example-appear.example-appear-active {
+  opacity: 1;
+  transition: opacity 1s ease-in;
+}
+
+
+////
+
+
+.page-container {
+  position: relative;
+}
+
+.page {
+  
+}
+
+.filler-entered, .filler-enter, .filler-entering {
+  display: none;
+}
+
+.filler-exit {
+  display: block;
+}
+
+.page-enter {
+  opacity: 0;
+  transform: scale(1.1);
+}
+
+.page-enter-active {
+  position: absolute;  
+  opacity: 1;
+  transform: scale(1);
+  left: 0;
+  right: 0;
+  top: 57px;
+  transition: all 2000ms ease-in-out;
+}
+
+.page-exit {
+  position: absolute;
+  opacity: 1;
+  left: 0;
+  right: 0;
+  top: 57px;
+  transform: scale(1);
+}
+
+.page-exit-active {
+  position: absolute;
+  opacity: 0;
+  top: 57px;
+  transform: scale(0.9);
+  transition: all 500ms ease-in;
+}
