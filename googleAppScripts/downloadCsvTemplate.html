@@ -6,22 +6,35 @@
     .body {
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      min-height: 50vh;
     }
 
     .download {
       font-size: 1.5rem;
+    }
+
+    ol {
+      padding: 0;
     }
   </style>
   <base target="_top">
 </head>
 
 <body class="body">
-  <a class="download" target="_blank" href="<?=data.csv?>" download="<?= data.fileName ?>">
-    Download "<?= data.fileName ?>"
+  <ol>
+    <li>Right-click the link</li>
+    <li>Open in new tab</li>
+    <li>Rename file and add ".csv" to end</li>
+  </ol>
+  <a id="downloadLink" class="download" href="javascript:void(0)" download="<?= data.fileName ?>.csv">
+    <?= data.fileName ?>
   </a>
+  <script type="text/javascript">
+    var csv = "<?= data.csvString ?>";
+    var blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    var downloadLink = document.getElementById('downloadLink');
+    downloadLink.href = URL.createObjectURL(blob);
+  </script>
 </body>
 
 </html>

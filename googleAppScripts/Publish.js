@@ -38,8 +38,8 @@ function getOAuthToken() {
 
 const sizes = ["F", "S", "M", "L", "B"];
 function createWholesaleCsv() {
-  var output = buildJsonOutput();
-  var flatFish = output.fish.reduce((agg, fish) => {
+  const output = buildJsonOutput();
+  const flatFish = output.fish.reduce((agg, fish) => {
     sizes.forEach(size => {
       const sizeModel = fish.sizes[size];
       if (sizeModel && sizeModel.count > 0) {
@@ -56,11 +56,12 @@ function createWholesaleCsv() {
     return agg;
   }, [["Common", "Scientific", "Length (inches)", "Count", "Price Each"]]);
 
-  let csvString = flatFish.map(e => e.join(",")).join("\n");
-  const fileName = `Wholesale Prices ${new Date().toLocaleDateString()}.csv`;
-  const file = DriveApp.createFile(fileName, csvString);
-  var t = HtmlService.createTemplateFromFile('downloadCsvTemplate');
-  t.data = { csv: file.getDownloadUrl(), fileName };
+  const fileName = `Wholesale Price List ${new Date().toLocaleDateString()}`;
+  const t = HtmlService.createTemplateFromFile('downloadCsvTemplate');
+  t.data = {
+    csvString: flatFish.map(e => e.join(",")).join("\n"),
+    fileName
+  };
   const htmlOutput = t.evaluate();
 
   SpreadsheetApp.getUi().showModalDialog(htmlOutput, fileName);
