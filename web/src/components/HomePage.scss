@@ -72,6 +72,12 @@
     font-size: 1.2em;
   }
 
+  .subtext {
+    font-weight: 300;
+    font-size: 0.9rem;
+    margin: 0.85rem 0;
+  }
+
   a {
     margin: ($grid-gap-default / 2) 0 0;
   }

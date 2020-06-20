@@ -9,7 +9,7 @@ const AboutPage = () => (
     <header className='App-header'>
       <h1 className='App-title'>About Us</h1>
     </header>
-    <div className='App-content'>
+    <div className='App-content container'>
       <div className='img-hero'>
         <AboutUsHeroImage
           publicId={'about_us/about_us.jpg'}
@@ -42,13 +42,6 @@ const AboutPage = () => (
       <p>
         We are regular members of the Diamond State Aquarium Society (DSAS) and Jeff is a board
         member.
-      </p>
-
-      <h2>Testimonials</h2>
-      <p>
-        TBD -- something like "They really know their stuff. I had so many questions but they were
-        very patient with me and helped me not only to pick the right fish, but how to set up my
-        tank and keep my fish healthy. I would definitely recommend them." --Average Joe
       </p>
 
       <h2>Want to learn more?</h2>

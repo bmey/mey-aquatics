@@ -32,7 +32,7 @@ const Home = ({ data: { fish, hotItems = [] } }) => (
       </div>
       <div className='homepage-header-text'>
         <h1 className='App-title'>Mey's Aquatics</h1>
-        <em>Caring for fish since 1970</em>
+        <span className='App-subtext text-right mt-1'>Caring for fish since 1970</span>
         <Link to='/livestock/'>
           <Button color='primary'>Browse our stock</Button>
         </Link>
@@ -42,7 +42,7 @@ const Home = ({ data: { fish, hotItems = [] } }) => (
       <div className='home-card-container'>
         <HomeCard icon={<IoMdGlobe />} description='Worldwide'>
           <div className='d-flex flex-column align-items-center worldwide'>
-            <span className='text-center'>
+            <span className='text-center subtext'>
               View our fish from different regions around the globe!
             </span>
             {regions.map(({ id, description }) => (
@@ -62,7 +62,7 @@ const Home = ({ data: { fish, hotItems = [] } }) => (
           className='priority-item'
         >
           <div className='d-flex flex-column align-items-center worldwide'>
-            <span className='text-center'>Check out our most popular and rare items!</span>
+            <span className='text-center subtext'>Check out our most popular and rare items!</span>
             {hotItems.map(id => {
               const upperCaseId = id.toUpperCase();
               const itemModel = fish.find(item => item.id.toUpperCase() === upperCaseId);
@@ -80,8 +80,8 @@ const Home = ({ data: { fish, hotItems = [] } }) => (
         </HomeCard>
         <HomeCard icon={<IoIosWarning />} description='Endangered'>
           <div className='d-flex flex-column align-items-center'>
-            <span className='text-center'>
-              We have <strong>{countEndangeredSpecies(fish)}&nbsp;endangered</strong> species in
+            <span className='text-center subtext'>
+              We have <span className="font-weight-bold">{countEndangeredSpecies(fish)}&nbsp;endangered</span> species in
               stock. Pick one up so you can make a difference, too!
             </span>
             <Link
@@ -93,13 +93,10 @@ const Home = ({ data: { fish, hotItems = [] } }) => (
           </div>
         </HomeCard>
       </div>
-      <div
-        className='d-flex flex-column justify-content-center text-center bg-gray'
-        style={{ padding: '40px' }}
-      >
-        <h2 style={{ marginBottom: '20px' }}>Contact Us</h2>
+      <div className='d-flex flex-column justify-content-center align-items-center bg-gray p-5'>
+        <h2 className="mb-4">Contact Us</h2>
 
-        <p className='text-center'>
+        <p className='text-center mb-4' style={{ maxWidth: '40rem' }}>
           We have a wide selection of fish, including rare and endangered species identified by the
           CARES Fish Preservation Program. Please contact us if you are interested in buying,
           trading, or to learning about what we do.
@@ -114,7 +111,7 @@ const Home = ({ data: { fish, hotItems = [] } }) => (
 const HomeCard = ({ icon, description, children, className = '' }) => (
   <div className={`home-card ${className}`}>
     <div className='d-flex flex-column align-items-center'>
-      <div style={{ fontSize: '3em' }}>{icon}</div>
+      <div style={{ fontSize: '3rem' }}>{icon}</div>
       <strong className='description'>{description}</strong>
     </div>
     {children}
