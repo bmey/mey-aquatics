@@ -13,6 +13,7 @@
   height: auto;
   padding: $grid-gap-default * 5;
   color: $dark;
+  background: radial-gradient(closest-side at 60% 45%, $color-gray-light, $color-primary);
 
   button.btn-primary {
     margin-top: 40px;
@@ -49,7 +50,9 @@
   margin-left: -($grid-gap-default * 2);
   margin-right: -($grid-gap-default * 2);
   padding: 0 ($grid-gap-default * 2);
-  background-image: linear-gradient($color-primary 50%, rgba(255, 0, 0, 0) 50%);
+  background-image: url('./wave.svg');
+  background-repeat: repeat-x;
+  background-size: auto;
 }
 
 .home-card {
