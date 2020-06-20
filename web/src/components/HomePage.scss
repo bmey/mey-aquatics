@@ -51,8 +51,8 @@
   margin-right: -($grid-gap-default * 2);
   padding: 0 ($grid-gap-default * 2);
   background-image: url('./wave.svg');
-  background-repeat: repeat-x;
-  background-size: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .home-card {
@@ -99,6 +99,7 @@
     margin-left: -($grid-gap-mobile * 2);
     margin-right: -($grid-gap-mobile * 2);
     padding: 0 ($grid-gap-mobile * 2);
+    background-size: auto;
   }
 
   .home-card {
