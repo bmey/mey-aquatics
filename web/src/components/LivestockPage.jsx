@@ -9,7 +9,7 @@ import './LivestockPage.css';
 
 const LivestockPage = props => (
   <FilterProvider>
-    <div data-cy='livestockpage'>
+    <div data-cy='livestockpage' className='mb-3'>
       <h1 className='a11y-offscreen'>Live Stock</h1>
       <div className='search'>
         <SearchContainer />

@@ -8,7 +8,7 @@ const LivestockDetailsPage = ({ data, match, history }) => {
   let model = data.fish.find(item => item.id.toUpperCase() === itemId.toUpperCase());
 
   return (
-    <div className='App-content'>
+    <div className='App-content container'>
       <div>
         <Button onClick={history.goBack} size='sm' outline color='secondary'>
           &lt; Go Back
