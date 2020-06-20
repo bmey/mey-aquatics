@@ -7,7 +7,7 @@ const Footer = ({ routes }) => (
   <footer className='body-footer bg-dark navbar-dark'>
     <div className='footer-content'>
       <div>
-        Follow us
+        <h5>Follow us</h5>
         <div className='d-flex flex-column navbar-nav'>
           {SOCIAL_MEDIA.map(route => (
             <a className='nav-link' href={route.href} key={route.id}>
@@ -17,7 +17,7 @@ const Footer = ({ routes }) => (
         </div>
       </div>
       <div>
-        Contact us
+        <h5>Contact us</h5>
         <div className='navbar-nav'>
           <a className='nav-link' href={`mailto:${email}`}>
             {email}
@@ -25,7 +25,7 @@ const Footer = ({ routes }) => (
         </div>
       </div>
       <div>
-        Sitemap
+        <h5>Sitemap</h5>
         <nav className='d-flex flex-column navbar-nav'>
           {routes
             .filter(route => route.showInNav)
@@ -37,7 +37,7 @@ const Footer = ({ routes }) => (
         </nav>
       </div>
       <div>
-        Affiliates
+        <h5>Affiliates</h5>
         <div className='navbar-nav'>
           <a className='nav-link' href='https://dsas.online/'>
             DSAS

@@ -49,7 +49,7 @@ export default class Nav extends Component {
     return (
       <>
         <Navbar color='light' light expand='sm' className='fixed-top-sm'>
-          <Link to='/' className='navbar-brand mr-auto' onClick={() => this.closeNavbar()}>
+          <Link to='/' className='navbar-brand mr-auto d-flex' onClick={() => this.closeNavbar()}>
             <Logo />
             Mey's Aquatics
           </Link>
