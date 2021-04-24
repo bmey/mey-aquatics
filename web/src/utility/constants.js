@@ -20,6 +20,10 @@ export const FILTER = {
 
 export const SOCIAL_MEDIA = [
   {
+    id: 'Facebook',
+    href: 'https://www.facebook.com/Meys-Aquatics-LLC-163514463696339/',
+  },
+  {
     id: 'Instagram',
     href: 'https://www.instagram.com/mey_aquatics/',
   },

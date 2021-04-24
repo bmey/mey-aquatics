@@ -1,5 +1,5 @@
 import React from 'react';
-import { IoLogoInstagram, IoLogoYoutube } from 'react-icons/io';
+import { IoLogoFacebook, IoLogoInstagram, IoLogoYoutube } from 'react-icons/io';
 import ContactButton from './ContactButton/ContactButton';
 import './ContactPage.css';
 
@@ -27,6 +27,13 @@ const ContactPage = () => (
         <div>
           <h3 className='text-center mb-3'>Social Media</h3>
           <div className='d-flex justify-content-center contact-social'>
+            <a
+              href='https://www.facebook.com/Meys-Aquatics-LLC-163514463696339/'
+              className='d-flex flex-column align-items-center'
+            >
+              <IoLogoFacebook style={{ fontSize: '2rem', color: '#4267B2' }} />
+              &nbsp;Facebook
+            </a>
             <a
               href='https://www.instagram.com/mey_aquatics/'
               className='d-flex flex-column align-items-center'
