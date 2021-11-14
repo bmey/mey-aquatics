@@ -1,11 +1,13 @@
 import React from 'react';
 import { Table, Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import { IoIosWarning } from 'react-icons/io';
 import Image from '../Image/Image';
 import MissingImage from '../MissingImage';
 import { getOriginDisplayName } from '../../service/origin';
 import './ProductDetails.css';
 import { priceDisplay } from './priceDisplay';
+import OutOfStock, { isOutOfStock } from '../OutOfStock';
 
 const sizeMap = [
   {
@@ -34,7 +36,7 @@ const ProductDetails = ({ onCaresList, common, scientific, origin, sizes, pictur
   return (
     <>
       <div className='product-info'>
-        <div className='d-flex justify-content-center info-image'>
+        <div className='d-flex justify-content-center info-image position-relative'>
           {picture ? (
             <Image
               publicId={picture}
@@ -49,8 +51,11 @@ const ProductDetails = ({ onCaresList, common, scientific, origin, sizes, pictur
               alt=''
             />
           ) : (
-            <MissingImage />
-          )}
+              <MissingImage />
+            )}
+          <div className="position-absolute" style={{ left: 0, top: 0 }}>
+            <OutOfStock sizes={sizes} />
+          </div>
         </div>
         <h2 className='info-header'>{common || scientific}</h2>
         <div className='info-list'>
@@ -68,6 +73,12 @@ const ProductDetails = ({ onCaresList, common, scientific, origin, sizes, pictur
         </div>
       </div>
       <h2 style={{ marginTop: '20px' }}>Stock Available</h2>
+      {isOutOfStock(sizes) && (
+        <div className="warning rounded border-complementary d-flex align-items-center p-3 mb-2">
+          <IoIosWarning className='color-complementary' />
+          <strong className="mx-1">Out of Stock.</strong>&nbsp;Check back later or contact us if interested.
+        </div>
+      )}
       <Table responsive striped hover>
         <thead>
           <tr>

@@ -5,11 +5,12 @@ import ButtonLink from './ButtonLink/ButtonLink';
 import Image from './Image/Image';
 import MissingImage from './MissingImage';
 import { getOriginDisplayName } from '../service/origin';
+import OutOfStock from './OutOfStock';
 
-const FishCard = ({ id, common, scientific, origin, picture, match }) => {
+const FishCard = ({ id, common, scientific, origin, picture, sizes, match }) => {
   return (
     <ButtonLink to={`${match.url}${id}`} className='button-card' data-test={`livestock-item-${id}`}>
-      <div className='d-flex justify-content-center card-thumbnail'>
+      <div className='d-flex justify-content-center card-thumbnail position-relative'>
         {picture ? (
           <Image
             publicId={picture}
@@ -25,6 +26,9 @@ const FishCard = ({ id, common, scientific, origin, picture, match }) => {
         ) : (
             <MissingImage />
           )}
+        <div className="position-absolute" style={{ left: 0, top: 0 }}>
+          <OutOfStock sizes={sizes} />
+        </div>
       </div>
       <div className='card-body-wrapper'>
         <div className='text-normal card-body-text'>

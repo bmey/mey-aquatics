@@ -38,6 +38,18 @@ a {
   color: $primary;
 }
 
+.color-complementary {
+  color: $color-complementary;
+}
+
+.bg-complementary {
+  background-color: $color-complementary;
+}
+
+.border-complementary {
+  border: 1px solid $color-complementary;
+}
+
 .logo {
   width: 100%;
   height: 100%;
