@@ -1,7 +1,5 @@
 import React from 'react';
-
-export const isOutOfStock = (sizes) =>
-  Object.values(sizes).every(size => size.count === 0);
+import { isOutOfStock } from '../service/filter';
 
 const OutOfStock = ({ sizes }) => {
   if (!isOutOfStock(sizes)) {

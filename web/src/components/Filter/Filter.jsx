@@ -15,6 +15,7 @@ const Filter = ({
   originOptions = [],
 }) => {
   const isEndangeredChecked = isFilterApplied(appliedFilters, FILTER.CARES_LIST);
+  const isInStockChecked = isFilterApplied(appliedFilters, FILTER.IN_STOCK);
   return (
     <div>
       <div>
@@ -51,6 +52,23 @@ const Filter = ({
           listStyleType: 'none',
         }}
       >
+        <li>
+          <strong>Availability</strong>
+          <div>
+            <Checkbox
+              id='in-stock'
+              checked={isInStockChecked}
+              data-test='filter-in-stock'
+              onClick={() =>
+                isInStockChecked
+                  ? removeFilter({ type: FILTER.IN_STOCK })
+                  : applyFilter({ type: FILTER.IN_STOCK })
+              }
+            >
+              In Stock
+            </Checkbox>
+          </div>
+        </li>
         <li>
           <strong>Endangered</strong>
           <div>

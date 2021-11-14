@@ -7,7 +7,8 @@ import MissingImage from '../MissingImage';
 import { getOriginDisplayName } from '../../service/origin';
 import './ProductDetails.css';
 import { priceDisplay } from './priceDisplay';
-import OutOfStock, { isOutOfStock } from '../OutOfStock';
+import OutOfStock from '../OutOfStock';
+import { isOutOfStock } from '../../service/filter';
 
 const sizeMap = [
   {
@@ -51,8 +52,8 @@ const ProductDetails = ({ onCaresList, common, scientific, origin, sizes, pictur
               alt=''
             />
           ) : (
-              <MissingImage />
-            )}
+            <MissingImage />
+          )}
           <div className="position-absolute" style={{ left: 0, top: 0 }}>
             <OutOfStock sizes={sizes} />
           </div>

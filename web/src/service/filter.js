@@ -5,6 +5,9 @@ export const isFilterApplied = (appliedFilters, filterType) => {
   return appliedFilters.some(filter => filter.type === filterType);
 };
 
+export const isOutOfStock = (sizes) =>
+  Object.values(sizes).every(size => size.count === 0);
+
 export const getFilter = (appliedFilters, filterType) => {
   return appliedFilters.filter(filter => filter.type === filterType)[0];
 };
@@ -26,6 +29,10 @@ const filter = (productList, appliedFilters = []) => {
 
   if (isFilterApplied(appliedFilters, FILTER.CARES_LIST)) {
     filteredList = filteredList.filter(product => product.onCaresList);
+  }
+
+  if (isFilterApplied(appliedFilters, FILTER.IN_STOCK)) {
+    filteredList = filteredList.filter(product => !isOutOfStock(product.sizes));
   }
 
   if (isFilterApplied(appliedFilters, FILTER.ORIGIN)) {

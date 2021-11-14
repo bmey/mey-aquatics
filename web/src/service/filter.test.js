@@ -33,6 +33,19 @@ describe('filter', () => {
     expect(result[0].id).toEqual('cares');
   });
 
+  it('only includes items in stock when IN STOCK filter applied', () => {
+    const productList = [
+      { id: 'out-of-stock', sizes: { B: { count: 0 } } },
+      { id: 'in-stock', sizes: { B: { count: 0 }, M: { count: 1 } } },
+    ];
+    const appliedFilters = [{ type: FILTER.IN_STOCK }];
+
+    const result = filter(productList, appliedFilters);
+
+    expect(result.length).toBe(1);
+    expect(result[0].id).toEqual('in-stock');
+  });
+
   it('includes items from areas of origin when ORIGIN filters applied', () => {
     const productList = [
       { id: 'test1', origin: 'TEST-1' },
