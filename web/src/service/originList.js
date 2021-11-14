@@ -1,16 +1,17 @@
 export const nameHash = {
   AM: 'Americas',
-  'AM-SAMER': 'South America',
-  'AM-COSTA': 'Costa Rica',
-  'AM-CEAME': 'Central America',
+  'AM-SAMERI': 'South America',
+  'AM-COSTAR': 'Costa Rica',
+  'AM-CEAMER': 'Central America',
   'AM-OTHER': 'Other',
   AF: 'Africa',
-  'AF-CONGO': 'Congo River',
-  'AF-LAKEM': 'Lake Malawi',
-  'AF-LAKET': 'Lake Tanganyika',
-  'AF-LAKEV': 'Lake Victoria',
+  'AF-CONGOR': 'Congo River',
+  'AF-LAKEMA': 'Lake Malawi',
+  'AF-LAKETA': 'Lake Tanganyika',
+  'AF-LAKETU': 'Lake Turkana',
+  'AF-LAKEVI': 'Lake Victoria',
   SEA: 'South East Asia',
-  'SEA-INDON': 'Indonesia',
+  'SEA-INDONE': 'Indonesia',
   'SEA-INDIA': 'India',
   'SEA-OTHER': 'Other',
 };
@@ -19,7 +20,7 @@ const originList = [
   {
     id: 'AM',
     name: nameHash['AM'],
-    subOrigins: ['SAMER', 'COSTA', 'CEAME', 'OTHER'].map(subId => ({
+    subOrigins: ['SAMERI', 'COSTAR', 'CEAMER', 'OTHER'].map(subId => ({
       id: `AM-${subId}`,
       name: nameHash[`AM-${subId}`],
     })),
@@ -27,7 +28,7 @@ const originList = [
   {
     id: 'AF',
     name: 'Africa',
-    subOrigins: ['CONGO', 'LAKEM', 'LAKET', 'LAKEV'].map(subId => ({
+    subOrigins: ['CONGOR', 'LAKEMA', 'LAKETA', 'LAKETU', 'LAKEVI'].map(subId => ({
       id: `AF-${subId}`,
       name: nameHash[`AF-${subId}`],
     })),
@@ -35,7 +36,7 @@ const originList = [
   {
     id: 'SEA',
     name: 'South East Asia',
-    subOrigins: ['INDON', 'INDIA', 'OTHER'].map(subId => ({
+    subOrigins: ['INDONE', 'INDIA', 'OTHER'].map(subId => ({
       id: `SEA-${subId}`,
       name: nameHash[`SEA-${subId}`],
     })),

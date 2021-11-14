@@ -1,33 +1,43 @@
 {
   "data.json": {
-    "hotItems": ["AF-BUF", "AM-ANGEL-ALTUM"],
     "fish": [
       {
         "common": "Buffalo Head",
         "id": "AF-BUF",
         "onCaresList": false,
-        "origin": "AF-CONGO",
+        "origin": "AF-CONGOR",
+        "picture": "Buffalo_Head.jpg",
         "scientific": "Steatocranus casuarius",
         "sizes": {
           "B": {
             "count": 0,
-            "length": 0
+            "length": 4,
+            "price": 40,
+            "wholesalePrice": 40
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": 3
           },
           "L": {
             "count": 0,
-            "length": 0
+            "length": 3,
+            "price": 20,
+            "wholesalePrice": 20
           },
           "M": {
-            "count": 1,
-            "length": 0
+            "count": 0,
+            "length": 2,
+            "price": 12,
+            "wholesalePrice": 12
           },
           "S": {
-            "count": 6,
-            "length": 0
+            "count": 0,
+            "length": 1,
+            "price": 5,
+            "wholesalePrice": 5
           }
         }
       },
@@ -35,29 +45,39 @@
         "common": "Red Top Cichlid",
         "id": "AF-M-AFRA",
         "onCaresList": false,
-        "origin": "AF-LAKEM",
+        "origin": "AF-LAKEMA",
         "picture": "Cynotilapia_Afra.jpg",
         "scientific": "Cynotilpia Afra",
         "sizes": {
           "B": {
-            "count": 6,
-            "length": 0
+            "count": 10,
+            "length": 4,
+            "price": 100,
+            "wholesalePrice": ""
           },
           "F": {
-            "count": 6,
-            "length": 0
+            "count": 2,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": 3
           },
           "L": {
             "count": 0,
-            "length": 0
+            "length": 3,
+            "price": 40,
+            "wholesalePrice": 15
           },
           "M": {
             "count": 0,
-            "length": 0
+            "length": 2,
+            "price": 20,
+            "wholesalePrice": 8
           },
           "S": {
-            "count": 21,
-            "length": 0
+            "count": 0,
+            "length": 1,
+            "price": 10,
+            "wholesalePrice": 5
           }
         }
       },
@@ -65,207 +85,239 @@
         "common": "Bream",
         "id": "AF-M-BREAM",
         "onCaresList": false,
-        "origin": "AF-LAKEM",
+        "origin": "AF-LAKEMA",
         "picture": "Chilotilapia_rhoadesii_M.jpg",
         "scientific": "Chilotilapia Rhoadesii",
         "sizes": {
           "B": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "L": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "M": {
-            "count": 5,
-            "length": 0
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "S": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           }
         }
       },
       {
-        "common": "Peacock Fire Fish",
-        "id": "AF-M-FIREFISH",
+        "common": "Peacock Red Shoulder",
+        "id": "AF-M-REDPEA",
         "onCaresList": false,
-        "origin": "AF-LAKEM",
-        "scientific": "Aulonocara suantific sp.",
+        "origin": "AF-LAKEMA",
+        "picture": "red_shoulder.jpg",
+        "scientific": "Aulonocara hansbaenschi",
         "sizes": {
           "B": {
             "count": 0,
-            "length": 0
+            "length": 4,
+            "price": "",
+            "wholesalePrice": ""
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "L": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": 30,
+            "wholesalePrice": ""
           },
           "M": {
-            "count": 1,
-            "length": 0
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "S": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           }
         }
       },
       {
-        "common": "European Dragonblood",
+        "common": "Peacock European Dragonblood",
         "id": "AF-M-JACOB",
         "onCaresList": false,
-        "origin": "AF-LAKEM",
+        "origin": "AF-LAKEMA",
         "picture": "Aulonocara_jacobfreibergi_M.jpg",
         "scientific": "Aulonocara jacobfreibergi",
         "sizes": {
           "B": {
-            "count": 5,
-            "length": 0
+            "count": 3,
+            "length": 4,
+            "price": 100,
+            "wholesalePrice": ""
           },
           "F": {
-            "count": 30,
-            "length": 0
+            "count": 0,
+            "length": 0.5,
+            "price": 5,
+            "wholesalePrice": 3
           },
           "L": {
             "count": 0,
-            "length": 0
+            "length": 3,
+            "price": 25,
+            "wholesalePrice": 15
+          },
+          "M": {
+            "count": 0,
+            "length": 2,
+            "price": 12,
+            "wholesalePrice": 8
+          },
+          "S": {
+            "count": 30,
+            "length": 1,
+            "price": 6,
+            "wholesalePrice": 5
+          }
+        }
+      },
+      {
+        "common": "Peacock Ruby Red albino",
+        "id": "AF-M-RED-ALBINO",
+        "onCaresList": false,
+        "origin": "AF-LAKEMA",
+        "picture": "peacock_3.jpg",
+        "scientific": "Aulonocara sp. Red",
+        "sizes": {
+          "B": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "F": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "L": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "M": {
             "count": 3,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "S": {
-            "count": 20,
-            "length": 0
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           }
         }
       },
       {
-        "common": "Albino Dragonblood",
-        "id": "AF-M-JACOB-ALBINO",
-        "onCaresList": false,
-        "origin": "AF-LAKEM",
-        "picture": "Aulonocara_jacobfreibergi_M.jpg",
-        "scientific": "Aulonocara jacobfreibergi",
-        "sizes": {
-          "B": {
-            "count": 0,
-            "length": 0
-          },
-          "F": {
-            "count": 0,
-            "length": 0
-          },
-          "L": {
-            "count": 0,
-            "length": 0
-          },
-          "M": {
-            "count": 1,
-            "length": 0
-          },
-          "S": {
-            "count": 0,
-            "length": 0
-          }
-        }
-      },
-      {
-        "common": "Red top lwanda",
+        "common": "Peacock Red top lwanda",
         "id": "AF-M-LWANDA",
         "onCaresList": true,
-        "origin": "AF-LAKEM",
+        "origin": "AF-LAKEMA",
         "picture": "Aulonocara_sp._LwandaM.jpg",
         "scientific": "Aulonocara sp. Lwanda",
         "sizes": {
           "B": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "L": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "M": {
-            "count": 4,
-            "length": 0
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "S": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           }
         }
       },
       {
-        "common": "Red Nyasa peacock",
+        "common": "Peacock Red Nyasa",
         "id": "AF-M-NYASSAE",
         "onCaresList": false,
-        "origin": "AF-LAKEM",
-        "picture": "Aulonocara_Nyassae.jpg",
+        "origin": "AF-LAKEMA",
+        "picture": "Aulonocara_Nyassae_2.jpg",
         "scientific": "Aulonocara nyassae",
         "sizes": {
           "B": {
-            "count": 10,
-            "length": 0
-          },
-          "F": {
-            "count": 2,
-            "length": 0
-          },
-          "L": {
-            "count": 0,
-            "length": 0
-          },
-          "M": {
-            "count": 0,
-            "length": 0
-          },
-          "S": {
-            "count": 10,
-            "length": 0
-          }
-        }
-      },
-      {
-        "common": "Red Peacock",
-        "id": "AF-M-RED",
-        "onCaresList": false,
-        "origin": "AF-LAKEM",
-        "scientific": "Aulonocara Red",
-        "sizes": {
-          "B": {
-            "count": 0,
-            "length": 0
+            "count": 6,
+            "length": 4,
+            "price": 100,
+            "wholesalePrice": ""
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0.5,
+            "price": 5,
+            "wholesalePrice": 3
           },
           "L": {
-            "count": 0,
-            "length": 0
+            "count": 5,
+            "length": 3,
+            "price": 40,
+            "wholesalePrice": 15
           },
           "M": {
-            "count": 1,
-            "length": 0
+            "count": 0,
+            "length": 2,
+            "price": 25,
+            "wholesalePrice": 8
           },
           "S": {
             "count": 0,
-            "length": 0
+            "length": 1,
+            "price": 12,
+            "wholesalePrice": 5
           }
         }
       },
@@ -273,28 +325,39 @@
         "common": "Taiwan Reef",
         "id": "AF-M-REEF",
         "onCaresList": true,
-        "origin": "AF-LAKEM",
+        "origin": "AF-LAKEMA",
+        "picture": "Taiwan_Reef.jpg",
         "scientific": "Steveni protomelas sp.",
         "sizes": {
           "B": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "L": {
             "count": 0,
-            "length": 0
+            "length": 3,
+            "price": 40,
+            "wholesalePrice": ""
           },
           "M": {
-            "count": 3,
-            "length": 0
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "S": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           }
         }
       },
@@ -302,58 +365,79 @@
         "common": "Blue Sapphire",
         "id": "AF-M-SAPPHIRE",
         "onCaresList": true,
-        "origin": "AF-LAKEM",
-        "picture": "Placido_phenochilius_F.jpg",
+        "origin": "AF-LAKEMA",
+        "picture": "Blue%20Saphire.jpg",
         "scientific": "Placido phenochilus",
         "sizes": {
           "B": {
-            "count": 0,
-            "length": 0
+            "count": 3,
+            "length": 6,
+            "price": "",
+            "wholesalePrice": ""
           },
           "F": {
-            "count": 0,
-            "length": 0
+            "count": 12,
+            "length": 1,
+            "price": 20,
+            "wholesalePrice": ""
           },
           "L": {
             "count": 0,
-            "length": 0
+            "length": 4,
+            "price": 150,
+            "wholesalePrice": ""
           },
           "M": {
-            "count": 9,
-            "length": 0
+            "count": 0,
+            "length": 3,
+            "price": 75,
+            "wholesalePrice": ""
           },
           "S": {
-            "count": 0,
-            "length": 0
+            "count": 28,
+            "length": 2,
+            "price": 50,
+            "wholesalePrice": ""
           }
         }
       },
       {
-        "common": "Brichardi",
+        "common": "Neo Brichardi",
         "id": "AF-T-BRICHARDI",
         "onCaresList": true,
-        "origin": "AF-LAKET",
+        "origin": "AF-LAKETA",
+        "picture": "Brichardi.jpg",
         "scientific": "Neolamprologus brichardi",
         "sizes": {
           "B": {
-            "count": 5,
-            "length": 0
+            "count": 0,
+            "length": 4,
+            "price": "",
+            "wholesalePrice": ""
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0.5,
+            "price": "",
+            "wholesalePrice": ""
           },
           "L": {
             "count": 0,
-            "length": 0
+            "length": 3,
+            "price": "",
+            "wholesalePrice": ""
           },
           "M": {
-            "count": 8,
-            "length": 0
+            "count": 6,
+            "length": 2,
+            "price": "",
+            "wholesalePrice": ""
           },
           "S": {
             "count": 0,
-            "length": 0
+            "length": 1,
+            "price": "",
+            "wholesalePrice": ""
           }
         }
       },
@@ -361,57 +445,39 @@
         "common": "Calvus Black",
         "id": "AF-T-CALVUS-B",
         "onCaresList": true,
-        "origin": "AF-LAKET",
+        "origin": "AF-LAKETA",
+        "picture": "Calvis_White.jpg",
         "scientific": "Altolamprologus calvus",
         "sizes": {
           "B": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "L": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "M": {
-            "count": 6,
-            "length": 0
+            "count": 2,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "S": {
             "count": 0,
-            "length": 0
-          }
-        }
-      },
-      {
-        "common": "Calvus Gold Head",
-        "id": "AF-T-CALVUS-GH",
-        "onCaresList": true,
-        "origin": "AF-LAKET",
-        "scientific": "Altolamprologus calvus",
-        "sizes": {
-          "B": {
-            "count": 0,
-            "length": 0
-          },
-          "F": {
-            "count": 0,
-            "length": 0
-          },
-          "L": {
-            "count": 0,
-            "length": 0
-          },
-          "M": {
-            "count": 4,
-            "length": 0
-          },
-          "S": {
-            "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           }
         }
       },
@@ -419,86 +485,79 @@
         "common": "Calvus Red Fin",
         "id": "AF-T-CALVUS-RF",
         "onCaresList": true,
-        "origin": "AF-LAKET",
+        "origin": "AF-LAKETA",
+        "picture": "Calvis_Red_Fin.jpg",
         "scientific": "Altolamprologus calvus",
         "sizes": {
           "B": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "L": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "M": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "S": {
-            "count": 4,
-            "length": 0
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           }
         }
       },
       {
-        "common": "Calvus White",
-        "id": "AF-T-CALVUS-W",
-        "onCaresList": true,
-        "origin": "AF-LAKET",
-        "scientific": "Altolamprologus calvus",
-        "sizes": {
-          "B": {
-            "count": 0,
-            "length": 0
-          },
-          "F": {
-            "count": 0,
-            "length": 0
-          },
-          "L": {
-            "count": 1,
-            "length": 0
-          },
-          "M": {
-            "count": 0,
-            "length": 0
-          },
-          "S": {
-            "count": 0,
-            "length": 0
-          }
-        }
-      },
-      {
-        "common": "Tanganyika Stinging Catfish",
+        "common": "Catfish Tanganyika Stinging",
         "id": "AF-T-CATFISH",
         "onCaresList": false,
-        "origin": "AF-LAKET",
+        "origin": "AF-LAKETA",
+        "picture": "Tanganyika_catfish.jpg",
         "scientific": "Lophiobagrus cyclurus",
         "sizes": {
           "B": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "L": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "M": {
-            "count": 6,
-            "length": 0
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "S": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           }
         }
       },
@@ -506,28 +565,39 @@
         "common": "Featherfin Cichlid",
         "id": "AF-T-FEATHER",
         "onCaresList": false,
-        "origin": "AF-LAKET",
+        "origin": "AF-LAKETA",
+        "picture": "Featherfin.jpg",
         "scientific": "Cyathopharynx furcifer",
         "sizes": {
           "B": {
-            "count": 10,
-            "length": 0
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "L": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "M": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "S": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           }
         }
       },
@@ -535,145 +605,199 @@
         "common": "Frontosa Black Widow",
         "id": "AF-T-FRONTOSA-BW",
         "onCaresList": true,
-        "origin": "AF-LAKET",
+        "origin": "AF-LAKETA",
+        "picture": "black_widow_frontosa.jpg",
         "scientific": "Cyphotilapia frontosa",
         "sizes": {
           "B": {
             "count": 0,
-            "length": 0
+            "length": 6,
+            "price": "",
+            "wholesalePrice": ""
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0.5,
+            "price": "",
+            "wholesalePrice": ""
           },
           "L": {
-            "count": 0,
-            "length": 0
+            "count": 4,
+            "length": 5,
+            "price": "",
+            "wholesalePrice": ""
           },
           "M": {
-            "count": 5,
-            "length": 0
+            "count": 0,
+            "length": 3,
+            "price": "",
+            "wholesalePrice": ""
           },
           "S": {
             "count": 0,
-            "length": 0
+            "length": 1,
+            "price": "",
+            "wholesalePrice": ""
           }
         }
       },
       {
-        "common": "Leleupi (yellow)",
+        "common": "Neo Leleupi (yellow)",
         "id": "AF-T-LELEUPI",
         "onCaresList": false,
-        "origin": "AF-LAKET",
+        "origin": "AF-LAKETA",
+        "picture": "Leleupi.jpg",
         "scientific": "Neolamprologus leleupi",
         "sizes": {
           "B": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "L": {
-            "count": 1,
-            "length": 0
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "M": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "S": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           }
         }
       },
       {
-        "common": "Neolamprolagus multifasciatus",
+        "common": "Neo multifasciatus",
         "id": "AF-T-MULTI",
         "onCaresList": false,
-        "origin": "AF-LAKET",
+        "origin": "AF-LAKETA",
         "picture": "Neolamprologus_multifasciatus_M.jpg",
         "scientific": "Neolamprologus multifasciatus",
         "sizes": {
           "B": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "L": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "M": {
-            "count": 5,
-            "length": 0
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "S": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           }
         }
       },
       {
-        "common": "Ornatus",
-        "id": "AF-T-ORNATUS",
+        "common": "Ocellatus",
+        "id": "AF-T-OCELLATUS",
         "onCaresList": false,
-        "origin": "AF-LAKET",
-        "scientific": "Julidochromis ornatus",
+        "origin": "AF-LAKETA",
+        "picture": "ocellatus_2.jpg",
+        "scientific": "Lamprologus ocellatus",
         "sizes": {
           "B": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "L": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "M": {
-            "count": 1,
-            "length": 0
+            "count": 3,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "S": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           }
         }
       },
       {
-        "common": "Pulcher (Daffodil)",
+        "common": "Neo Pulcher (Daffodil)",
         "id": "AF-T-PULCHER",
         "onCaresList": true,
-        "origin": "AF-LAKET",
+        "origin": "AF-LAKETA",
+        "picture": "pulcher_2.jpg",
         "scientific": "Neolamprologus pulcher",
         "sizes": {
           "B": {
-            "count": 0,
-            "length": 0
+            "count": 4,
+            "length": 3,
+            "price": 25,
+            "wholesalePrice": ""
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0.25,
+            "price": 5,
+            "wholesalePrice": 3
           },
           "L": {
             "count": 0,
-            "length": 0
+            "length": 2,
+            "price": 20,
+            "wholesalePrice": 15
           },
           "M": {
             "count": 6,
-            "length": 0
+            "length": 1.5,
+            "price": 15,
+            "wholesalePrice": 8
           },
           "S": {
-            "count": 0,
-            "length": 0
+            "count": 30,
+            "length": 0.5,
+            "price": 7,
+            "wholesalePrice": 5
           }
         }
       },
@@ -681,28 +805,39 @@
         "common": "Transcriptus",
         "id": "AF-T-TRANS",
         "onCaresList": false,
-        "origin": "AF-LAKET",
+        "origin": "AF-LAKETA",
+        "picture": "Transcriptus_2.jpg",
         "scientific": "Julidochromis transcriptus",
         "sizes": {
           "B": {
-            "count": 0,
-            "length": 0
+            "count": 6,
+            "length": 4,
+            "price": 100,
+            "wholesalePrice": ""
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0.5,
+            "price": 5,
+            "wholesalePrice": 5
           },
           "L": {
             "count": 0,
-            "length": 0
+            "length": 3,
+            "price": 40,
+            "wholesalePrice": 20
           },
           "M": {
-            "count": 2,
-            "length": 0
+            "count": 0,
+            "length": 2,
+            "price": 25,
+            "wholesalePrice": 10
           },
           "S": {
-            "count": 0,
-            "length": 0
+            "count": 6,
+            "length": 1,
+            "price": 7,
+            "wholesalePrice": 7
           }
         }
       },
@@ -710,28 +845,119 @@
         "common": "Tropheus Bemba Orange",
         "id": "AF-T-TROPHEUS-ORANGE",
         "onCaresList": true,
-        "origin": "AF-LAKET",
+        "origin": "AF-LAKETA",
+        "picture": "Tropheus_Bemba_M.jpg",
         "scientific": "Tropheus Bemba",
         "sizes": {
           "B": {
             "count": 0,
-            "length": 0
+            "length": 4,
+            "price": "",
+            "wholesalePrice": ""
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "L": {
             "count": 0,
-            "length": 0
+            "length": 3,
+            "price": 40,
+            "wholesalePrice": ""
           },
           "M": {
-            "count": 4,
-            "length": 0
+            "count": 0,
+            "length": 2,
+            "price": "",
+            "wholesalePrice": ""
           },
           "S": {
             "count": 0,
-            "length": 0
+            "length": 1,
+            "price": 10,
+            "wholesalePrice": ""
+          }
+        }
+      },
+      {
+        "common": "Tropheus Lufubu (Purple)",
+        "id": "AF-T-TROPHEUS-PURPLE",
+        "onCaresList": true,
+        "origin": "AF-LAKETA",
+        "picture": "Tropheus_moorii_Lufubu_2.jpg",
+        "scientific": "Tropheus moorii Lufubu",
+        "sizes": {
+          "B": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "F": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "L": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "M": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "S": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          }
+        }
+      },
+      {
+        "common": "Astatotilapia sp. \"tomato\"",
+        "id": "AF-V-35",
+        "onCaresList": true,
+        "origin": "AF-LAKEVI",
+        "picture": "red_tomato.jpg",
+        "scientific": "Haplochromis sp. \"35\"",
+        "sizes": {
+          "B": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "F": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "L": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "M": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "S": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           }
         }
       },
@@ -739,61 +965,39 @@
         "common": "Astatotilapia sp. \"red tail\"",
         "id": "AF-V-44",
         "onCaresList": true,
-        "origin": "AF-LAKEV",
+        "origin": "AF-LAKEVI",
+        "picture": "vc44_2.jpg",
         "scientific": "Haplochromis sp. \"#44\" thickskin",
         "sizes": {
           "B": {
-            "count": 6,
+            "count": 0,
+            "length": 3,
+            "price": 25,
+            "wholesalePrice": ""
+          },
+          "F": {
+            "count": 0,
+            "length": 0.25,
+            "price": 5,
+            "wholesalePrice": 3
+          },
+          "L": {
+            "count": 0,
+            "length": 2,
+            "price": 20,
+            "wholesalePrice": 15
+          },
+          "M": {
+            "count": 35,
+            "length": 1.5,
             "price": 15,
-            "length": 0
+            "wholesalePrice": 8
           },
-          "F": {
-            "count": 50,
-            "price": 0.5,
-            "length": 0
-          },
-          "L": {
+          "S": {
             "count": 0,
+            "length": 0.5,
             "price": 7,
-            "length": 0
-          },
-          "M": {
-            "count": 80,
-            "length": 0
-          },
-          "S": {
-            "count": 21,
-            "price": 2,
-            "length": 0
-          }
-        }
-      },
-      {
-        "common": "Hap sp.Albino",
-        "id": "AF-V-ALBINO",
-        "onCaresList": true,
-        "origin": "AF-LAKEV",
-        "scientific": "Albino",
-        "sizes": {
-          "B": {
-            "count": 0,
-            "length": 0
-          },
-          "F": {
-            "count": 0,
-            "length": 0
-          },
-          "L": {
-            "count": 0,
-            "length": 0
-          },
-          "M": {
-            "count": 1,
-            "length": 0
-          },
-          "S": {
-            "count": 0,
-            "length": 0
+            "wholesalePrice": 5
           }
         }
       },
@@ -801,28 +1005,39 @@
         "common": "Fire Red Uganda",
         "id": "AF-V-FIRE-UG",
         "onCaresList": true,
-        "origin": "AF-LAKEV",
+        "origin": "AF-LAKEVI",
+        "picture": "IMG_1104.jpg",
         "scientific": "Paralabidochromis Fire Uganda",
         "sizes": {
           "B": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "L": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "M": {
-            "count": 16,
-            "length": 0
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "S": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           }
         }
       },
@@ -830,29 +1045,39 @@
         "common": "Fischeri",
         "id": "AF-V-FISCHERI",
         "onCaresList": true,
-        "origin": "AF-LAKEV",
+        "origin": "AF-LAKEVI",
         "picture": "Ptyochromus_fisheri.jpg",
         "scientific": "Ptyochromus fischeri",
         "sizes": {
           "B": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "L": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "M": {
-            "count": 2,
-            "length": 0
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "S": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           }
         }
       },
@@ -860,29 +1085,119 @@
         "common": "Kenya Gold",
         "id": "AF-V-KENYA",
         "onCaresList": true,
-        "origin": "AF-LAKEV",
+        "origin": "AF-LAKEVI",
         "picture": "Haplochromis_Kenya_Gold_F.jpg",
         "scientific": "Haplochromis Kenya Gold",
         "sizes": {
           "B": {
-            "count": 7,
-            "length": 0
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "L": {
-            "count": 15,
-            "length": 0
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "M": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "S": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          }
+        }
+      },
+      {
+        "common": "Hap Milomo",
+        "id": "AF-V-MILOMO",
+        "onCaresList": true,
+        "origin": "AF-LAKEVI",
+        "picture": "Hap_Milomo.jpg",
+        "scientific": "Placidochromis milomo",
+        "sizes": {
+          "B": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "F": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "L": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "M": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "S": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          }
+        }
+      },
+      {
+        "common": "Pundamilia Nyererei",
+        "id": "AF-V-NYEREREI",
+        "onCaresList": true,
+        "origin": "AF-LAKEVI",
+        "picture": "pundamilla_nyererei_red.jpg",
+        "scientific": "Pundamilia Nyererei",
+        "sizes": {
+          "B": {
+            "count": 4,
+            "length": 3,
+            "price": 50,
+            "wholesalePrice": ""
+          },
+          "F": {
+            "count": 0,
+            "length": 0.25,
+            "price": 5,
+            "wholesalePrice": 3
+          },
+          "L": {
+            "count": 5,
+            "length": 2,
+            "price": 20,
+            "wholesalePrice": 15
+          },
+          "M": {
+            "count": 6,
+            "length": 1.5,
+            "price": 15,
+            "wholesalePrice": 8
+          },
+          "S": {
+            "count": 0,
+            "length": 0.5,
+            "price": 7,
+            "wholesalePrice": 5
           }
         }
       },
@@ -890,29 +1205,79 @@
         "common": "Obliquden",
         "id": "AF-V-OBLIQ",
         "onCaresList": true,
-        "origin": "AF-LAKEV",
+        "origin": "AF-LAKEVI",
         "picture": "Hapolochromus_murchasin_2.jpg",
         "scientific": "Hapolochromus murchasin",
         "sizes": {
           "B": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "L": {
-            "count": 1,
-            "length": 0
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "M": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "S": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          }
+        }
+      },
+      {
+        "common": "Black Piebald",
+        "id": "AF-V-PIEBALD",
+        "onCaresList": false,
+        "origin": "AF-LAKEVI",
+        "picture": "Paralabidochromis_chromogynos_F.jpg",
+        "scientific": "Paralabidochromis chromogynos",
+        "sizes": {
+          "B": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "F": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "L": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "M": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "S": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           }
         }
       },
@@ -920,29 +1285,39 @@
         "common": "Ruby Green",
         "id": "AF-V-RG",
         "onCaresList": true,
-        "origin": "AF-LAKEV",
+        "origin": "AF-LAKEVI",
         "picture": "Haplochromus_sp._Ruby_Green_M.jpg",
         "scientific": "Haplochromis sp. Ruby Green",
         "sizes": {
           "B": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "L": {
-            "count": 1,
-            "length": 0
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "M": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "S": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           }
         }
       },
@@ -950,233 +1325,159 @@
         "common": "Rock Kribensis",
         "id": "AF-V-ROCK",
         "onCaresList": true,
-        "origin": "AF-LAKEV",
+        "origin": "AF-LAKEVI",
         "picture": "Paralabidochromis_sauvagei.jpg",
         "scientific": "Paralabidochromis sauvagei",
         "sizes": {
           "B": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "L": {
-            "count": 1,
-            "length": 0
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "M": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "S": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           }
         }
       },
       {
-        "common": "Amazonia",
-        "id": "AM-AMAZONIA",
-        "onCaresList": false,
-        "origin": "AM-SAMER",
-        "picture": "Cichlasoma_Amazonia_F.jpg",
-        "scientific": "Cichlasoma amazonia",
-        "sizes": {
-          "B": {
-            "count": 0,
-            "length": 0
-          },
-          "F": {
-            "count": 0,
-            "length": 0
-          },
-          "L": {
-            "count": 2,
-            "length": 0
-          },
-          "M": {
-            "count": 0,
-            "length": 0
-          },
-          "S": {
-            "count": 0,
-            "length": 0
-          }
-        }
-      },
-      {
-        "common": "Altum Angelfish",
+        "common": "Angelfish Altum",
         "id": "AM-ANGEL-ALTUM",
         "onCaresList": true,
-        "origin": "AM-SAMER",
+        "origin": "AM-SAMERI",
+        "picture": "Pteryphilum_altum.jpg",
         "scientific": "Pteryphllum altum",
         "sizes": {
           "B": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "L": {
-            "count": 5,
-            "length": 0
+            "count": 1,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "M": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "S": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           }
         }
       },
       {
-        "common": "Koi Angel Red Top",
+        "common": "Angelfish Koi Red Top",
         "id": "AM-ANGEL-KOI",
         "onCaresList": false,
-        "origin": "AM-SAMER",
+        "origin": "AM-SAMERI",
+        "picture": "koi_angel.jpg",
         "scientific": "Scalare",
         "sizes": {
           "B": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "L": {
-            "count": 0,
-            "length": 0
+            "count": 1,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "M": {
-            "count": 15,
-            "length": 0
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "S": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           }
         }
       },
       {
-        "common": "Peacock Apistograma",
-        "id": "AM-APISTO-AGA",
+        "common": "Arowana Black",
+        "id": "AM-AROWANA-B",
         "onCaresList": false,
-        "origin": "AM-SAMER",
-        "scientific": "Apistogramma agassizii",
-        "sizes": {
-          "B": {
-            "count": 0,
-            "length": 0
-          },
-          "F": {
-            "count": 0,
-            "length": 0
-          },
-          "L": {
-            "count": 0,
-            "length": 0
-          },
-          "M": {
-            "count": 4,
-            "length": 0
-          },
-          "S": {
-            "count": 0,
-            "length": 0
-          }
-        }
-      },
-      {
-        "common": "Black Arowana",
-        "id": "AM-AROWANA",
-        "onCaresList": false,
-        "origin": "AM-SAMER",
+        "origin": "AM-SAMERI",
+        "picture": "arowana_in_tank.jpg",
         "scientific": "Osteoglossum ferreirai",
         "sizes": {
           "B": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "L": {
             "count": 0,
-            "length": 0
-          },
-          "M": {
-            "count": 1,
-            "length": 0
-          },
-          "S": {
-            "count": 0,
-            "length": 0
-          }
-        }
-      },
-      {
-        "common": "Cory catfish",
-        "id": "AM-CORY",
-        "onCaresList": false,
-        "origin": "AM-SAMER",
-        "scientific": "Corydoras",
-        "sizes": {
-          "B": {
-            "count": 0,
-            "length": 0
-          },
-          "F": {
-            "count": 0,
-            "length": 0
-          },
-          "L": {
-            "count": 0,
-            "length": 0
-          },
-          "M": {
-            "count": 5,
-            "length": 0
-          },
-          "S": {
-            "count": 0,
-            "length": 0
-          }
-        }
-      },
-      {
-        "common": "Discus Yellow Scribble",
-        "id": "AM-DICUS-YELLOW",
-        "onCaresList": false,
-        "origin": "AM-SAMER",
-        "scientific": "Symphysodon",
-        "sizes": {
-          "B": {
-            "count": 0,
-            "length": 0
-          },
-          "F": {
-            "count": 0,
-            "length": 0
-          },
-          "L": {
-            "count": 0,
-            "length": 0
+            "length": 26,
+            "price": "",
+            "wholesalePrice": ""
           },
           "M": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "S": {
-            "count": 3,
-            "length": 0
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           }
         }
       },
@@ -1184,28 +1485,39 @@
         "common": "Discus",
         "id": "AM-DISCUS-ORANGE",
         "onCaresList": false,
-        "origin": "AM-SAMER",
+        "origin": "AM-SAMERI",
+        "picture": "Discus.jpg",
         "scientific": "Symphysodon",
         "sizes": {
           "B": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "L": {
-            "count": 5,
-            "length": 0
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "M": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "S": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           }
         }
       },
@@ -1214,27 +1526,38 @@
         "id": "AM-FLOWERHORN",
         "onCaresList": false,
         "origin": "AM-OTHER",
-        "scientific": "",
+        "picture": "Pieraquiran_Flowerhorn.jpg",
+        "scientific": "Pieraquiran",
         "sizes": {
           "B": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "L": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "M": {
-            "count": 2,
-            "length": 0
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "S": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           }
         }
       },
@@ -1242,88 +1565,159 @@
         "common": "Bandit cichlid",
         "id": "AM-GEAYI",
         "onCaresList": false,
-        "origin": "AM-SAMER",
+        "origin": "AM-SAMERI",
         "picture": "Guianacara_geayi.jpg",
         "scientific": "Guianacara geayi",
         "sizes": {
           "B": {
-            "count": 10,
-            "length": 0
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "L": {
             "count": 0,
-            "length": 0
+            "length": 3,
+            "price": 30,
+            "wholesalePrice": ""
           },
           "M": {
             "count": 0,
-            "length": 0
+            "length": 2,
+            "price": 22,
+            "wholesalePrice": ""
           },
           "S": {
             "count": 0,
-            "length": 0
+            "length": 1,
+            "price": 15,
+            "wholesalePrice": ""
           }
         }
       },
       {
         "common": "Geophagus",
-        "id": "AM-GEO",
+        "id": "AM-GEO-DICRO",
         "onCaresList": false,
-        "origin": "AM-SAMER",
+        "origin": "AM-SAMERI",
+        "picture": "Geophagus.jpg",
         "scientific": "Geophagus dicrozoster",
         "sizes": {
           "B": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "L": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "M": {
-            "count": 1,
-            "length": 0
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "S": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           }
         }
       },
       {
-        "common": "Green Terror",
+        "common": "Blue Acara",
+        "id": "AM-BLUEA",
+        "onCaresList": false,
+        "origin": "AM-SAMERI",
+        "picture": "Blue_Acara.jpg",
+        "scientific": "Andinoacara pulcher",
+        "sizes": {
+          "B": {
+            "count": 2,
+            "length": 3,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "F": {
+            "count": 0,
+            "length": 0.25,
+            "price": 5,
+            "wholesalePrice": 3
+          },
+          "L": {
+            "count": 0,
+            "length": 2,
+            "price": 20,
+            "wholesalePrice": 15
+          },
+          "M": {
+            "count": 4,
+            "length": 1.5,
+            "price": 15,
+            "wholesalePrice": 8
+          },
+          "S": {
+            "count": 0,
+            "length": 0.5,
+            "price": 7,
+            "wholesalePrice": 5
+          }
+        }
+      },
+      {
+        "common": "Green Terror -white saum",
         "id": "AM-GREEN-T",
         "onCaresList": false,
-        "origin": "AM-SAMER",
-        "picture": "Andinoacara_rivulatus.jpg",
+        "origin": "AM-SAMERI",
+        "picture": "green_terror.jpg",
         "scientific": "Andinoacara rivulatus syn.",
         "sizes": {
           "B": {
             "count": 0,
-            "length": 0
+            "length": 6,
+            "price": "",
+            "wholesalePrice": ""
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "L": {
-            "count": 0,
-            "length": 0
+            "count": 1,
+            "length": 4,
+            "price": 100,
+            "wholesalePrice": ""
           },
           "M": {
-            "count": 2,
-            "length": 0
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "S": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           }
         }
       },
@@ -1331,176 +1725,239 @@
         "common": "Midas Cichlid",
         "id": "AM-MIDAS",
         "onCaresList": false,
-        "origin": "AM-COSTA",
+        "origin": "AM-CEAMER",
         "picture": "Amphilophus_citrinellus_F.jpg",
         "scientific": "Amphilophus citrinellus",
         "sizes": {
           "B": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "L": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "M": {
-            "count": 1,
-            "length": 0
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "S": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           }
         }
       },
       {
-        "common": "Zebra Pleco (L-46)",
+        "common": "Pleco Zebra (L-46)",
         "id": "AM-PLECO-046",
         "onCaresList": true,
-        "origin": "AM-SAMER",
-        "picture": "10-7_L46.jpg",
+        "origin": "AM-SAMERI",
+        "picture": "zebra_pleco.jpg",
         "scientific": "Hypancistrus Zebra L046",
         "sizes": {
           "B": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "L": {
-            "count": 0,
-            "length": 0
+            "count": 7,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "M": {
-            "count": 6,
-            "length": 0
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "S": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           }
         }
       },
       {
-        "common": "Hypancistrus Lower ingu Rio ",
+        "common": "Pleco Hypancistrus",
         "id": "AM-PLECO-066",
         "onCaresList": true,
-        "origin": "AM-SAMER",
+        "origin": "AM-SAMERI",
+        "picture": "L066.jpg",
         "scientific": "Hypancistrus Xingu L066",
         "sizes": {
           "B": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "L": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "M": {
-            "count": 5,
-            "length": 0
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "S": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           }
         }
       },
       {
-        "common": "Blue Phantom Pleco",
+        "common": "Pleco Blue Phantom",
         "id": "AM-PLECO-128",
         "onCaresList": false,
-        "origin": "AM-SAMER",
+        "origin": "AM-SAMERI",
+        "picture": "Blue_Phantom_Pleco.jpg",
         "scientific": "Hemiancistrus sp. L128",
         "sizes": {
           "B": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "L": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "M": {
-            "count": 2,
-            "length": 0
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "S": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           }
         }
       },
       {
-        "common": "Columbian Zebra plecoctamus",
+        "common": "Pleco Columbian Zebra",
         "id": "AM-PLECO-129",
         "onCaresList": false,
-        "origin": "AM-SAMER",
+        "origin": "AM-SAMERI",
+        "picture": "L129.jpg",
         "scientific": "Hypancistrus debilittera L129",
         "sizes": {
           "B": {
-            "count": 4,
-            "length": 0
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "L": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "M": {
-            "count": 1,
-            "length": 0
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "S": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           }
         }
       },
       {
-        "common": "Window cichlid",
+        "common": "Vieja Brehidori",
         "id": "AM-VIEJA",
         "onCaresList": false,
-        "origin": "AM-CEAME",
+        "origin": "AM-CEAMER",
         "picture": "Vieja_Fenestratus_Pink.jpg",
-        "scientific": "Vieja fenestratus \"pink\"",
+        "scientific": "Vieja Brehidori",
         "sizes": {
           "B": {
-            "count": 0,
-            "length": 0
+            "count": 5,
+            "length": 6,
+            "price": 50,
+            "wholesalePrice": ""
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0.5,
+            "price": 5,
+            "wholesalePrice": ""
           },
           "L": {
-            "count": 1,
-            "length": 0
+            "count": 0,
+            "length": 4,
+            "price": 40,
+            "wholesalePrice": ""
           },
           "M": {
-            "count": 8,
-            "length": 0
+            "count": 0,
+            "length": 2,
+            "price": 25,
+            "wholesalePrice": ""
           },
           "S": {
             "count": 0,
-            "length": 0
+            "length": 1,
+            "price": 7,
+            "wholesalePrice": ""
           }
         }
       },
@@ -1508,28 +1965,39 @@
         "common": "Clown loach",
         "id": "SEA-CLOWN",
         "onCaresList": false,
-        "origin": "SEA-INDON",
+        "origin": "SEA-INDONE",
+        "picture": "clown_loch_small_2.jpg",
         "scientific": "Chromobotia macracanthus",
         "sizes": {
           "B": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "L": {
-            "count": 0,
-            "length": 0
+            "count": 3,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "M": {
-            "count": 9,
-            "length": 0
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "S": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           }
         }
       },
@@ -1537,28 +2005,39 @@
         "common": "Galaxy rasbora",
         "id": "SEA-GALAXY",
         "onCaresList": false,
-        "origin": "SEA-OTHER",
+        "origin": "SEA-SEASIA",
+        "picture": "Galaxy_Rasbora.jpg",
         "scientific": "Danio margaritatus",
         "sizes": {
           "B": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": 40,
+            "wholesalePrice": ""
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0.25,
+            "price": 5,
+            "wholesalePrice": ""
           },
           "L": {
             "count": 0,
-            "length": 0
+            "length": 1,
+            "price": 20,
+            "wholesalePrice": ""
           },
           "M": {
-            "count": 5,
-            "length": 0
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "S": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           }
         }
       },
@@ -1567,60 +2046,1367 @@
         "id": "SEA-ROSE",
         "onCaresList": false,
         "origin": "SEA-INDIA",
+        "picture": "Roseline_Shark.jpg",
         "scientific": "Sahyadria denisonii",
         "sizes": {
           "B": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "L": {
-            "count": 4,
-            "length": 0
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "M": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "S": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           }
         }
       },
       {
-        "common": "Brevis",
+        "common": "Neo Brevis",
         "id": "AF-T-BREVIS",
         "onCaresList": false,
-        "origin": "AF-LAKET",
+        "origin": "AF-LAKETA",
+        "picture": "brevis.jpg",
         "scientific": "Neolamprologus brevis",
         "sizes": {
           "B": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "F": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "L": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "M": {
-            "count": 4,
-            "length": 0
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           },
           "S": {
             "count": 0,
-            "length": 0
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          }
+        }
+      },
+      {
+        "common": "Blue Ram",
+        "id": "AM-BLUERAM",
+        "onCaresList": false,
+        "origin": "AM-SAMERI",
+        "picture": "blue_ram.jpg",
+        "scientific": "Mikrogeophagus ramirezi",
+        "sizes": {
+          "B": {
+            "count": 0,
+            "length": 3,
+            "price": 40,
+            "wholesalePrice": ""
+          },
+          "F": {
+            "count": 0,
+            "length": 0.5,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "L": {
+            "count": 0,
+            "length": 2,
+            "price": 25,
+            "wholesalePrice": ""
+          },
+          "M": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "S": {
+            "count": 0,
+            "length": 1,
+            "price": "",
+            "wholesalePrice": ""
+          }
+        }
+      },
+      {
+        "common": "Pleco King Tiger",
+        "id": "AM-PLECO-133",
+        "onCaresList": false,
+        "origin": "AM-SAMERI",
+        "picture": "L133.jpg",
+        "scientific": "Hypancistrus debilittera L133",
+        "sizes": {
+          "B": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "F": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "L": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "M": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "S": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          }
+        }
+      },
+      {
+        "common": "Pleco Bristlenose SF SupRed",
+        "id": "AM-PLECO-184-SF",
+        "onCaresList": false,
+        "origin": "AM-SAMERI",
+        "picture": "red_bristlenose.jpg",
+        "scientific": "Ancistrus dolichopterus L184",
+        "sizes": {
+          "B": {
+            "count": 0,
+            "length": 4,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "F": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "L": {
+            "count": 0,
+            "length": 3,
+            "price": 35,
+            "wholesalePrice": ""
+          },
+          "M": {
+            "count": 2,
+            "length": 2,
+            "price": 15,
+            "wholesalePrice": ""
+          },
+          "S": {
+            "count": 0,
+            "length": 1,
+            "price": 10,
+            "wholesalePrice": ""
+          }
+        }
+      },
+      {
+        "common": "Catfish False Upside Down",
+        "id": "AF-CAT-GOLD",
+        "onCaresList": false,
+        "origin": "AF-AFRICA",
+        "picture": "False_Upside_Down_Catfish.jpg",
+        "scientific": "Synodontis nigrita gold",
+        "sizes": {
+          "B": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "F": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "L": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "M": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "S": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          }
+        }
+      },
+      {
+        "common": "Arapaima",
+        "id": "AM-ARAPAIMA",
+        "onCaresList": true,
+        "origin": "AM-SAMERI",
+        "picture": "fish_3.13.jpg",
+        "scientific": "Arapaima gigas",
+        "sizes": {
+          "B": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "F": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "L": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "M": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "S": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          }
+        }
+      },
+      {
+        "common": "Spangled Cichlid",
+        "id": "AF-T-AURITIS",
+        "onCaresList": true,
+        "origin": "AF-LAKETA",
+        "picture": "Chituta.jpg",
+        "scientific": "Limnochromis auritis",
+        "sizes": {
+          "B": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "F": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "L": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "M": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "S": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          }
+        }
+      },
+      {
+        "common": "Pleco Bristlenose LF Albino",
+        "id": "AM-PLECO-184-LFA",
+        "onCaresList": false,
+        "origin": "AM-SAMERI",
+        "picture": "LF_bristlenose.jpg",
+        "scientific": "Ancistrus dolichopterus",
+        "sizes": {
+          "B": {
+            "count": 2,
+            "length": 6,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "F": {
+            "count": 0,
+            "length": 0.5,
+            "price": "",
+            "wholesalePrice": 3
+          },
+          "L": {
+            "count": 0,
+            "length": 4,
+            "price": 35,
+            "wholesalePrice": 15
+          },
+          "M": {
+            "count": 0,
+            "length": 2,
+            "price": 15,
+            "wholesalePrice": 8
+          },
+          "S": {
+            "count": 2,
+            "length": 1,
+            "price": 10,
+            "wholesalePrice": 5
+          }
+        }
+      },
+      {
+        "common": "Golden Dwarf Cichlid",
+        "id": "AM-GOLDD",
+        "onCaresList": false,
+        "origin": "AM-SAMERI",
+        "picture": "nanacara_2.jpg",
+        "scientific": "Nannacara anomala",
+        "sizes": {
+          "B": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "F": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "L": {
+            "count": 5,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "M": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "S": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          }
+        }
+      },
+      {
+        "common": "Catfish Pygmy Leopard",
+        "id": "AF-CAT-LEO",
+        "onCaresList": false,
+        "origin": "AF-LAKETA",
+        "picture": "leopard_catfish.jpg",
+        "scientific": "Petricola Synodontis",
+        "sizes": {
+          "B": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "F": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "L": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "M": {
+            "count": 5,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "S": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          }
+        }
+      },
+      {
+        "common": "Catfish Whiptail",
+        "id": "AM-WHIP-CAT",
+        "onCaresList": false,
+        "origin": "AM-SAMERI",
+        "picture": "whiptail_catfish_3.jpg",
+        "scientific": "Rineloricaria longicauda",
+        "sizes": {
+          "B": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "F": {
+            "count": 0,
+            "length": 1,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "L": {
+            "count": 0,
+            "length": 5,
+            "price": 45,
+            "wholesalePrice": ""
+          },
+          "M": {
+            "count": 2,
+            "length": 4,
+            "price": 35,
+            "wholesalePrice": ""
+          },
+          "S": {
+            "count": 0,
+            "length": 2,
+            "price": "",
+            "wholesalePrice": ""
+          }
+        }
+      },
+      {
+        "common": "Guppy Albino Koi",
+        "id": "AM-GUP-CK",
+        "onCaresList": false,
+        "origin": "AM-SAMERI",
+        "picture": "Chinese_Koi_Guppy_2.jpg",
+        "scientific": "Poecilia reticulata",
+        "sizes": {
+          "B": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "F": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "L": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "M": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "S": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          }
+        }
+      },
+      {
+        "common": "Guppy Nebula",
+        "id": "AM-GUP-N",
+        "onCaresList": false,
+        "origin": "AM-SAMERI",
+        "picture": "Nebula_Guppy_2.jpg",
+        "scientific": "Poecilia reticulata",
+        "sizes": {
+          "B": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "F": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "L": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "M": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "S": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          }
+        }
+      },
+      {
+        "common": "Pleco Gold Nugget",
+        "id": "AM-PLECO-018",
+        "onCaresList": false,
+        "origin": "AM-SAMERI",
+        "picture": "nugget_2_2.jpg",
+        "scientific": "Baryancistrus xanthellus L018",
+        "sizes": {
+          "B": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "F": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "L": {
+            "count": 7,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "M": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "S": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          }
+        }
+      },
+      {
+        "common": "Electric Blue Jack Dempsey",
+        "id": "AM-EB-JACKDEMP",
+        "onCaresList": false,
+        "origin": "AM-CEAMER",
+        "picture": "Electric_Blue_Jack_Dempsey_2.jpg",
+        "scientific": "Nandopsis octofasciatum",
+        "sizes": {
+          "B": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "F": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "L": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "M": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "S": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          }
+        }
+      },
+      {
+        "common": "Geophagus Redcap Tapajos",
+        "id": "AM-GEO-REDTOP",
+        "onCaresList": false,
+        "origin": "AM-SAMERI",
+        "picture": "red_top_2.jpg",
+        "scientific": "Geophagus parnaibae",
+        "sizes": {
+          "B": {
+            "count": 3,
+            "length": 5,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "F": {
+            "count": 0,
+            "length": 0.5,
+            "price": 5,
+            "wholesalePrice": ""
+          },
+          "L": {
+            "count": 0,
+            "length": 4,
+            "price": 40,
+            "wholesalePrice": ""
+          },
+          "M": {
+            "count": 9,
+            "length": 2,
+            "price": 25,
+            "wholesalePrice": ""
+          },
+          "S": {
+            "count": 8,
+            "length": 1,
+            "price": 12,
+            "wholesalePrice": ""
+          }
+        }
+      },
+      {
+        "common": "Yellow labidochromis",
+        "id": "AF-M-YEL-LAB",
+        "onCaresList": false,
+        "origin": "AF-LAKEMA",
+        "picture": "yellow_lab_3.jpg",
+        "scientific": "Labidochromis caeruleus",
+        "sizes": {
+          "B": {
+            "count": 2,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "F": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "L": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "M": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "S": {
+            "count": 12,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          }
+        }
+      },
+      {
+        "common": "Catfish Sun",
+        "id": "SEA-CAT-SUN",
+        "onCaresList": false,
+        "origin": "SEA-INDIA",
+        "picture": "Sun_catfish.jpg",
+        "scientific": "Horabagrus brachysoma",
+        "sizes": {
+          "B": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "F": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "L": {
+            "count": 0,
+            "length": 12,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "M": {
+            "count": 0,
+            "length": 6,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "S": {
+            "count": 0,
+            "length": 4,
+            "price": "",
+            "wholesalePrice": ""
+          }
+        }
+      },
+      {
+        "common": "Guppy Albino Koi Nebula",
+        "id": "AM-GUP-CKN",
+        "onCaresList": false,
+        "origin": "AM-SAMERI",
+        "picture": "guppy_2.jpg",
+        "scientific": "Poecilia reticulata",
+        "sizes": {
+          "B": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "F": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "L": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "M": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "S": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          }
+        }
+      },
+      {
+        "common": "Angelfish California Smoky Green",
+        "id": "AM-ANGEL-CSG",
+        "onCaresList": false,
+        "origin": "AM-SAMERI",
+        "picture": "angel_green.jpg",
+        "scientific": "Pterophyllum scalare",
+        "sizes": {
+          "B": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "F": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "L": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "M": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "S": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          }
+        }
+      },
+      {
+        "common": "Frontosa",
+        "id": "AF-T-FRONTOSA",
+        "onCaresList": false,
+        "origin": "AF-LAKETA",
+        "picture": "frontosa_king_coma.jpg",
+        "scientific": "Cyphotilapia frontosa",
+        "sizes": {
+          "B": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "F": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "L": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "M": {
+            "count": 5,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "S": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          }
+        }
+      },
+      {
+        "common": "Transcriptus (albino)",
+        "id": "AF-T-TRANS-ALBINO",
+        "onCaresList": false,
+        "origin": "AF-LAKETA",
+        "picture": "transcriptus_albino.jpg",
+        "scientific": "Julidochromis transcriptus",
+        "sizes": {
+          "B": {
+            "count": 3,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "F": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "L": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "M": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "S": {
+            "count": 1,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          }
+        }
+      },
+      {
+        "common": "Catfish Otto",
+        "id": "AM-CAT-O",
+        "onCaresList": false,
+        "origin": "AM-SAMERI",
+        "picture": "otto.jpg",
+        "scientific": "Otocinclus afinis",
+        "sizes": {
+          "B": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "F": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "L": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "M": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "S": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          }
+        }
+      },
+      {
+        "common": "Arowana Silver",
+        "id": "AM-AROWANA-S",
+        "onCaresList": false,
+        "origin": "AM-SAMERI",
+        "picture": "arrowana_3.jpg",
+        "scientific": "Osteoglossum bicirrhosum",
+        "sizes": {
+          "B": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "F": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "L": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "M": {
+            "count": 1,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "S": {
+            "count": 3,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          }
+        }
+      },
+      {
+        "common": "Swordtail Kohaku (albino)",
+        "id": "AM-SWORD-K-A",
+        "onCaresList": false,
+        "origin": "AM-CEAMER",
+        "picture": "swordtail_2.jpg",
+        "scientific": "Xiphophorus helleri",
+        "sizes": {
+          "B": {
+            "count": 10,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "F": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "L": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "M": {
+            "count": 5,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "S": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          }
+        }
+      },
+      {
+        "common": "Catfish Brown Bullhead",
+        "id": "AM-CAT-BULL",
+        "onCaresList": false,
+        "origin": "AM-NAMERI",
+        "picture": "bull_catfish.jpg",
+        "scientific": "Ameiurus nebulosus",
+        "sizes": {
+          "B": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "F": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "L": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "M": {
+            "count": 1,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "S": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          }
+        }
+      },
+      {
+        "common": "Pleco Sailfin",
+        "id": "AM-PLECO-083",
+        "onCaresList": false,
+        "origin": "AM-SAMERI",
+        "picture": "pleco_sailfin.jpg",
+        "scientific": "Pterygoplichthys gibbiceps",
+        "sizes": {
+          "B": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "F": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "L": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "M": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "S": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          }
+        }
+      },
+      {
+        "common": "Green Terror - gold saum",
+        "id": "AM-GREEN-TG",
+        "onCaresList": false,
+        "origin": "AM-SAMERI",
+        "picture": "green_terror_gold.jpg",
+        "scientific": "Andinoacara rivulatus syn.",
+        "sizes": {
+          "B": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "F": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "L": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "M": {
+            "count": 4,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "S": {
+            "count": 12,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          }
+        }
+      },
+      {
+        "common": "Guppy Japan Blue",
+        "id": "AM-GUP-JB",
+        "onCaresList": false,
+        "origin": "AM-SAMERI",
+        "picture": "blue_guppy.jpg",
+        "scientific": "Poecilia reticulata",
+        "sizes": {
+          "B": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "F": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "L": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "M": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "S": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          }
+        }
+      },
+      {
+        "common": "Opae ula shrimp",
+        "id": "AM-SHRIMP-OPAE",
+        "onCaresList": false,
+        "origin": "AM-NAMERI",
+        "picture": "shrimp_opae_ula.jpg",
+        "scientific": "Halocaridinia rubra",
+        "sizes": {
+          "B": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "F": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "L": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "M": {
+            "count": 65,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "S": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          }
+        }
+      },
+      {
+        "common": "Plant Amazon Frogbit",
+        "id": "P-FROGBIT",
+        "onCaresList": false,
+        "origin": "P-SAMERI",
+        "picture": "frog_bit_2.jpg",
+        "scientific": "Limnobium laeviatum",
+        "sizes": {
+          "B": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "F": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "L": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "M": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "S": {
+            "count": 1,
+            "length": 1,
+            "price": 1,
+            "wholesalePrice": ""
+          }
+        }
+      },
+      {
+        "common": "Plant Red Root floater",
+        "id": "P-REDROOT",
+        "onCaresList": false,
+        "origin": "P-SAMERI",
+        "picture": "red_root.jpg",
+        "scientific": "Phyllanthus fluitans",
+        "sizes": {
+          "B": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "F": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "L": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "M": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "S": {
+            "count": 1,
+            "length": 1,
+            "price": 2,
+            "wholesalePrice": ""
+          }
+        }
+      },
+      {
+        "common": "Jewel Cichlid Turkana",
+        "id": "AF-TU-JEWEL",
+        "onCaresList": false,
+        "origin": "AF-LAKETU",
+        "picture": "jewel_2.jpg",
+        "scientific": "Hemichromis exsul",
+        "sizes": {
+          "B": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "F": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "L": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "M": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
+          },
+          "S": {
+            "count": 0,
+            "length": 0,
+            "price": "",
+            "wholesalePrice": ""
           }
         }
       }
     ],
-    "postDate": "Sat, 15 Dec 2018 13:50:15 GMT"
+    "hotItems": [
+      "AF-V-nyererei",
+      "AF-V-44",
+      "AF-T-pulcher"
+    ],
+    "postDate": "Sun, 14 Nov 2021 02:08:29 GMT"
   }
 }

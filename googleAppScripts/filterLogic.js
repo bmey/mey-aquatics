@@ -66,7 +66,7 @@ function updateSizeCount(item, stockCount, size) {
 }
 
 function getOriginId(item) {
-  var subOriginId = toKebabCase(item.origin ? item.origin.replace(/\s+/g, "").substr(0, 5) : "OTHER");
+  var subOriginId = toKebabCase(item.origin ? item.origin.replace(/\s+/g, "").substr(0, 6) : "OTHER");
   var continentId = item.id.split("-")[0];
 
   if (subOriginId === "SEASI" || subOriginId === "AFRIC") {
