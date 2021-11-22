@@ -1,4 +1,4 @@
-import { containsCaseInsensitive } from '../utility/strings'
+import { containsCaseInsensitive } from './strings'
 
 describe('string utilities', () => {
   describe('containsCaseInsensitive', () => {
