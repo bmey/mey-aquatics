@@ -38,7 +38,9 @@ export const getStaticProps: GetStaticProps<DatabaseJson> = () => {
   }
 }
 
-const Home = ({ data: { fish, hotItems = [] } }: DatabaseJson): JSX.Element => (
+export const Home = ({
+  data: { fish, hotItems = [] },
+}: DatabaseJson): JSX.Element => (
   <Layout>
     <div data-cy="homepage">
       <header className="homepage-header">
