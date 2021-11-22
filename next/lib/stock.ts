@@ -1,4 +1,4 @@
-import { FishItem } from '../types'
+import { DatabaseJson, FishItem } from '../types'
 import db from '../data-copy/db.json'
 
 export const getAllStockIds = (): string[] => {
@@ -7,6 +7,10 @@ export const getAllStockIds = (): string[] => {
 
 export const getAllStockData = (): FishItem[] => {
   return db['data.json'].fish
+}
+
+export const getAllData = (): DatabaseJson => {
+  return { data: db['data.json'] }
 }
 
 export const getStockData = async (

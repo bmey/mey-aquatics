@@ -1,227 +1,157 @@
-import Head from 'next/head'
+import { Button } from '../components/Button'
+import { IoMdGlobe, IoIosFlame, IoIosWarning } from 'react-icons/io'
+import ContactButton from '../components/ContactButton/ContactButton'
+import Logo from '../components/Logo/Logo'
+import {
+  getRouteFromOrigin,
+  getRouteFromFilter,
+} from '../components/Filter/filters'
+import { countEndangeredSpecies } from '../service/stats'
+import { FILTER } from '../utility/constants'
 import Link from 'next/link'
-import Image from 'next/image'
+import { DatabaseJson } from '../types'
+import { GetStaticProps } from 'next'
+import { getAllData } from '../lib/stock'
 import Layout from '../components/Layout'
 
-export const Home = (): JSX.Element => (
+const regions = [
+  {
+    id: 'AF',
+    description: 'Africa',
+  },
+  {
+    id: 'AM',
+    description: 'Americas',
+  },
+  {
+    id: 'SEA',
+    description: 'Asia',
+  },
+]
+
+export const getStaticProps: GetStaticProps<DatabaseJson> = () => {
+  const data = getAllData()
+  return {
+    props: {
+      ...data,
+    },
+  }
+}
+
+const Home = ({ data: { fish, hotItems = [] } }: DatabaseJson): JSX.Element => (
   <Layout>
-    <div className="container">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className="description">
-          Get started by editing <code>pages/index.tsx</code>
-        </p>
-
-        <button
-          onClick={() => {
-            window.alert('With typescript and Jest')
-          }}
-        >
-          Test Button
-        </button>
-
-        <Link href="/livestock">
-          <a>Live Stock</a>
-        </Link>
-
-        <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="card"
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+    <div data-cy="homepage">
+      <header className="homepage-header">
+        <div className="logo-container">
+          <Logo className="logo" />
         </div>
-      </main>
+        <div className="homepage-header-text">
+          <h1 className="App-title">{`Mey's Aquatics`}</h1>
+          <span className="App-subtext text-right mt-1">
+            Caring for fish since 1970
+          </span>
+          <Link href="/stock/">
+            <a>
+              <Button color="primary">Browse our stock</Button>
+            </a>
+          </Link>
+        </div>
+      </header>
+      <div className="home-content">
+        <div className="home-card-container">
+          <HomeCard icon={<IoMdGlobe />} description="Worldwide">
+            <div className="d-flex flex-column align-items-center worldwide">
+              <span className="text-center subtext">
+                View our fish from different regions around the globe!
+              </span>
+              {regions.map(({ id, description }) => (
+                <Link
+                  href={`/stock#${getRouteFromOrigin(id)}?${getRouteFromOrigin(
+                    id
+                  )}`}
+                  key={id}
+                  data-test={`view-region-${id}`}
+                >
+                  {description}
+                </Link>
+              ))}
+            </div>
+          </HomeCard>
+          <HomeCard
+            icon={<IoIosFlame className="color-primary" />}
+            description="What's Hot"
+            className="priority-item"
+          >
+            <div className="d-flex flex-column align-items-center worldwide">
+              <span className="text-center subtext">
+                Check out our most popular and rare items!
+              </span>
+              {hotItems.map((id) => {
+                const upperCaseId = id.toUpperCase()
+                const itemModel = fish.find(
+                  (item) => item.id.toUpperCase() === upperCaseId
+                )
+                if (!itemModel) {
+                  return null
+                }
 
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <Image
-            src="/vercel.svg"
-            alt="Vercel Logo"
-            height={'32'}
-            width={'64'}
-          />
-        </a>
-      </footer>
+                return (
+                  <Link
+                    href={`/stockdetails/${id}`}
+                    data-test={`view-hot-${id}`}
+                    key={id}
+                  >
+                    {itemModel.common}
+                  </Link>
+                )
+              })}
+            </div>
+          </HomeCard>
+          <HomeCard icon={<IoIosWarning />} description="Endangered">
+            <div className="d-flex flex-column align-items-center">
+              <span className="text-center subtext">
+                We have{' '}
+                <span className="font-weight-bold">
+                  {countEndangeredSpecies(fish)}&nbsp;endangered
+                </span>{' '}
+                species in stock. Pick one up so you can make a difference, too!
+              </span>
+              <Link
+                href={`/stock#${getRouteFromFilter(
+                  FILTER.CARES_LIST
+                )}?${getRouteFromFilter(FILTER.CARES_LIST)}`}
+                data-test="view-endangered"
+              >
+                View now
+              </Link>
+            </div>
+          </HomeCard>
+        </div>
+        <div className="d-flex flex-column justify-content-center align-items-center bg-gray p-5">
+          <h2 className="mb-4">Contact Us</h2>
 
-      <style jsx>{`
-        .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
+          <p className="text-center mb-4" style={{ maxWidth: '40rem' }}>
+            We have a wide selection of fish, including rare and endangered
+            species identified by the CARES Fish Preservation Program. Please
+            contact us if you are interested in buying, trading, or to learning
+            about what we do.
+          </p>
 
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer img {
-          margin-left: 0.5rem;
-        }
-
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
-
-        .title a {
-          color: #0070f3;
-          text-decoration: none;
-        }
-
-        .title a:hover,
-        .title a:focus,
-        .title a:active {
-          text-decoration: underline;
-        }
-
-        .title {
-          margin: 0;
-          line-height: 1.15;
-          font-size: 4rem;
-        }
-
-        .title,
-        .description {
-          text-align: center;
-        }
-
-        .description {
-          line-height: 1.5;
-          font-size: 1.5rem;
-        }
-
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
-
-        .grid {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
-
-          max-width: 800px;
-          margin-top: 3rem;
-        }
-
-        .card {
-          margin: 1rem;
-          flex-basis: 45%;
-          padding: 1.5rem;
-          text-align: left;
-          color: inherit;
-          text-decoration: none;
-          border: 1px solid #eaeaea;
-          border-radius: 10px;
-          transition: color 0.15s ease, border-color 0.15s ease;
-        }
-
-        .card:hover,
-        .card:focus,
-        .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
-        }
-
-        .card h3 {
-          margin: 0 0 1rem 0;
-          font-size: 1.5rem;
-        }
-
-        .card p {
-          margin: 0;
-          font-size: 1.25rem;
-          line-height: 1.5;
-        }
-
-        @media (max-width: 600px) {
-          .grid {
-            width: 100%;
-            flex-direction: column;
-          }
-        }
-      `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
+          <ContactButton />
+        </div>
+      </div>
     </div>
   </Layout>
+)
+
+const HomeCard = ({ icon, description, children, className = '' }) => (
+  <div className={`home-card ${className}`}>
+    <div className="d-flex flex-column align-items-center">
+      <div style={{ fontSize: '3rem' }}>{icon}</div>
+      <strong className="description">{description}</strong>
+    </div>
+    {children}
+  </div>
 )
 
 export default Home

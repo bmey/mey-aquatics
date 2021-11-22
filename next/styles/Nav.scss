@@ -1,0 +1,29 @@
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins';
+@import 'variables';
+
+@include media-breakpoint-down(sm) {
+  .navbar.fixed-top-sm {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: $zindex-fixed;
+  }
+
+  .fixed-top-sm-spacer {
+    height: 56px;
+  }
+}
+
+.navbar-brand svg {
+  line-height: 30px;
+  height: 30px;
+  margin-right: 10px;
+  fill: $font-color-default;
+}
+
+.nav-link.active {
+  font-weight: 500;
+}
