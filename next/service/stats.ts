@@ -1,4 +1,8 @@
-export const countEndangeredSpecies = (fish) => {
+import { FishItem } from '../types'
+
+export const countEndangeredSpecies = (
+  fish?: Partial<FishItem>[] | null
+): number => {
   if (fish === null || !Array.isArray(fish)) {
     return 0
   }

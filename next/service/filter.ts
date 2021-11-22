@@ -1,3 +1,4 @@
+import { ItemSize, ItemSizeSpec } from '../types'
 import { FILTER } from '../utility/constants'
 import {
   compareCaseInsentitive,
@@ -8,7 +9,7 @@ export const isFilterApplied = (appliedFilters, filterType) => {
   return appliedFilters.some((filter) => filter.type === filterType)
 }
 
-export const isOutOfStock = (sizes) =>
+export const isOutOfStock = (sizes: Record<ItemSize, ItemSizeSpec>): boolean =>
   Object.values(sizes).every((size) => size.count === 0)
 
 export const getFilter = (appliedFilters, filterType) => {

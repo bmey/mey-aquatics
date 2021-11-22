@@ -1,7 +1,9 @@
-import getOrigins from './originList'
+import untypedGetOrigins from './originList'
 import mapStateToOrigin from './origin'
 
 jest.mock('./originList')
+
+const getOrigins = untypedGetOrigins as jest.Mock
 
 describe('mapStateToOrigin', () => {
   const originList = [

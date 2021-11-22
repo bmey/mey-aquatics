@@ -80,7 +80,7 @@ describe('appliedFilters reducer', () => {
 
     it('adds all sub-origins to filter when origin has sub-origins', () => {
       const originId = 'TEST-ALL'
-      getOrigins.mockReturnValue([
+      ;(getOrigins as jest.Mock).mockReturnValue([
         {
           id: originId,
           name: 'Top level',
@@ -123,7 +123,7 @@ describe('appliedFilters reducer', () => {
 
     it('removes all sub-origins from filter when origin has sub-origins', () => {
       const originId = 'TEST-ALL'
-      getOrigins.mockReturnValue([
+      ;(getOrigins as jest.Mock).mockReturnValue([
         {
           id: originId,
           name: 'Top level',
