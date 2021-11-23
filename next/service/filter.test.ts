@@ -1,6 +1,6 @@
 import filter, { isFilterApplied } from './filter'
 import { FILTER } from '../utility/constants'
-import { FishItem, ItemSize, ItemSizeSpec } from '../types'
+import { buildItem, buildSizes, buildSizeSpec } from '../test/modelBuilders'
 
 describe('filter', () => {
   it('returns empty array when input is null', () => {
@@ -135,34 +135,4 @@ describe('isFilterApplied', () => {
 
     expect(result).toBe(true)
   })
-})
-
-const buildItem = (overrides: Partial<FishItem>): FishItem => ({
-  common: 'common',
-  id: 'id',
-  onCaresList: false,
-  origin: 'origin',
-  picture: 'picture',
-  scientific: 'scientific',
-  sizes: undefined,
-  ...overrides,
-})
-
-const buildSizes = (
-  overrides?: Partial<Record<ItemSize, ItemSizeSpec>>
-): Record<ItemSize, ItemSizeSpec> => ({
-  B: buildSizeSpec(),
-  F: buildSizeSpec(),
-  M: buildSizeSpec(),
-  S: buildSizeSpec(),
-  L: buildSizeSpec(),
-  ...(overrides || {}),
-})
-
-const buildSizeSpec = (overrides?: Partial<ItemSizeSpec>): ItemSizeSpec => ({
-  count: '',
-  length: '',
-  price: '',
-  wholesalePrice: '',
-  ...(overrides || {}),
 })
