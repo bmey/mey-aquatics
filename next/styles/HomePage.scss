@@ -1,0 +1,185 @@
+@import 'bootstrap/scss/_functions';
+@import 'bootstrap/scss/_variables';
+@import 'bootstrap/scss/mixins/_breakpoints';
+@import 'colors';
+@import 'variables';
+
+.homepage-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-primary;
+  height: auto;
+  padding: $grid-gap-default * 5;
+  color: $dark;
+  background: radial-gradient(
+    closest-side at 60% 45%,
+    $color-gray-light,
+    $color-primary
+  );
+
+  button.btn-primary {
+    margin-top: 40px;
+  }
+
+  .logo-container {
+    max-width: 10rem;
+  }
+}
+
+.homepage-header-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: auto;
+  color: $dark;
+
+  .App-title {
+    font-size: 3em;
+  }
+}
+
+.home-content {
+  overflow: hidden;
+
+  > *:not(:last-child) {
+    margin-bottom: $grid-gap-default * 5;
+  }
+}
+
+.home-card-container {
+  display: flex;
+  justify-content: center;
+  margin-left: -($grid-gap-default * 2);
+  margin-right: -($grid-gap-default * 2);
+  padding: 0 ($grid-gap-default * 2);
+  background-image: url('../components/wave.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.home-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: $light;
+  box-shadow: lighten($dark, 30%) 0px 5px 40px -5px;
+  width: 250px;
+  padding: $grid-gap-default;
+  margin: 0 $grid-gap-default;
+
+  > {
+    margin: $grid-gap-default 0;
+  }
+
+  .description {
+    margin: 10px 0;
+    font-size: 1.2em;
+  }
+
+  .subtext {
+    font-weight: 300;
+    font-size: 0.9rem;
+    margin: 0.85rem 0;
+  }
+
+  a {
+    margin: ($grid-gap-default / 2) 0 0;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .home-content {
+    > *:not(:last-child) {
+      margin-bottom: $grid-gap-mobile;
+    }
+  }
+
+  .home-card-container {
+    display: flex;
+    justify-content: center;
+    margin-left: -($grid-gap-mobile * 2);
+    margin-right: -($grid-gap-mobile * 2);
+    padding: 0 ($grid-gap-mobile * 2);
+    background-size: auto;
+  }
+
+  .home-card {
+    width: auto;
+    flex-basis: 33%;
+    padding: $grid-gap-mobile;
+    margin: 0 ($grid-gap-mobile / 2);
+
+    > {
+      margin: $grid-gap-mobile 0;
+    }
+
+    .description {
+      font-size: 1em;
+    }
+  }
+
+  .homepage-header {
+    padding: ($grid-gap-mobile * 3) ($grid-gap-mobile * 5);
+  }
+
+  .homepage-header-text {
+    .App-title {
+      font-size: 2em;
+    }
+  }
+
+  .logo-container {
+    flex-basis: 30%;
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  .home-card-container {
+    flex-direction: column;
+  }
+
+  .home-card {
+    max-width: 75%;
+    margin: auto;
+    margin-bottom: $grid-gap-mobile;
+
+    &.priority-item {
+      order: 1;
+    }
+
+    &:not(.priority-item) {
+      order: 2;
+    }
+  }
+
+  .homepage-header {
+    flex-direction: column;
+    padding: $grid-gap-mobile * 3;
+
+    button.btn-primary {
+      margin-top: $grid-gap-mobile;
+    }
+
+    svg {
+      height: 3em;
+    }
+  }
+
+  .homepage-header-text {
+    align-items: center;
+    padding: $grid-gap-mobile;
+
+    .App-title {
+      font-size: 1.5em;
+    }
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .logo-container {
+    margin-right: 40px;
+  }
+}

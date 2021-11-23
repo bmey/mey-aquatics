@@ -9,7 +9,7 @@ const Livestock = (): JSX.Element => (
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>about us!</div>
+      <div>contact us!</div>
     </div>
   </Layout>
 )

@@ -1,0 +1,10 @@
+$font-family-sans-serif: 'Pacifico', cursive, -apple-system, system-ui,
+  BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+$font-family-serif: 'Montserrat', Georgia, 'Times New Roman', Times, serif;
+$font-family-base: $font-family-serif;
+$font-family-default: $font-family-serif;
+
+strong,
+.font-weight-semibold {
+  font-weight: 600;
+}
