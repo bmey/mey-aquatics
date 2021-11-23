@@ -14,7 +14,7 @@ export const isFilterApplied = (
 }
 
 export const isOutOfStock = (sizes: Record<ItemSize, ItemSizeSpec>): boolean =>
-  Object.values(sizes).every((size) => size.count === 0)
+  Object.values(sizes).every((size) => !size.count)
 
 export const getFilter = (
   appliedFilters: State,
