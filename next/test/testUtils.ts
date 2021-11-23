@@ -1,24 +1,23 @@
-import { render } from '@testing-library/react'
-// import { ThemeProvider } from "my-ui-lib"
-// import { TranslationProvider } from "my-i18n-lib"
-// import defaultStrings from "i18n/en-x-default"
+import {
+  Queries,
+  queries,
+  render,
+  RenderOptions,
+  RenderResult,
+} from '@testing-library/react'
 
 const Providers = ({ children }) => {
   return children
-  // return (
-  //   <ThemeProvider theme="light">
-  //     <TranslationProvider messages={defaultStrings}>
-  //       {children}
-  //     </TranslationProvider>
-  //   </ThemeProvider>
-  // )
 }
 
-const customRender = (ui, options = {}) =>
-  render(ui, { wrapper: Providers, ...options })
+const customRender = <
+  Q extends Queries = typeof queries,
+  Container extends Element | DocumentFragment = HTMLElement
+>(
+  ui: React.ReactElement,
+  options: RenderOptions<Q, Container>
+): RenderResult<Q, Container> => render(ui, { wrapper: Providers, ...options })
 
-// re-export everything
 export * from '@testing-library/react'
 
-// override render method
 export { customRender as render }

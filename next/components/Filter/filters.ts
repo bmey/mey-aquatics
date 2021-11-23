@@ -3,8 +3,8 @@ import queryString from 'query-string'
 import { FILTER } from '../../utility/constants'
 import getOrigins from '../../service/originList'
 
-type State = Filter[]
-interface Filter {
+export type State = Filter[]
+export interface Filter {
   type: number
   [x: string]: any
 }

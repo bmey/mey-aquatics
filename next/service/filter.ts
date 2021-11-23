@@ -1,22 +1,32 @@
-import { ItemSize, ItemSizeSpec } from '../types'
+import { Filter, State } from '../components/Filter/filters'
+import { FishItem, ItemSize, ItemSizeSpec } from '../types'
 import { FILTER } from '../utility/constants'
 import {
   compareCaseInsentitive,
   containsCaseInsensitive,
 } from '../utility/strings'
 
-export const isFilterApplied = (appliedFilters, filterType) => {
+export const isFilterApplied = (
+  appliedFilters: State,
+  filterType: number
+): boolean => {
   return appliedFilters.some((filter) => filter.type === filterType)
 }
 
 export const isOutOfStock = (sizes: Record<ItemSize, ItemSizeSpec>): boolean =>
   Object.values(sizes).every((size) => size.count === 0)
 
-export const getFilter = (appliedFilters, filterType) => {
+export const getFilter = (
+  appliedFilters: State,
+  filterType: number
+): Filter => {
   return appliedFilters.filter((filter) => filter.type === filterType)[0]
 }
 
-const filter = (productList, appliedFilters = []) => {
+const filter = (
+  productList: FishItem[],
+  appliedFilters: State = []
+): FishItem[] => {
   if (!productList) {
     return []
   }

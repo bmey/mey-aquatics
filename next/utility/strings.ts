@@ -1,6 +1,7 @@
-export const isEmpty = (string) => !string || string.trim().length === 0
+export const isEmpty = (string: string): boolean =>
+  !string || string.trim().length === 0
 
-const sortEmptyStringToEnd = (a, b) => {
+const sortEmptyStringToEnd = (a: string, b: string): number => {
   if (isEmpty(a) && isEmpty(b)) {
     return 0
   } else if (isEmpty(a)) {
@@ -11,7 +12,11 @@ const sortEmptyStringToEnd = (a, b) => {
   }
 }
 
-export const compareCaseInsentitive = (a, b, descendingOrder = false) => {
+export const compareCaseInsentitive = (
+  a: string,
+  b: string,
+  descendingOrder = false
+): number => {
   if (isEmpty(a) || isEmpty(b)) {
     return sortEmptyStringToEnd(a, b)
   }
@@ -20,7 +25,10 @@ export const compareCaseInsentitive = (a, b, descendingOrder = false) => {
   return descendingOrder ? -1 * comparison : comparison
 }
 
-export const containsCaseInsensitive = (subject, test) => {
+export const containsCaseInsensitive = (
+  subject: string,
+  test: string
+): boolean => {
   if (isEmpty(test)) {
     return true
   }
