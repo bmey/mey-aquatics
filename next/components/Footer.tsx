@@ -2,7 +2,14 @@ import { SOCIAL_MEDIA } from '../utility/constants'
 import { email } from '../service/contact'
 import Link from 'next/link'
 
-const Footer = ({ routes }) => (
+interface IProps {
+  routes: {
+    path: string
+    name: string
+  }[]
+}
+
+const Footer = ({ routes }: IProps): JSX.Element => (
   <footer className="body-footer bg-dark navbar-dark">
     <div className="footer-content">
       <div>

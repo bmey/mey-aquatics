@@ -14,19 +14,19 @@ export default class Nav extends Component {
     collapsed: true,
   }
 
-  toggleNavbar() {
+  toggleNavbar(): void {
     this.setState({
       collapsed: !this.state.collapsed,
     })
   }
 
-  closeNavbar() {
+  closeNavbar(): void {
     this.setState({
       collapsed: true,
     })
   }
 
-  render() {
+  render(): JSX.Element {
     const { collapsed } = this.state
     const routes = [
       {
