@@ -1,4 +1,13 @@
-export const nameHash = {
+import { Origin } from './origin'
+
+const subOrigins = (origin: Origin) =>
+  Object.keys(Origin).filter(
+    (k) =>
+      typeof Origin[k as any] === 'string' &&
+      (Origin[k] as string).startsWith(`${origin}-`)
+  ) as Origin[]
+
+export const nameHash: Record<Origin, string> = {
   AM: 'Americas',
   'AM-SAMERI': 'South America',
   'AM-COSTAR': 'Costa Rica',
@@ -16,35 +25,32 @@ export const nameHash = {
   'SEA-OTHER': 'Other',
 }
 
-const originList = [
-  {
-    id: 'AM',
-    name: nameHash['AM'],
-    subOrigins: ['SAMERI', 'COSTAR', 'CEAMER', 'OTHER'].map((subId) => ({
-      id: `AM-${subId}`,
-      name: nameHash[`AM-${subId}`],
-    })),
-  },
-  {
-    id: 'AF',
-    name: 'Africa',
-    subOrigins: ['CONGOR', 'LAKEMA', 'LAKETA', 'LAKETU', 'LAKEVI'].map(
-      (subId) => ({
-        id: `AF-${subId}`,
-        name: nameHash[`AF-${subId}`],
-      })
-    ),
-  },
-  {
-    id: 'SEA',
-    name: 'South East Asia',
-    subOrigins: ['INDONE', 'INDIA', 'OTHER'].map((subId) => ({
-      id: `SEA-${subId}`,
-      name: nameHash[`SEA-${subId}`],
-    })),
-  },
-]
+export interface SubOrigin {
+  id: Origin
+  name: string
+  checked?: boolean
+  hasSubOrigins?: false
+}
 
-const getOrigins = () => originList
+export interface OriginGroup {
+  id: Origin
+  name: string
+  subOrigins: SubOrigin[]
+  checked?: boolean
+  hasSubOrigins?: boolean
+}
+
+const originList: OriginGroup[] = [Origin.AM, Origin.AF, Origin.SEA].map(
+  (topOrigin) => ({
+    id: topOrigin,
+    name: nameHash[topOrigin],
+    subOrigins: subOrigins(topOrigin).map((subId) => ({
+      id: subId,
+      name: nameHash[subId],
+    })),
+  })
+)
+
+const getOrigins = (): OriginGroup[] => originList
 
 export default getOrigins

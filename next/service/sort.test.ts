@@ -1,5 +1,6 @@
 import sort from './sort'
 import { SORT_BY } from '../utility/constants'
+import { buildItem } from '../test/modelBuilders'
 
 describe('sort', () => {
   it('returns empty array when input is null', () => {
@@ -45,15 +46,15 @@ describe('sort', () => {
 
     it('sorts empty common names to end when alphabetical by common name', () => {
       const productList = [
-        {
+        buildItem({
           id: 'empty',
           common: '',
-        },
+        }),
         setupCommonCase('A'),
-        {
+        buildItem({
           id: 'empty2',
           common: '',
-        },
+        }),
       ]
 
       const result = sort(productList, SORT_BY.ALPHABETICAL_COMMON)
@@ -76,15 +77,15 @@ describe('sort', () => {
 
     it('sorts empty common names to end when alphabetical-descending by common name', () => {
       const productList = [
-        {
+        buildItem({
           id: 'empty',
           common: '',
-        },
+        }),
         setupCommonCase('A'),
-        {
+        buildItem({
           id: 'empty2',
           common: '',
-        },
+        }),
       ]
 
       const result = sort(productList, SORT_BY.ALPHABETICAL_COMMON_DESCENDING)
@@ -109,17 +110,17 @@ describe('sort', () => {
 
     it('sorts empty scientific names to end when alphabetical by scientific name', () => {
       const productList = [
-        {
+        buildItem({
           id: 'empty',
           common: 'something',
           scientific: '',
-        },
+        }),
         setupScientificCase('A'),
-        {
+        buildItem({
           id: 'empty2',
           common: 'something2',
           scientific: '',
-        },
+        }),
       ]
 
       const result = sort(productList, SORT_BY.ALPHABETICAL_SCIENTIFIC)
@@ -145,15 +146,15 @@ describe('sort', () => {
 
     it('sorts empty scientific names to end when alphabetical-descending by scientific name', () => {
       const productList = [
-        {
+        buildItem({
           id: 'empty',
           common: '',
-        },
+        }),
         setupScientificCase('A'),
-        {
+        buildItem({
           id: 'empty2',
           common: '',
-        },
+        }),
       ]
 
       const result = sort(
@@ -166,17 +167,17 @@ describe('sort', () => {
   })
 
   const setupCommonCase = (name) => {
-    return {
+    return buildItem({
       id: name,
       common: name,
-    }
+    })
   }
 
   const setupScientificCase = (name) => {
-    return {
+    return buildItem({
       id: name,
       scientific: name,
       common: 'commonName',
-    }
+    })
   }
 })

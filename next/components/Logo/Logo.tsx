@@ -1,5 +1,5 @@
 import React from 'react'
-export default (props) => (
+export default (props: React.SVGAttributes<HTMLOrSVGElement>): JSX.Element => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 192.064 209.052"

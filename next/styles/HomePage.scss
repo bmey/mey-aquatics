@@ -1,3 +1,4 @@
+@use 'sass:math';
 @import 'bootstrap/scss/_functions';
 @import 'bootstrap/scss/_variables';
 @import 'bootstrap/scss/mixins/_breakpoints';
@@ -86,7 +87,7 @@
   }
 
   a {
-    margin: ($grid-gap-default / 2) 0 0;
+    margin: math.div($grid-gap-default, 2) 0 0;
   }
 }
 
@@ -110,7 +111,7 @@
     width: auto;
     flex-basis: 33%;
     padding: $grid-gap-mobile;
-    margin: 0 ($grid-gap-mobile / 2);
+    margin: 0 math.div($grid-gap-mobile, 2);
 
     > {
       margin: $grid-gap-mobile 0;

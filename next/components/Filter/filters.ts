@@ -3,7 +3,17 @@ import queryString from 'query-string'
 import { FILTER } from '../../utility/constants'
 import getOrigins from '../../service/originList'
 
-export const applyFilter = (state, action) => {
+export type State = Filter[]
+export interface Filter {
+  type: number
+  [x: string]: any
+}
+
+interface Action {
+  payload: Filter
+}
+
+export const applyFilter = (state: State, action: Action): State => {
   const { type, id, hasSubOrigins } = action.payload
 
   if (type === FILTER.ORIGIN) {
@@ -28,7 +38,7 @@ export const applyFilter = (state, action) => {
     : [...state, action.payload]
 }
 
-export const removeFilter = (state, action) => {
+export const removeFilter = (state: State, action: Action): State => {
   const { type, id, hasSubOrigins } = action.payload
 
   if (type === FILTER.ORIGIN) {
@@ -51,7 +61,7 @@ export const removeFilter = (state, action) => {
   return state.filter((filter) => filter.type !== action.payload.type)
 }
 
-export const getRouteFromOrigin = (originId) => {
+export const getRouteFromOrigin = (originId: string): string => {
   const filterState = applyFilter([], {
     payload: { type: FILTER.ORIGIN, id: originId, hasSubOrigins: true },
   })
@@ -59,7 +69,7 @@ export const getRouteFromOrigin = (originId) => {
   return queryString.stringify({ filter: JSON.stringify(filterState) })
 }
 
-export const getRouteFromFilter = (filterType) => {
+export const getRouteFromFilter = (filterType: number): string => {
   const filterState = applyFilter([], {
     payload: { type: filterType },
   })

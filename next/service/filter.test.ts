@@ -1,5 +1,6 @@
 import filter, { isFilterApplied } from './filter'
 import { FILTER } from '../utility/constants'
+import { buildItem, buildSizes, buildSizeSpec } from '../test/modelBuilders'
 
 describe('filter', () => {
   it('returns empty array when input is null', () => {
@@ -22,8 +23,8 @@ describe('filter', () => {
 
   it('only includes items on CARES list when CARES filter applied', () => {
     const productList = [
-      { id: 'cares', onCaresList: true },
-      { id: 'non-cares', onCaresList: false },
+      buildItem({ id: 'cares', onCaresList: true }),
+      buildItem({ id: 'non-cares', onCaresList: false }),
     ]
     const appliedFilters = [{ type: FILTER.CARES_LIST }]
 
@@ -35,8 +36,17 @@ describe('filter', () => {
 
   it('only includes items in stock when IN STOCK filter applied', () => {
     const productList = [
-      { id: 'out-of-stock', sizes: { B: { count: 0 } } },
-      { id: 'in-stock', sizes: { B: { count: 0 }, M: { count: 1 } } },
+      buildItem({
+        id: 'out-of-stock',
+        sizes: buildSizes({ B: buildSizeSpec({ count: 0 }) }),
+      }),
+      buildItem({
+        id: 'in-stock',
+        sizes: buildSizes({
+          B: buildSizeSpec({ count: 0 }),
+          M: buildSizeSpec({ count: 1 }),
+        }),
+      }),
     ]
     const appliedFilters = [{ type: FILTER.IN_STOCK }]
 
@@ -48,9 +58,9 @@ describe('filter', () => {
 
   it('includes items from areas of origin when ORIGIN filters applied', () => {
     const productList = [
-      { id: 'test1', origin: 'TEST-1' },
-      { id: 'test2', origin: 'TEST-2' },
-      { id: 'test3', origin: 'TEST-3' },
+      buildItem({ id: 'test1', origin: 'TEST-1' }),
+      buildItem({ id: 'test2', origin: 'TEST-2' }),
+      buildItem({ id: 'test3', origin: 'TEST-3' }),
     ]
     const appliedFilters = [
       { type: FILTER.ORIGIN, values: ['TEST-1', 'TEST-3', 'OTHER'] },
@@ -66,9 +76,9 @@ describe('filter', () => {
 
   it('includes all items when ORIGIN filter is empty', () => {
     const productList = [
-      { id: 'test1', origin: 'TEST-1' },
-      { id: 'test2', origin: 'TEST-2' },
-      { id: 'test3', origin: 'TEST-3' },
+      buildItem({ id: 'test1', origin: 'TEST-1' }),
+      buildItem({ id: 'test2', origin: 'TEST-2' }),
+      buildItem({ id: 'test3', origin: 'TEST-3' }),
     ]
     const appliedFilters = [{ type: FILTER.ORIGIN, values: [] }]
 
@@ -82,8 +92,8 @@ describe('filter', () => {
 
   it('only includes items that match search term', () => {
     const productList = [
-      { id: 'test1', common: 'TEST-1' },
-      { id: 'test2', common: 'TEST-2' },
+      buildItem({ id: 'test1', common: 'TEST-1' }),
+      buildItem({ id: 'test2', common: 'TEST-2' }),
     ]
     const appliedFilters = [{ type: FILTER.SEARCH, value: '2' }]
 
@@ -95,8 +105,8 @@ describe('filter', () => {
 
   it('includes items with scientific name that match search term', () => {
     const productList = [
-      { id: 'test1', common: 'TEST-1', scientific: 'foo' },
-      { id: 'test2', common: 'TEST-2', scientific: 'bar' },
+      buildItem({ id: 'test1', common: 'TEST-1', scientific: 'foo' }),
+      buildItem({ id: 'test2', common: 'TEST-2', scientific: 'bar' }),
     ]
     const appliedFilters = [{ type: FILTER.SEARCH, value: 'bar' }]
 

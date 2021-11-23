@@ -1,7 +1,11 @@
+import { FishItem } from '../types'
 import { SORT_BY } from '../utility/constants'
 import { compareCaseInsentitive } from '../utility/strings'
 
-const sort = (productList, sortType = SORT_BY.DEFAULT) => {
+const sort = (
+  productList: FishItem[],
+  sortType = SORT_BY.DEFAULT
+): FishItem[] => {
   if (!productList) {
     return []
   }
@@ -22,15 +26,15 @@ const sort = (productList, sortType = SORT_BY.DEFAULT) => {
   }
 }
 
-const scientificNameSelector = (productItem) => productItem.scientific
-const commonNameSelector = (productItem) => productItem.common
+const scientificNameSelector = (productItem: FishItem) => productItem.scientific
+const commonNameSelector = (productItem: FishItem) => productItem.common
 
 const sortAlphabetically = (
-  productList,
-  nameSelector,
+  productList: FishItem[],
+  nameSelector: (productItem: FishItem) => string,
   descendingOrder = false
 ) => {
-  return productList.sort((a, b) => {
+  return productList.sort((a: FishItem, b: FishItem) => {
     const nameA = nameSelector(a)
     const nameB = nameSelector(b)
     return compareCaseInsentitive(nameA, nameB, descendingOrder)
