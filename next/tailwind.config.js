@@ -1,6 +1,11 @@
 module.exports = {
-  purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
-  darkMode: false, // or 'media' or 'class'
+  purge: [
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+    './node_modules/bootstrap/**/*.js',
+    './node_modules/reactstrap/**/*.js',
+  ],
+  darkMode: false,
   theme: {
     extend: {},
   },
