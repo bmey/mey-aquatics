@@ -5,6 +5,7 @@ import { FishItem } from '../types'
 import { GetStaticProps } from 'next'
 import { getAllStockData } from '../lib/stock'
 import Link from 'next/link'
+import { getStockDetailRoute } from '../service/routes'
 
 interface IProps {
   items: FishItem[]
@@ -29,7 +30,7 @@ const Livestock = ({ items }: IProps): JSX.Element => (
       <div>
         live stock!
         {items.map((item) => (
-          <Link href={`/stockdetails/${item.id}`} key={item.id}>
+          <Link href={getStockDetailRoute(item.id)} key={item.id}>
             <a>{item.common}</a>
           </Link>
         ))}

@@ -1,5 +1,6 @@
 import untypedGetOrigins from './originList'
-import mapStateToOrigin, { Origin } from './origin'
+import mapStateToOrigin from './origin'
+import { Origin } from '../types'
 
 jest.mock('./originList')
 

@@ -1,4 +1,4 @@
-import { Origin } from './origin'
+import { Origin, OriginGroup } from '../types'
 
 const subOrigins = (origin: Origin) =>
   Object.keys(Origin).filter(
@@ -23,21 +23,6 @@ export const nameHash: Record<Origin, string> = {
   'SEA-INDONE': 'Indonesia',
   'SEA-INDIA': 'India',
   'SEA-OTHER': 'Other',
-}
-
-export interface SubOrigin {
-  id: Origin
-  name: string
-  checked?: boolean
-  hasSubOrigins?: false
-}
-
-export interface OriginGroup {
-  id: Origin
-  name: string
-  subOrigins: SubOrigin[]
-  checked?: boolean
-  hasSubOrigins?: boolean
 }
 
 const originList: OriginGroup[] = [Origin.AM, Origin.AF, Origin.SEA].map(
