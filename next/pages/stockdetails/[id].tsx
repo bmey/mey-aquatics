@@ -8,6 +8,9 @@ import {
   GetStaticPropsContext,
 } from 'next'
 import { ParsedUrlQuery } from 'querystring'
+import { useRouter } from 'next/router'
+import { Button } from '../../components/Button'
+import ProductDetails from '../../components/Stock/ProductDetails'
 
 interface IProps {
   item: FishItem
@@ -29,21 +32,35 @@ export const getStaticProps: GetStaticProps<IProps> = async ({
 }
 
 export default function StockDetails({ item }: IProps): JSX.Element {
+  const router = useRouter()
   return (
     <Layout>
       <Head>
         <title>{item.common}</title>
       </Head>
-      <main>
-        <h1 className="text-xl">{item.common}</h1>
-        <div className="text-gray-300">{item.scientific}</div>
-      </main>
+      <div className="App-content container py-10">
+        <div>
+          <Button
+            onClick={() => router.back()}
+            size="sm"
+            outline
+            color="secondary"
+          >
+            &lt; Go Back
+          </Button>
+        </div>
+        <div style={{ marginTop: '20px' }}>
+          <ProductDetails {...item} />
+        </div>
+      </div>
     </Layout>
   )
 }
 
 export const getStaticPaths = (): GetStaticPathsResult => {
-  const paths = getAllStockIds().map((id) => ({ params: { id } }))
+  const paths = getAllStockIds().map((id) => ({
+    params: { id: id.toUpperCase() },
+  }))
   return {
     paths,
     fallback: false,

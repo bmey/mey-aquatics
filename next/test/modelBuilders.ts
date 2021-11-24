@@ -1,12 +1,12 @@
 import { FishItem, ItemSize, ItemSizeSpec } from '../types'
 
 export const buildItem = (overrides?: Partial<FishItem>): FishItem => ({
-  common: 'common',
+  common: '',
   id: 'id',
   onCaresList: false,
   origin: 'origin',
-  picture: 'picture',
-  scientific: 'scientific',
+  picture: '',
+  scientific: '',
   sizes: undefined,
   ...(overrides || {}),
 })

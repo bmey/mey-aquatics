@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Footer from './Footer'
 import Nav from './Nav'
+import { CloudinaryContext } from 'cloudinary-react'
 
 export const siteTitle = "Mey's Aquatics"
 
@@ -79,7 +80,9 @@ export default function Layout({
       <div className="body-container">
         <div className="body-content" data-test="loaded">
           <Nav />
-          <main>{children}</main>
+          <CloudinaryContext cloudName="bmey">
+            <main>{children}</main>
+          </CloudinaryContext>
         </div>
         <Footer routes={routes} />
       </div>

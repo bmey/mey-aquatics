@@ -13,6 +13,7 @@ import { DatabaseJson } from '../types'
 import { GetStaticProps } from 'next'
 import { getAllData } from '../lib/stock'
 import Layout from '../components/Layout'
+import { getStockDetailRoute } from '../service/routes'
 
 const regions = [
   {
@@ -99,7 +100,7 @@ export const Home = ({
 
                 return (
                   <Link
-                    href={`/stockdetails/${id}`}
+                    href={getStockDetailRoute(id)}
                     data-test={`view-hot-${id}`}
                     key={id}
                   >

@@ -1,22 +1,5 @@
-import getOrigins, { nameHash, OriginGroup, SubOrigin } from './originList'
-
-export enum Origin {
-  AM = 'AM',
-  'AM-SAMERI' = 'AM-SAMERI',
-  'AM-COSTAR' = 'AM-COSTAR',
-  'AM-CEAMER' = 'AM-CEAMER',
-  'AM-OTHER' = 'AM-OTHER',
-  AF = 'AF',
-  'AF-CONGOR' = 'AF-CONGOR',
-  'AF-LAKEMA' = 'AF-LAKEMA',
-  'AF-LAKETA' = 'AF-LAKETA',
-  'AF-LAKETU' = 'AF-LAKETU',
-  'AF-LAKEVI' = 'AF-LAKEVI',
-  SEA = 'SEA',
-  'SEA-INDONE' = 'SEA-INDONE',
-  'SEA-INDIA' = 'SEA-INDIA',
-  'SEA-OTHER' = 'SEA-OTHER',
-}
+import getOrigins, { nameHash } from './originList'
+import { Origin, OriginGroup, SubOrigin } from '../types'
 
 const mapSubOrigins = (subOrigins: SubOrigin[], appliedFilters) =>
   subOrigins.map((subOrigin) => ({

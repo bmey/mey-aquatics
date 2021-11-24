@@ -1,0 +1,11 @@
+.img-missing-text {
+  position: relative;
+  background-color: #eee;
+  width: 100%;
+
+  &::after {
+    content: 'Image missing';
+    position: absolute;
+    color: #aaa;
+  }
+}
