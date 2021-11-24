@@ -7,7 +7,7 @@ const Image = (
 ): JSX.Element => {
   if (
     process.env.NODE_ENV === 'production' ||
-    /true/i.test(process.env.REACT_APP_USE_CLOUDINARY)
+    /true/i.test(process.env.NEXT_PUBLIC_USE_CLOUDINARY)
   ) {
     return <CloudinaryImage {...props} width="1500" />
   } else {
