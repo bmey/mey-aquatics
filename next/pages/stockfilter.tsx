@@ -1,7 +1,7 @@
 import { Button } from 'reactstrap'
 import Filter from '../components/Filter/FilterContainer'
 import ResultsContainer from '../components/Filter/ResultsContainer'
-import styles from './stockFilter.module.scss'
+import styles from './stockfilter.module.scss'
 import { useRouter } from 'next/router'
 import { GetStaticProps } from 'next'
 import StockLayout from '../components/Stock/StockLayout'
