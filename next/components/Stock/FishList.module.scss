@@ -1,3 +1,4 @@
+@use 'sass:math';
 @import 'bootstrap/scss/_functions';
 @import 'bootstrap/scss/_variables';
 @import 'bootstrap/scss/mixins/_breakpoints';
@@ -10,7 +11,7 @@ $card-border-radius: calc(0.5rem - 1px);
   display: flex;
   flex-grow: 1;
   flex-flow: row wrap;
-  padding: $grid-gap-mobile / 2;
+  padding: math.div($grid-gap-mobile, 2);
   margin: -$grid-gap-mobile;
   align-content: flex-start;
 
@@ -42,7 +43,7 @@ $card-border-radius: calc(0.5rem - 1px);
   :global(.button-link.button-card) {
     padding: 0;
     cursor: pointer;
-    margin: $grid-gap-mobile / 2;
+    margin: math.div($grid-gap-mobile, 2);
     border: 1px solid lighten($dark, 50%);
     border-radius: $card-border-radius;
     display: flex;
@@ -83,7 +84,7 @@ $card-border-radius: calc(0.5rem - 1px);
       margin-bottom: $card-padding-default;
 
       > :not(:last-child) {
-        margin-bottom: ($card-padding-default / 2);
+        margin-bottom: math.div($card-padding-default, 2);
       }
     }
   }

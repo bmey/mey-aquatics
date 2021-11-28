@@ -1,3 +1,4 @@
+@use 'sass:math';
 @import 'bootstrap/scss/_functions';
 @import 'bootstrap/scss/_variables';
 @import 'bootstrap/scss/mixins/_breakpoints';
@@ -10,33 +11,33 @@
   @include media-breakpoint-up(md) {
     grid-template-columns: [first] 240px [second] auto [end];
     grid-column-gap: $grid-gap-default;
-    grid-row-gap: $grid-gap-default / 2;
+    grid-row-gap: math.div($grid-gap-default, 2);
 
     .results {
-      grid-column: first / end;
+      grid-column: math.div(first, end);
     }
 
     .filter {
       grid-row: body;
-      grid-column: first / second;
+      grid-column: math.div(first, second);
       align-self: start;
 
       margin-left: $grid-gap-default;
     }
 
     .data {
-      grid-column: second / end;
+      grid-column: math.div(second, end);
       padding-right: $grid-gap-default;
     }
   }
 
   @include media-breakpoint-down(sm) {
     grid-template-columns: [first] 1fr [second] auto [end];
-    grid-row-gap: $grid-gap-mobile / 2;
+    grid-row-gap: math.div($grid-gap-mobile, 2);
 
     .filter {
       grid-row: results;
-      grid-column: second / end;
+      grid-column: math.div(second, end);
       justify-self: end;
 
       display: flex;
@@ -46,12 +47,12 @@
     }
 
     .results {
-      grid-column: first / second;
+      grid-column: math.div(first, second);
       justify-self: start;
     }
 
     .data {
-      grid-column: first / end;
+      grid-column: math.div(first, end);
       padding: 0 ($grid-gap-default - 5px);
     }
   }

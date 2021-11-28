@@ -1,3 +1,4 @@
+@use 'sass:math';
 @import 'bootstrap/scss/_functions';
 @import 'bootstrap/scss/_variables';
 @import 'bootstrap/scss/mixins/_breakpoints';
@@ -10,14 +11,14 @@
     grid-template-rows: [header] 3rem [line2] 1fr [line3] 1fr;
     grid-template-columns: [image] 1fr [primary] 2fr;
     grid-column-gap: $grid-gap-default;
-    grid-row-gap: $grid-gap-default / 2;
+    grid-row-gap: math.div($grid-gap-default, 2);
 
     .info-image {
-      grid-row: header / line3;
+      grid-row: math.div(header, line3);
     }
 
     .info-list {
-      grid-row: line2 / last-line;
+      grid-row: math.div(line2, last-line);
     }
   }
 
@@ -25,7 +26,7 @@
     grid-template-rows: [header] 3rem [line2] auto [line3] 1fr;
     grid-template-columns: [primary image] 1fr;
     grid-column-gap: $grid-gap-mobile;
-    grid-row-gap: $grid-gap-mobile / 2;
+    grid-row-gap: math.div($grid-gap-mobile, 2);
 
     .info-image {
       grid-row: line2;
