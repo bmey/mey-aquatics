@@ -1,0 +1,18 @@
+@import '../../styles/variables';
+
+.search {
+  background-color: $bg-gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  align-self: stretch;
+  height: 75px;
+  padding: 5px $grid-gap-default;
+
+  :global(.form-group) {
+    margin: 0;
+    max-width: 600px;
+    width: 100%;
+  }
+}

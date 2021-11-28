@@ -1,0 +1,74 @@
+@use 'sass:math';
+@import 'bootstrap/scss/_functions';
+@import 'bootstrap/scss/_variables';
+@import 'bootstrap/scss/mixins/_breakpoints';
+@import '../../styles/variables';
+
+.livestock-list-page {
+  display: grid;
+  grid-template-rows: [results] 50px [body] auto [end];
+
+  @include media-breakpoint-up(md) {
+    grid-template-columns: [first] 240px [second] auto [end];
+    grid-column-gap: $grid-gap-default;
+    grid-row-gap: math.div($grid-gap-default, 2);
+
+    .results {
+      grid-column: math.div(first, end);
+    }
+
+    .filter {
+      grid-row: body;
+      grid-column: math.div(first, second);
+      align-self: start;
+
+      margin-left: $grid-gap-default;
+    }
+
+    .data {
+      grid-column: math.div(second, end);
+      padding-right: $grid-gap-default;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    grid-template-columns: [first] 1fr [second] auto [end];
+    grid-row-gap: math.div($grid-gap-mobile, 2);
+
+    .filter {
+      grid-row: results;
+      grid-column: math.div(second, end);
+      justify-self: end;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-right: $grid-gap-default;
+    }
+
+    .results {
+      grid-column: math.div(first, second);
+      justify-self: start;
+    }
+
+    .data {
+      grid-column: math.div(first, end);
+      padding: 0 ($grid-gap-default - 5px);
+    }
+  }
+
+  .results {
+    grid-row: results;
+    align-self: stretch;
+
+    padding: 5px $grid-gap-default;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .data {
+    grid-row: body;
+    align-self: stretch;
+  }
+}

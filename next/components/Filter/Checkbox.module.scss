@@ -1,0 +1,18 @@
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin: 0;
+
+  &:not(:only-child) {
+    // reduce space between checkboxes due to touch box
+    margin-bottom: -8px;
+  }
+
+  .checkbox {
+    // accomodate for touch and icon padding.
+    // this will visually align with the left of container.
+    margin-left: -10px;
+    padding: 7px;
+  }
+}
