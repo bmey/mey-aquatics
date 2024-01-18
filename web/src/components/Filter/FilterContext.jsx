@@ -3,13 +3,13 @@ import _ from 'lodash';
 import queryString from 'query-string';
 import { withRouter } from 'react-router';
 import { applyFilter, removeFilter } from './filters';
-import { SORT_BY } from '../../utility/constants';
+import { FILTER, SORT_BY } from '../../utility/constants';
 
 const initialSortId = SORT_BY.DEFAULT;
 const FilterContext = React.createContext();
 
 const getInitialState = ({ location: { hash } }) => {
-  let filters = [];
+  let filters = [{ type: FILTER.IN_STOCK }];
   let sort = initialSortId;
   if (!_.isEmpty(hash)) {
     try {
