@@ -52,7 +52,10 @@ export const removeFilter = (state, action) => {
 };
 
 export const getRouteFromOrigin = originId => {
-  const filterState = applyFilter([], {
+  const inStock = applyFilter([], {
+    payload: { type: FILTER.IN_STOCK },
+  });
+  const filterState = applyFilter(inStock, {
     payload: { type: FILTER.ORIGIN, id: originId, hasSubOrigins: true },
   });
 
