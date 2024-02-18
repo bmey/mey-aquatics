@@ -4,7 +4,7 @@ import { Button } from 'reactstrap';
 import { IoMdGlobe, IoIosFlame, IoIosWarning } from 'react-icons/io';
 import ContactButton from './ContactButton/ContactButton';
 import Logo from './Logo/Logo';
-import { getRouteFromOrigin, getRouteFromFilter } from './Filter/filters';
+import { getRouteFromOrigin, getRouteFromFilters } from './Filter/filters';
 import { countEndangeredSpecies } from '../service/stats';
 import './HomePage.css';
 import { FILTER } from '../utility/constants';
@@ -88,7 +88,7 @@ const Home = ({ data: { fish, hotItems = [] } }) => (
               species in stock. Pick one up so you can make a difference, too!
             </span>
             <Link
-              to={`/livestock/#${getRouteFromFilter(FILTER.CARES_LIST)}`}
+              to={`/livestock/#${getRouteFromFilters([FILTER.CARES_LIST, FILTER.IN_STOCK])}`}
               data-test='view-endangered'
             >
               View now
