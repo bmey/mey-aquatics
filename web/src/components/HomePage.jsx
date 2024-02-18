@@ -81,8 +81,11 @@ const Home = ({ data: { fish, hotItems = [] } }) => (
         <HomeCard icon={<IoIosWarning />} description='Endangered'>
           <div className='d-flex flex-column align-items-center'>
             <span className='text-center subtext'>
-              We have <span className="font-weight-bold">{countEndangeredSpecies(fish)}&nbsp;endangered</span> species in
-              stock. Pick one up so you can make a difference, too!
+              We have{' '}
+              <span className='font-weight-bold'>
+                {countEndangeredSpecies(fish)}&nbsp;endangered
+              </span>{' '}
+              species in stock. Pick one up so you can make a difference, too!
             </span>
             <Link
               to={`/livestock/#${getRouteFromFilter(FILTER.CARES_LIST)}`}
@@ -94,7 +97,7 @@ const Home = ({ data: { fish, hotItems = [] } }) => (
         </HomeCard>
       </div>
       <div className='d-flex flex-column justify-content-center align-items-center bg-gray p-5'>
-        <h2 className="mb-4">Contact Us</h2>
+        <h2 className='mb-4'>Contact Us</h2>
 
         <p className='text-center mb-4' style={{ maxWidth: '40rem' }}>
           We have a wide selection of fish, including rare and endangered species identified by the

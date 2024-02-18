@@ -54,7 +54,7 @@ const ProductDetails = ({ onCaresList, common, scientific, origin, sizes, pictur
           ) : (
             <MissingImage />
           )}
-          <div className="position-absolute" style={{ left: 0, top: 0 }}>
+          <div className='position-absolute' style={{ left: 0, top: 0 }}>
             <OutOfStock sizes={sizes} />
           </div>
         </div>
@@ -75,9 +75,10 @@ const ProductDetails = ({ onCaresList, common, scientific, origin, sizes, pictur
       </div>
       <h2 style={{ marginTop: '20px' }}>Stock Available</h2>
       {isOutOfStock(sizes) && (
-        <div className="warning rounded border-complementary d-flex align-items-center p-3 mb-2">
+        <div className='warning rounded border-complementary d-flex align-items-center p-3 mb-2'>
           <IoIosWarning className='color-complementary' />
-          <strong className="mx-1">Out of Stock.</strong>&nbsp;Check back later or contact us if interested.
+          <strong className='mx-1'>Out of Stock.</strong>&nbsp;Check back later or contact us if
+          interested.
         </div>
       )}
       <Table responsive striped hover>

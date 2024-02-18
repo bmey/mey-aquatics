@@ -21,7 +21,9 @@ describe('stats', () => {
     });
 
     it('returns zero when no endangered fish', () => {
-      const result = subject.countEndangeredSpecies([{ onCaresList: false, sizes: { B: { count: 1 } } }]);
+      const result = subject.countEndangeredSpecies([
+        { onCaresList: false, sizes: { B: { count: 1 } } },
+      ]);
 
       expect(result).toBe(0);
     });
@@ -33,7 +35,9 @@ describe('stats', () => {
     });
 
     it('returns one when one endangered fish', () => {
-      const result = subject.countEndangeredSpecies([{ onCaresList: true, sizes: { B: { count: 1 } } }]);
+      const result = subject.countEndangeredSpecies([
+        { onCaresList: true, sizes: { B: { count: 1 } } },
+      ]);
 
       expect(result).toBe(1);
     });
@@ -53,9 +57,9 @@ describe('stats', () => {
         { id: 'out-of-stock', onCaresList: true, sizes: { B: { count: 0 } } },
         { id: 'in-stock', onCaresList: true, sizes: { B: { count: 1 } } },
       ];
-      
+
       const result = subject.countEndangeredSpecies(productList);
-  
+
       expect(result).toBe(1);
     });
   });

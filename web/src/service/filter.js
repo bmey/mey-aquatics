@@ -5,12 +5,12 @@ export const isFilterApplied = (appliedFilters, filterType) => {
   return appliedFilters.some(filter => filter.type === filterType);
 };
 
-export const isOutOfStock = (sizes) => {
+export const isOutOfStock = sizes => {
   if (!sizes) {
     return true;
   }
   return Object.values(sizes).every(size => size.count === 0);
-}
+};
 
 export const getFilter = (appliedFilters, filterType) => {
   return appliedFilters.filter(filter => filter.type === filterType)[0];
